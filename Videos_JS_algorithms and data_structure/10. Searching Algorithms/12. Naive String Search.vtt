@@ -1,0 +1,304 @@
+WEBVTT
+
+00:00.150 --> 00:01.250
+Hey welcome back.
+
+00:01.260 --> 00:05.880
+So we're still talking about searching algorithms but now we're talking about a different type which
+
+00:05.880 --> 00:09.840
+has to do with searching for substrings in a larger string.
+
+00:09.840 --> 00:11.520
+So there are two that we're going to focus on.
+
+00:11.510 --> 00:16.140
+And the first one is that naive string search I don't think there's actually a name for this.
+
+00:16.140 --> 00:19.870
+This is just the most basic common way of doing this problem.
+
+00:19.980 --> 00:22.140
+And then we're going to see a better implementation.
+
+00:22.140 --> 00:26.100
+That is definitely a little more complicated in the next video or two videos from now.
+
+00:26.490 --> 00:28.400
+But we're going to start with the basic solution.
+
+00:28.440 --> 00:34.680
+So imagine that you want to count the number of times a smaller string appears in a longer string.
+
+00:34.860 --> 00:38.290
+A straightforward approach involves checking pairs of characters individually.
+
+00:38.290 --> 00:40.140
+Let's imagine we have this string here.
+
+00:40.140 --> 00:42.540
+Harold said haha in Hamburg.
+
+00:43.020 --> 00:49.250
+So if we were searching for just a single character like I don't know the letter II for example that's
+
+00:49.260 --> 00:50.070
+very easy.
+
+00:50.160 --> 00:51.270
+That's basically what we've done.
+
+00:51.270 --> 00:52.580
+You just do a linear search.
+
+00:52.740 --> 00:54.270
+You could treat this as an array.
+
+00:54.290 --> 00:54.880
+Right.
+
+00:54.950 --> 00:59.520
+Each check is this and I hope is this and why is this and why is this night over and over until you
+
+00:59.520 --> 01:01.500
+find a night or until you hit the end.
+
+01:01.560 --> 01:02.380
+So that's nothing new.
+
+01:02.380 --> 01:07.320
+If we're searching for a single character we can use what we've already done instead of accessing items
+
+01:07.320 --> 01:10.530
+in an array we access using an index in the string.
+
+01:10.530 --> 01:12.440
+Just like this right with zero.
+
+01:12.480 --> 01:14.880
+And I would check 1 and it would check too.
+
+01:14.940 --> 01:23.400
+But if you're checking for a pattern for example I want to see if H A ha ha ha is in there that takes
+
+01:23.400 --> 01:28.200
+some more work because we're no longer just checking a single character against a single character.
+
+01:28.440 --> 01:29.640
+We're checking.
+
+01:29.650 --> 01:33.500
+OK let's walk through the string and it looks like we have an H that to match.
+
+01:33.510 --> 01:35.220
+And then we have an A O that's a match.
+
+01:35.220 --> 01:37.280
+And then in our op not a match anymore.
+
+01:37.300 --> 01:39.830
+So then we start over and we look for an H again.
+
+01:39.960 --> 01:41.610
+So I actually have a little diagram here.
+
+01:41.610 --> 01:47.010
+Imagine that this is our long string we're searching through and we're trying to find o m g inside of
+
+01:47.010 --> 01:47.660
+this.
+
+01:47.670 --> 01:53.340
+So the simplest approach is going to involve basically if we put them next to one another we're going
+
+01:53.340 --> 01:59.060
+to start by walking one character at a time and we're just going to check is this w here equal to the
+
+01:59.070 --> 02:01.380
+0 at the beginning or are these two characters the same.
+
+02:01.410 --> 02:01.910
+No.
+
+02:02.120 --> 02:02.370
+OK.
+
+02:02.370 --> 02:03.450
+Move on.
+
+02:03.740 --> 02:04.710
+Now we have a match.
+
+02:04.740 --> 02:05.050
+Oh.
+
+02:05.100 --> 02:05.550
+Oh.
+
+02:05.700 --> 02:07.560
+So now we move on to the second character.
+
+02:07.560 --> 02:09.200
+We're looking for an M.
+
+02:09.300 --> 02:10.290
+We don't find one.
+
+02:10.350 --> 02:13.130
+So we move on w no we don't find that.
+
+02:13.130 --> 02:14.400
+So we move on again.
+
+02:14.490 --> 02:15.090
+OK.
+
+02:15.210 --> 02:17.340
+Oh and oh that's a match.
+
+02:17.340 --> 02:18.590
+Now we move on to the next character.
+
+02:18.600 --> 02:19.470
+MNM.
+
+02:19.620 --> 02:20.700
+That's good.
+
+02:20.700 --> 02:21.860
+G and G.
+
+02:22.170 --> 02:25.350
+And we hit the end of our short string we found a match.
+
+02:25.350 --> 02:29.640
+So now we we add a counter we increment something to keep track of how many matches we found.
+
+02:29.700 --> 02:31.380
+We found one so far.
+
+02:31.380 --> 02:32.830
+Now we move on to the M.
+
+02:32.850 --> 02:38.100
+So basically we do it for every single character here and we start at the beginning of our smaller string
+
+02:38.100 --> 02:40.840
+and check it against every individual character in the longer string.
+
+02:40.860 --> 02:42.840
+So that's not a match that's of a match.
+
+02:42.840 --> 02:44.160
+That's not a match.
+
+02:44.160 --> 02:45.700
+Now we have a match at the O.
+
+02:45.720 --> 02:51.610
+Then we check the next character m check which still match G and we increment.
+
+02:51.690 --> 02:54.680
+I don't know why this when I made this side I just checked.
+
+02:54.690 --> 02:56.350
+These are the same size.
+
+02:56.590 --> 02:59.610
+Somehow when it's there's some weird bug when it's being displayed.
+
+02:59.610 --> 03:01.050
+But these should be count evenly.
+
+03:01.050 --> 03:04.540
+There's two matches and that's what we want to do.
+
+03:04.560 --> 03:07.080
+We want to try and implement this naive string search.
+
+03:07.080 --> 03:11.820
+So there is a better way of doing this but it involves a lot more code that we'll see in two videos
+
+03:11.820 --> 03:13.080
+from now.
+
+03:13.110 --> 03:18.120
+And it has a much fancier name but this approach is one that just takes a couple of lines.
+
+03:18.150 --> 03:19.040
+A couple of loops.
+
+03:19.200 --> 03:20.700
+Let's walk through the pseudo code.
+
+03:20.970 --> 03:25.800
+So the idea again is for you to try and implement this on your own using the pseudo code.
+
+03:25.950 --> 03:29.970
+If you have the time or willpower or energy here's the steps.
+
+03:29.970 --> 03:31.500
+So loop over the longer string.
+
+03:31.560 --> 03:36.930
+So I guess I didn't say define a function this time but to find a function that takes two strings and
+
+03:36.930 --> 03:38.490
+just call it maybe string search.
+
+03:38.490 --> 03:42.100
+It takes the larger string and then the pattern that we're looking for.
+
+03:42.660 --> 03:48.390
+And then you loop over each character in the longer string and then we have another loop over the shorter
+
+03:48.390 --> 03:48.970
+string.
+
+03:49.350 --> 03:50.850
+And then we just check.
+
+03:50.850 --> 03:55.050
+Basically if the characters don't match break out of the inner loop so stop.
+
+03:55.290 --> 03:56.370
+And if they do match.
+
+03:56.390 --> 04:01.950
+If we find a match for 0 for example and O M G then you move onto the next character keep going until
+
+04:01.950 --> 04:03.440
+you hit the end of the short string.
+
+04:03.450 --> 04:07.620
+And if you do hit the end of that short string that means that you find a match.
+
+04:07.620 --> 04:13.020
+So if you complete the loop find a match increment the count of matches and then return the count at
+
+04:13.020 --> 04:13.760
+the end.
+
+04:14.130 --> 04:18.600
+And so if Count should start at zero we don't need to have any special error handling if there are no
+
+04:18.750 --> 04:20.850
+matches count stays at zero.
+
+04:20.850 --> 04:22.420
+So just return the count at the end.
+
+04:22.620 --> 04:24.150
+So hopefully that makes sense.
+
+04:24.240 --> 04:28.710
+Loop over the longer string inside of that loop a nested loop over the shorter string.
+
+04:28.710 --> 04:33.990
+And then if you make it to the end of that shorter string and you haven't broken out yet then add one
+
+04:34.110 --> 04:35.010
+to the counter.
+
+04:35.330 --> 04:38.210
+OK so give it a shot in the next video we'll have a solution.

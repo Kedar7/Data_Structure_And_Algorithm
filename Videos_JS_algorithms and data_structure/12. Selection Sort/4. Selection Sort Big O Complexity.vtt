@@ -1,0 +1,82 @@
+WEBVTT
+
+00:00.230 --> 00:02.450
+So selection is not terribly efficient.
+
+00:02.460 --> 00:05.370
+We're talking about time complexity and squared.
+
+00:05.580 --> 00:10.290
+We'll revisit time complexity at the end of this section to compare them all the algorithms that we've
+
+00:10.290 --> 00:11.320
+learned so far.
+
+00:11.640 --> 00:16.340
+But yeah roughly we have to compare every element to every other element in the array.
+
+00:16.350 --> 00:21.090
+So as the length of the array grows the number of comparison grows roughly at the rate of end times
+
+00:21.090 --> 00:22.220
+end and squared.
+
+00:22.350 --> 00:24.860
+Yes technically the first time through.
+
+00:24.900 --> 00:29.650
+We make six comparisons then five then four and then three and so on.
+
+00:29.820 --> 00:32.400
+But that doesn't really matter in the grand scheme of things.
+
+00:32.430 --> 00:34.410
+We're still going with over and squared.
+
+00:34.410 --> 00:39.130
+It's drastically worse than if we only had to make a single comparison for each item.
+
+00:39.420 --> 00:44.790
+Now where selection sort potentially is better than something like bubble sort.
+
+00:45.000 --> 00:51.690
+Really there's only one scenario which is if for some reason or you're and you're in a situation where
+
+00:51.690 --> 00:54.980
+you want to minimize the number of swaps that you're making.
+
+00:55.260 --> 00:58.660
+So remember that bubble sort if you can recall how that works.
+
+00:58.770 --> 01:03.510
+We're basically swapping over and over and over to get the largest item to the end we keep swapping
+
+01:03.510 --> 01:08.130
+and swapping until it goes to the end and the next time through we swap if we need to keep swapping
+
+01:08.360 --> 01:14.710
+in selection sort we iterate we compare a lot but we only make one swap at the end of each loop.
+
+01:15.120 --> 01:20.730
+So if for some reason we're worried about writing to memory we're worried about actually doing the swap
+
+01:21.090 --> 01:22.730
+which is not very common to be items.
+
+01:22.740 --> 01:25.180
+But if you were then selection sort is better.
+
+01:25.380 --> 01:28.720
+Otherwise it's just not it's not very good but it is easy.
+
+01:28.800 --> 01:32.800
+Which is a good thing and it helped prepare us for some of the other algorithms we'll see.
+
+01:33.060 --> 01:34.300
+So that selection sort.
+
+01:34.320 --> 01:39.260
+Next we have one more of the elementary algorithms the basic ones which is called insertion.
+
+01:39.450 --> 01:40.310
+That's coming up next.

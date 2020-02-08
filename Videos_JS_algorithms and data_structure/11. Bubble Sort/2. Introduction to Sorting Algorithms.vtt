@@ -1,0 +1,400 @@
+WEBVTT
+
+00:00.240 --> 00:01.310
+Hey welcome back.
+
+00:01.440 --> 00:07.800
+So this is the first of a couple of sections on a somewhat notorious topic which is sorting and sorting
+
+00:07.800 --> 00:08.850
+algorithms.
+
+00:08.850 --> 00:13.890
+So when I get to this point in my in-person classes I think this is a topic that a lot of people have
+
+00:13.890 --> 00:15.660
+been dreading.
+
+00:15.660 --> 00:21.600
+So people look forward to it but it's something that has taken on a bit of weight in the developer.
+
+00:21.620 --> 00:23.210
+So I don't know Zeit Geist.
+
+00:23.280 --> 00:28.860
+It's a heavy topic to people and it's something that is important and part of the reason I think is
+
+00:28.860 --> 00:35.160
+that it's sort of like the quintessential computer science topic that every blog post ever about getting
+
+00:35.160 --> 00:36.930
+your dream job at Google.
+
+00:36.930 --> 00:42.490
+Here are 10 things you must master or every book about aging the computer science interview.
+
+00:42.600 --> 00:46.520
+There's always a large section devoted to sorting and for good reason.
+
+00:46.530 --> 00:51.600
+It is an important topic it's a great challenge and something that we do all the time whether we're
+
+00:51.600 --> 00:54.450
+writing our own code or using a built in sort method.
+
+00:54.450 --> 00:57.880
+It's important but it also doesn't have to be that scary.
+
+00:57.900 --> 01:02.940
+So let's start by just talking about what sorting is referring to when we say a sorting algorithm.
+
+01:02.940 --> 01:07.680
+It just is that it's referring to the process of rearranging items in any collection.
+
+01:07.680 --> 01:13.590
+So we could take a string and sort the individual characters inside a sentence for example but we're
+
+01:13.590 --> 01:16.780
+going to usually be working with arrays at least for now.
+
+01:16.800 --> 01:20.730
+Later we'll talk about sorting other data structures like linked lists or trees.
+
+01:20.880 --> 01:22.700
+But for now we're focusing on an array.
+
+01:22.890 --> 01:28.560
+So let's say we have an array of data we want to write a function that takes the terrain and spits out
+
+01:28.890 --> 01:30.370
+a reordered array.
+
+01:30.780 --> 01:36.940
+So that could be sorting numbers from smallest to largest or the other way around ascending or descending.
+
+01:36.960 --> 01:43.370
+It could be sorting names alphabetically or if we have movie data that say objects movie objects.
+
+01:43.500 --> 01:45.170
+Each movie has a year.
+
+01:45.290 --> 01:46.940
+A total revenue.
+
+01:46.950 --> 01:48.600
+It has a director a title.
+
+01:48.600 --> 01:53.910
+We could sort them by release here or we could sort them by revenue or we could take their international
+
+01:53.940 --> 01:57.850
+and domestic revenue add those together and then sort by that.
+
+01:57.870 --> 02:02.460
+So the point is that it doesn't really matter what we're sorting by what the comparison is whether it's
+
+02:02.460 --> 02:06.890
+alphabetically what comes first or numerically what comes first that doesn't matter.
+
+02:06.930 --> 02:09.750
+The algorithms behind it don't really care.
+
+02:10.080 --> 02:14.030
+We're going to focus on working with arrays for now and just in numbers.
+
+02:14.280 --> 02:21.360
+So imagine that I asked you to write a function called sort and it just takes in an array and it should
+
+02:21.360 --> 02:23.860
+return that array sorted.
+
+02:24.240 --> 02:32.880
+So if I called it like this with let's just say some random numbers like that you would need to write
+
+02:32.880 --> 02:37.980
+code in here in order to make this work so that it should return but C in this case what are we looking
+
+02:37.980 --> 02:45.900
+at six comma 12 13 23 and 45 from in ascending order.
+
+02:45.920 --> 02:47.470
+What we're going to start with.
+
+02:47.490 --> 02:49.950
+So it's a simple It's a simple challenge right.
+
+02:49.950 --> 02:54.350
+We can we can look at this it doesn't seem that bad but there's a million ways of doing this.
+
+02:54.350 --> 02:59.580
+And that's part of the problem part of what makes sorting algorithms kind of scary is that I can think
+
+02:59.580 --> 03:06.480
+of 15 probably named algorithms that exist that actually have a name that are kind of well-known that
+
+03:06.480 --> 03:12.230
+do the exact same thing and there are definitely some better ones overall that we will be floating about.
+
+03:12.360 --> 03:16.710
+Then there are also some that are very niche that are terrible most of the time but they do well in
+
+03:16.710 --> 03:18.090
+certain situations.
+
+03:18.090 --> 03:19.750
+So just to give you a really quick preview.
+
+03:19.770 --> 03:22.620
+This is a video I like to show when I'm teaching sorting.
+
+03:22.650 --> 03:23.610
+We're not going to look at.
+
+03:23.610 --> 03:29.610
+I'm going to skip around for like 15 seconds but it visualizes the different approaches to sorting.
+
+03:29.640 --> 03:34.040
+So basically over here we have some unsorted data representing let's say numbers.
+
+03:34.200 --> 03:40.980
+The taller items are taller rows our columns are a larger number let's say this is 100 the tallest one
+
+03:40.980 --> 03:44.140
+here and the smallest one is representing the number one.
+
+03:44.160 --> 03:49.840
+So they're all in this order totally random and we write code to go and order them.
+
+03:49.860 --> 03:52.140
+So here's one approach called selection sort.
+
+03:52.380 --> 03:55.580
+And you can see that it builds up the array one item at a time.
+
+03:55.620 --> 03:57.950
+It sorts it one thing at a time till we're done.
+
+03:58.170 --> 03:59.660
+Then here's another approach.
+
+03:59.700 --> 04:03.000
+It's called insertion sort and it's a little bit different.
+
+04:03.090 --> 04:04.350
+We've got quick sort.
+
+04:04.350 --> 04:05.040
+Very different.
+
+04:05.040 --> 04:09.190
+We're working from the start and the end at the same time.
+
+04:09.450 --> 04:11.300
+We've got one called merge sort.
+
+04:11.310 --> 04:15.710
+Another approach heapsort radix sort.
+
+04:15.810 --> 04:21.250
+We're not going to learn every single one of these there's 15 in this video shell sort bubble sort.
+
+04:21.330 --> 04:24.030
+But the point is that these are all different approaches.
+
+04:24.090 --> 04:26.880
+They all end up with the exact same resort resort.
+
+04:26.910 --> 04:30.800
+They end up with the same results but how they get there is very different.
+
+04:31.170 --> 04:32.990
+So this video was kind of fun to take a look at.
+
+04:33.060 --> 04:37.460
+I will warn you the sound is the sound is a little bit of noxious.
+
+04:37.460 --> 04:41.580
+I'm not playing it here but definitely don't play it on high volume if you're going to check this video
+
+04:41.580 --> 04:42.280
+out.
+
+04:42.630 --> 04:43.830
+So why do we need to learn this.
+
+04:43.830 --> 04:45.270
+That's the next question.
+
+04:45.270 --> 04:50.570
+So there are all these different algorithms and we're going to learn a bunch of them but why.
+
+04:50.850 --> 04:56.310
+The first is that sorting is something that is really really common in programming and even if you are
+
+04:56.310 --> 05:03.300
+using the built in javascript sort or the built in sort that in Ruby or in Python for example it still
+
+05:03.300 --> 05:07.890
+is important to understand what algorithm it's using behind the scenes because that will help us understand
+
+05:07.890 --> 05:09.980
+what it's good at and what it's bad at.
+
+05:10.050 --> 05:15.240
+And that brings us to the next point which is there are many ways of sorting things and each algorithm
+
+05:15.240 --> 05:17.650
+that we see will have pros and cons.
+
+05:17.730 --> 05:23.420
+So while some are objectively faster than others there are certain situations where one algorithm would
+
+05:23.430 --> 05:28.190
+say that the data is almost sorted and there's just a couple of pieces that are out of place.
+
+05:28.260 --> 05:32.000
+Some algorithms that are usually slow will be really fast at that.
+
+05:32.100 --> 05:37.440
+So if you know for example that you're working with data that is pretty uniform it's almost all sorted
+
+05:37.470 --> 05:42.000
+but there's a couple of things that are out of place and you want to make sure that it's being sorted
+
+05:42.000 --> 05:43.400
+as fast as possible.
+
+05:43.410 --> 05:48.750
+You might want to implement your own sort rather than having to rely on the built in one which isn't
+
+05:48.750 --> 05:50.630
+going to be as fast in that situation.
+
+05:50.670 --> 05:56.010
+And just to illustrate my point this is a really cool Web site I'd like to show called sorting algorithm
+
+05:56.130 --> 06:02.520
+algorithms animations and it shows seven of the most common sorting algorithms insertions selection
+
+06:02.520 --> 06:05.130
+bubble shall merge heap and quicksort.
+
+06:05.160 --> 06:10.110
+These are all different approaches and what it's showing here are different data sets.
+
+06:10.110 --> 06:16.080
+So a totally random set of data versus nearly sorted so you can see we're almost there but there's a
+
+06:16.080 --> 06:22.170
+couple of items out of place totally reversed data and then data that has few unique items so a lot
+
+06:22.170 --> 06:23.940
+of very similar items.
+
+06:23.940 --> 06:28.860
+Now what I'm going to show you is first of all what this does is it just visualizes what happens just
+
+06:28.860 --> 06:32.230
+like the video I showed you in the past but this compares them all at once.
+
+06:32.250 --> 06:38.480
+So if I hit play on random you can see how basically how their speeds compare.
+
+06:39.100 --> 06:39.820
+Whoops I missed it.
+
+06:39.820 --> 06:40.530
+There you go.
+
+06:40.560 --> 06:42.870
+Their speeds compare and their approaches compare.
+
+06:42.870 --> 06:48.060
+So this is totally random data and you'll see things like keep a quick merge and shell finish much before
+
+06:48.060 --> 06:52.260
+insertion and selection and bubble and poor selection just finished.
+
+06:52.260 --> 06:57.060
+But then if we look at nearly sorted you'll see that insertion actually finished pretty shirt finished
+
+06:57.060 --> 06:58.090
+first didn't it.
+
+06:58.440 --> 07:02.800
+Yep it's done before anything else poor selection still very slow.
+
+07:03.060 --> 07:06.870
+And I won't go through all of this but you can feel free to play around with this but all that this
+
+07:06.870 --> 07:13.830
+is showing is that something like insertion which was slow when our data is totally random was actually
+
+07:13.920 --> 07:16.940
+very quick when our data was nearly sorted.
+
+07:17.190 --> 07:18.670
+I think I was the first one to finish.
+
+07:18.930 --> 07:22.410
+So they have pros and cons and it's worth understanding them.
+
+07:22.590 --> 07:27.010
+And the other reason I didn't put on here that we already hinted at this is a classic interview topic.
+
+07:27.120 --> 07:31.510
+It's something that is a great well it's just a good problem.
+
+07:31.560 --> 07:36.960
+There's so many approaches it's really a good critical thinking challenge complete from using that phrase.
+
+07:37.200 --> 07:42.980
+And like my dad it's just it's a good challenge to do and it's something that comes up in interviews.
+
+07:43.020 --> 07:46.030
+So of course that's a good reason to know something if you're trying to interview.
+
+07:46.200 --> 07:49.860
+So without further ado let's talk about what we're covering in this section.
+
+07:49.860 --> 07:50.970
+Our objectives are.
+
+07:50.970 --> 07:53.080
+First we're going to implement bubble sort.
+
+07:53.190 --> 07:56.280
+So this is one algorithm we'll learn how it works and implement it.
+
+07:56.280 --> 07:59.700
+Same thing for selection sort and then insertion sort.
+
+07:59.700 --> 08:02.950
+So these are what I'm calling the elementary sorting algorithms.
+
+08:02.970 --> 08:07.800
+They definitely are less commonly used because they're less efficient but that doesn't mean that you
+
+08:07.800 --> 08:08.670
+shouldn't learn them.
+
+08:08.730 --> 08:10.370
+And we'll talk more about why it's important.
+
+08:10.380 --> 08:13.360
+But I kind of already hinted that hinted at it.
+
+08:13.470 --> 08:19.600
+We saw that at least one of the algorithms performed very well in a certain very specific situation.
+
+08:19.650 --> 08:24.960
+So we'll be able to analyze these as we go through and figure out when they perform well and then after
+
+08:24.960 --> 08:28.350
+this we will move on to more advanced sorting algorithms as well.
+
+08:28.350 --> 08:32.910
+So let's start first before we even get to bubble we're going to talk about the built in javascript
+
+08:32.910 --> 08:35.690
+sort the sort method and just learn how that works.

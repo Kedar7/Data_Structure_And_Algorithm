@@ -1,0 +1,355 @@
+WEBVTT
+
+00:00.120 --> 00:01.140
+All right welcome back.
+
+00:01.140 --> 00:05.670
+Here's my solution using two pointers for the count unique values problem.
+
+00:05.670 --> 00:10.870
+So as I mentioned we use two pointers starting from the left one starting here and next one is the index
+
+00:10.910 --> 00:14.590
+0 and then index of 1 and then we look forward from there.
+
+00:14.880 --> 00:21.630
+And then we update the first pointer only at a particular condition which is when we find two unique
+
+00:21.630 --> 00:24.380
+values two values that do not match.
+
+00:24.900 --> 00:26.120
+So let's hop over here.
+
+00:26.400 --> 00:32.710
+And first thing I'll do is just define my function call it count unique values and it will take an array
+
+00:33.810 --> 00:36.890
+and let me call it down here with a new list of unique value.
+
+00:36.890 --> 00:44.200
+So let's do one come a one comma two three three.
+
+00:45.020 --> 00:45.430
+All right.
+
+00:45.500 --> 00:51.210
+That's good enough like this and I want to start with making a variable I and setting it equal to zero.
+
+00:51.420 --> 00:52.820
+So it's going to start right here.
+
+00:52.940 --> 00:53.390
+Right.
+
+00:53.540 --> 00:59.030
+And then I'm going to make a loop and this will be a for loop let's call it J.
+
+00:59.300 --> 01:01.560
+And I'm not going to said it equal to zero.
+
+01:01.610 --> 01:05.810
+I mean a set is equal to index of 1 which also is value of 1.
+
+01:05.810 --> 01:06.650
+I hate when that happens.
+
+01:06.650 --> 01:07.710
+But yeah.
+
+01:07.940 --> 01:09.440
+Index zero index of 1.
+
+01:09.770 --> 01:14.600
+So J equals 1 while J is less than a red dot length.
+
+01:14.600 --> 01:16.060
+We don't want it to go any further.
+
+01:16.370 --> 01:17.030
+And then I.
+
+01:17.030 --> 01:19.930
+Plus plus no J plus plus.
+
+01:20.180 --> 01:24.010
+So J is just going to go through the entire loop from here to the end.
+
+01:24.170 --> 01:26.720
+So we have one iteration and that's it.
+
+01:26.750 --> 01:34.370
+Now inside of those iteration of the loop we're going to compare index array index of an array index
+
+01:34.370 --> 01:34.940
+of J.
+
+01:35.120 --> 01:36.140
+So we could just start with that.
+
+01:36.140 --> 01:41.100
+So array Y and array of J.
+
+01:41.420 --> 01:42.740
+So what do we want to check.
+
+01:43.190 --> 01:45.750
+If they are not equal to one another.
+
+01:45.980 --> 01:48.770
+So array is not equal to array J.
+
+01:48.770 --> 01:49.810
+What are we going to do.
+
+01:49.850 --> 01:53.590
+First of all it invalid syntax to make it a conditional statement.
+
+01:53.690 --> 01:56.070
+If they are not equal.
+
+01:56.570 --> 02:02.200
+If you didn't watch the entire video we talked about my approach in the last I guess yeah the last video.
+
+02:02.330 --> 02:03.920
+Two years ago.
+
+02:03.920 --> 02:09.230
+What we do is we compare them if they are equal we just move ahead until we find something that is not
+
+02:09.290 --> 02:11.060
+equal to what I am looking at.
+
+02:11.060 --> 02:12.410
+So they're not equal now.
+
+02:12.410 --> 02:17.490
+We move up by one and then we put this value here.
+
+02:17.930 --> 02:22.100
+So we don't have to swap them we just put two here as well.
+
+02:22.100 --> 02:25.400
+So to do that we just can do I.
+
+02:25.550 --> 02:28.230
+Plus plus that adds one to high.
+
+02:28.250 --> 02:29.660
+So it started at zero.
+
+02:29.660 --> 02:38.130
+Now we move it up here and then we set array of I to now equal what is an array of J.
+
+02:38.480 --> 02:42.760
+And then we move forward again so that J goes up.
+
+02:42.830 --> 02:44.470
+So now J is 3.
+
+02:44.480 --> 02:46.160
+This has to be a two for us to do that.
+
+02:46.260 --> 02:48.090
+So now J is 3 we compare it.
+
+02:48.260 --> 02:49.710
+Oh well they don't match again.
+
+02:49.910 --> 02:51.250
+So we move forward.
+
+02:51.260 --> 02:57.200
+I plus plus and we set array of I to be three array of is equal to array of J.
+
+02:57.410 --> 02:58.680
+And then the loop moves on.
+
+02:58.730 --> 03:00.300
+This time they are equal.
+
+03:00.470 --> 03:03.080
+When that's the case we don't do anything.
+
+03:03.080 --> 03:06.080
+J increments automatically because of the loop.
+
+03:06.080 --> 03:07.380
+So three and three are equal.
+
+03:07.430 --> 03:10.150
+So next time through J goes up to four.
+
+03:10.370 --> 03:12.230
+Well now we have a mismatch again.
+
+03:12.440 --> 03:14.780
+So we take four and we put it here.
+
+03:14.780 --> 03:19.130
+So first we technically move up and then we put four here.
+
+03:19.170 --> 03:22.520
+So now we're comparing four to five.
+
+03:22.580 --> 03:23.370
+So we do the same thing.
+
+03:23.390 --> 03:24.240
+We move up.
+
+03:24.320 --> 03:26.110
+We put a 5 here.
+
+03:26.210 --> 03:27.690
+Now we're comparing six to five.
+
+03:27.740 --> 03:32.090
+So we move up and we put a six here and then we move up again.
+
+03:32.150 --> 03:32.890
+They match.
+
+03:32.930 --> 03:35.120
+So we don't do anything move up again.
+
+03:35.280 --> 03:38.330
+We put I right here and we put a 7 there.
+
+03:38.330 --> 03:44.510
+So now we've built up this beginning part of the array that has all the unique values and it's basically
+
+03:44.510 --> 03:49.070
+all we want is the length of this portion and we have that by default.
+
+03:49.070 --> 03:51.250
+If we look at I and J at the very end.
+
+03:51.440 --> 03:55.480
+J is going to be the very last index of our array.
+
+03:55.610 --> 03:58.420
+So actually to demonstrate this.
+
+03:58.670 --> 04:00.620
+Remember this only works with a sorted array.
+
+04:00.620 --> 04:07.370
+So I can't directly use this array as it is I need to return it to how it was.
+
+04:07.390 --> 04:09.670
+So that would be I don't actually remember it.
+
+04:09.670 --> 04:19.060
+Now let's just say 1 1 1 2 2 3 4 5 5 5 6 7 like that.
+
+04:19.060 --> 04:23.160
+How many unique numbers are there with those 1 2 3 4 5 6 7.
+
+04:23.230 --> 04:28.160
+So we should get 7 and we'll call count unique values with that.
+
+04:28.510 --> 04:35.240
+And then what I'm going to do is in here let's go inside the loop at the very end of that log.
+
+04:35.710 --> 04:37.170
+I Khama J.
+
+04:37.450 --> 04:42.380
+And we have to do it in here if we want J because J is going to disappear.
+
+04:42.490 --> 04:43.270
+And if we run it.
+
+04:43.420 --> 04:43.900
+OK.
+
+04:44.200 --> 04:46.870
+So we can see you know here's I here's J.
+
+04:47.050 --> 04:54.460
+And at the very end J hits the end of the array and we stop the loop is at 6 because that's index of
+
+04:54.500 --> 04:55.350
+six.
+
+04:55.540 --> 05:00.310
+And that's because internally the array looks something like this where we have all the unique values
+
+05:00.310 --> 05:01.060
+right here.
+
+05:01.060 --> 05:06.650
+This is where I is get rid of this highest rate here which is index of six.
+
+05:06.700 --> 05:14.080
+So we need to add one to I because it's basically the length of this section up until I and we don't
+
+05:14.080 --> 05:14.840
+want to start with zero.
+
+05:14.830 --> 05:16.450
+We want to start at 1 when we're counting.
+
+05:16.570 --> 05:19.820
+So we want to return I plus 1 just down here.
+
+05:21.120 --> 05:28.910
+Just like this and if we now test it out we get seven and that should be right.
+
+05:29.070 --> 05:32.730
+Let's try it with something like this one.
+
+05:32.730 --> 05:35.670
+Number three we should get to and we do.
+
+05:35.670 --> 05:40.820
+Now there is a special case which if we have an empty array it's not working.
+
+05:40.980 --> 05:45.150
+It's giving us one and it should give us zero there's no digits in there.
+
+05:45.160 --> 05:46.010
+And why is that.
+
+05:46.080 --> 05:47.650
+Well I started at zero.
+
+05:48.030 --> 05:54.570
+And even if none of this runs and nothing happens and here we are returning 0 plus 1.
+
+05:54.900 --> 05:57.200
+So I'll add a little short circuit at the beginning.
+
+05:57.330 --> 06:00.990
+Just check if a rate length is equal to zero.
+
+06:01.140 --> 06:03.430
+Just return zero.
+
+06:03.480 --> 06:05.610
+That means there's zero unique digits.
+
+06:05.610 --> 06:06.790
+Now we get zero.
+
+06:06.810 --> 06:18.190
+But if we go back to one let's do like this we get 5 1 2 3 4 5 unique numbers.
+
+06:18.400 --> 06:19.010
+OK.
+
+06:19.030 --> 06:20.890
+So that is one way of solving this.
+
+06:20.890 --> 06:28.150
+Using two pointers and it's over and time it's linear time because we're only looping once which is
+
+06:28.150 --> 06:29.410
+pretty nice.
+
+06:29.410 --> 06:30.020
+All right.
+
+06:30.190 --> 06:30.790
+Moving on.

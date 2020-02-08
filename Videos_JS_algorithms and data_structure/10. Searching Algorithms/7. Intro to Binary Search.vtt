@@ -1,0 +1,331 @@
+WEBVTT
+
+00:00.240 --> 00:00.600
+All right.
+
+00:00.600 --> 00:01.430
+Welcome back.
+
+00:01.440 --> 00:07.230
+So we're moving on to our second searching algorithm and this one can be a significant improvement on
+
+00:07.320 --> 00:09.530
+linear search that we saw in the last video.
+
+00:09.570 --> 00:12.930
+It's called binary search so it can be much much faster.
+
+00:12.930 --> 00:19.020
+We'll get into the specifics with Big O later on but it can be faster rather than eliminating one element
+
+00:19.020 --> 00:22.320
+at a time like we did in linear search where we checked one element.
+
+00:22.320 --> 00:22.950
+Is this it.
+
+00:22.950 --> 00:23.350
+Nope.
+
+00:23.490 --> 00:24.230
+It's the next one it.
+
+00:24.250 --> 00:25.480
+Nope it's an X on it.
+
+00:25.500 --> 00:31.020
+Over and over and over in binary search we can eliminate half of the remaining elements at any given
+
+00:31.020 --> 00:31.760
+point.
+
+00:31.780 --> 00:34.150
+However there's a really big caveat here.
+
+00:34.200 --> 00:40.200
+Binary Search only works on sorted arrays so the data has to be sorted from if it's numbers lowest to
+
+00:40.200 --> 00:43.070
+highest or highest to lowest or strings alphabetical.
+
+00:43.110 --> 00:45.100
+There has to be an order to it.
+
+00:45.120 --> 00:48.090
+So imagine we have our same states array.
+
+00:48.210 --> 00:50.100
+You don't have to imagine it's right here.
+
+00:50.430 --> 00:56.900
+And this is sorted alphabetically so you can see Alabama down to Wyoming and let's say that a user were
+
+00:56.910 --> 01:01.980
+doing the same example where we ask the user to enter a state and for their address or something.
+
+01:01.980 --> 01:04.860
+And we're going to verify that it exists in this array.
+
+01:04.860 --> 01:07.520
+Now first of all this is a very short array in the grand scheme of things.
+
+01:07.530 --> 01:10.640
+So linear search isn't really going to be big.
+
+01:10.860 --> 01:16.710
+It's going to take much time and that the millisecond probably less than a millisecond the tiniest fraction
+
+01:16.710 --> 01:17.930
+of a second that we're saving.
+
+01:17.930 --> 01:22.020
+With binary search isn't really worth it but since it's already sorted it's a good example.
+
+01:22.110 --> 01:26.510
+Let's say that someone enters Oregon as their state so an end quote.
+
+01:26.820 --> 01:28.390
+And we want to check the facts in here.
+
+01:28.590 --> 01:34.560
+Well since it sorted alphabetically the way that binary search works is that we pick a halfway point
+
+01:34.680 --> 01:35.570
+in this array.
+
+01:35.760 --> 01:39.240
+So somewhere and I'm not going to count exactly I think there's 59.
+
+01:39.240 --> 01:45.480
+I'm not going to count the exact halfway point but let's just guess roughly let's say that we pick states
+
+01:45.630 --> 01:48.790
+of twenty nine twenty nine point five.
+
+01:48.790 --> 01:49.250
+Right.
+
+01:49.260 --> 01:50.110
+So we'll round down.
+
+01:50.160 --> 01:54.540
+So we pick our first spot we pick the middle because we know it's sorted.
+
+01:54.540 --> 01:59.910
+In this case alphabetically so the middle should be the middle sorted element and then all we do is
+
+01:59.910 --> 02:00.710
+we check.
+
+02:00.900 --> 02:07.650
+So we find Missouri where you are and we check is Oregon greater than Missouri or less than in our case
+
+02:07.800 --> 02:08.660
+alphabetically.
+
+02:08.760 --> 02:12.790
+Is it after m Missouri is it after that in the alphabet.
+
+02:12.810 --> 02:15.220
+Or is it before and it's after.
+
+02:15.660 --> 02:18.090
+So now we only care about this part of theory.
+
+02:18.120 --> 02:19.590
+We've just eliminated all of this.
+
+02:19.590 --> 02:23.920
+We don't care about the beginning and recheck halfway through the next little bit.
+
+02:24.030 --> 02:28.760
+And I'm just going to eyeball it rather than doing the math let's say halfway through is around 44.
+
+02:28.770 --> 02:33.170
+So let's say check States 44 that gives us Pennsylvania.
+
+02:33.180 --> 02:37.010
+So now this is the middle of this array here.
+
+02:37.200 --> 02:41.840
+And we go to Pennsylvania and we check in Oregon before or after Pennsylvania.
+
+02:42.150 --> 02:43.660
+And it's before.
+
+02:43.830 --> 02:46.140
+So now we care about this list.
+
+02:46.140 --> 02:49.290
+From Missouri to Pennsylvania we know that it's somewhere in here.
+
+02:49.710 --> 02:51.800
+We eliminated all of this here.
+
+02:52.020 --> 02:55.740
+So now we're going from Missouri to Pennsylvania and we pick the halfway point again.
+
+02:55.900 --> 02:58.130
+And I think this is 16 or so.
+
+02:58.140 --> 03:00.000
+So let's go to the eighth one.
+
+03:00.060 --> 03:07.200
+Three four five six seven eight so we go to New York and we check Oregon greater or less than New York
+
+03:07.440 --> 03:08.540
+and it's greater.
+
+03:08.550 --> 03:11.030
+So it's between New York and Pennsylvania.
+
+03:11.070 --> 03:13.470
+So we pick somewhere in the middle between New York and Pennsylvania.
+
+03:13.470 --> 03:18.090
+Let's say that it's Ohio and we know that it's greater than Ohio so much somewhere between Ohio and
+
+03:18.090 --> 03:18.690
+Pennsylvania.
+
+03:18.690 --> 03:20.950
+We pick the middle and now it's Oregon.
+
+03:21.210 --> 03:22.740
+And I know that seems like a lot of work.
+
+03:22.860 --> 03:29.070
+But remember that that was only what five or six guesses compared to if we started at the beginning
+
+03:29.070 --> 03:31.550
+with a linear search we checked this is this Oregon.
+
+03:31.590 --> 03:32.020
+Nope.
+
+03:32.100 --> 03:32.790
+Is this Oregon.
+
+03:32.820 --> 03:33.260
+Nope.
+
+03:33.360 --> 03:34.610
+Over and over and over.
+
+03:34.650 --> 03:37.750
+So it saves a lot of time if your data is sorted.
+
+03:37.950 --> 03:41.010
+So let's get down to the details of the implementation.
+
+03:41.020 --> 03:43.180
+So the idea is dividing and conquering.
+
+03:43.290 --> 03:46.410
+So we split up the array into two pieces.
+
+03:46.410 --> 03:52.890
+We pick a pivot point in the middle usually And we check the left side and the right side and see where
+
+03:53.010 --> 03:56.400
+it based off of what we're looking for where it will be in which half.
+
+03:56.670 --> 03:59.520
+So let's search for 15 in this list.
+
+03:59.520 --> 04:01.110
+Remember it has to be sorted.
+
+04:01.140 --> 04:02.090
+This doesn't work at all.
+
+04:02.090 --> 04:03.600
+If it's not sorted.
+
+04:03.600 --> 04:07.370
+So if it's sorted here we're going to start by picking.
+
+04:07.370 --> 04:09.070
+We're going to call them left and right.
+
+04:09.330 --> 04:13.830
+So we're going to change the window of where we're searching because remember we can throw out half
+
+04:13.830 --> 04:16.140
+of the array roughly every time.
+
+04:16.290 --> 04:21.510
+So we're going to start with the left at one end right at the end 19 and then we're going to pick somewhere
+
+04:21.510 --> 04:22.290
+in the middle.
+
+04:22.290 --> 04:23.810
+And I think this is an odd number.
+
+04:23.970 --> 04:27.110
+So you can round down or round up just be consistent.
+
+04:27.300 --> 04:28.580
+As far as where you pick.
+
+04:28.710 --> 04:30.630
+So I think we're going to pick 11 here.
+
+04:30.750 --> 04:38.190
+I know we're picking 11 and we we check is 15 greater than 11 or less than 11 and it's greater than.
+
+04:38.190 --> 04:43.590
+So now we eliminate all of that to the left and we make the new left 12.
+
+04:44.430 --> 04:46.020
+And the new right is the same.
+
+04:46.020 --> 04:47.370
+It's 19.
+
+04:47.370 --> 04:49.280
+Now we checked somewhere in the middle.
+
+04:49.560 --> 04:55.980
+So we're going to check 17 as our middle point and we check is 15 greater than or less than 17.
+
+04:56.050 --> 05:03.160
+It's is on the right side or the left side and it's a leftside so we can eliminate 17 18 19.
+
+05:03.400 --> 05:09.750
+And now we have left at 12 right at 16 and then the middle is 15 which is the only choice and recheck
+
+05:10.010 --> 05:14.290
+is 15 equal to 15 is greater than or less than it's equal.
+
+05:14.290 --> 05:17.040
+So we found that only took three checks.
+
+05:17.110 --> 05:18.100
+Three guesses.
+
+05:18.100 --> 05:21.430
+We checked at the middle first 11 and we knew it was greater.
+
+05:21.430 --> 05:22.690
+So we did a second check.
+
+05:22.710 --> 05:24.520
+We picked 17 that was too big.
+
+05:24.790 --> 05:28.680
+And then we picked 15 and that was correct compared to starting at the beginning.
+
+05:28.690 --> 05:33.500
+One two three four five six seven eight nine guesses using linear search.
+
+05:33.520 --> 05:39.730
+So if we have a sorted array numbers or strings or whatever it is as long as we can compare easily to
+
+05:39.730 --> 05:45.490
+check if something is greater than or less than in some respect if we can do that then we can implement
+
+05:45.490 --> 05:47.640
+binary search which is much faster.

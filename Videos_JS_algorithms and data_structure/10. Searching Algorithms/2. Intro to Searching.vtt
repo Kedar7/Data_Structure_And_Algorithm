@@ -1,0 +1,187 @@
+WEBVTT
+
+00:00.150 --> 00:01.130
+They will come back.
+
+00:01.200 --> 00:06.750
+So when this section we're talking about search and searching algorithms and when I say search some
+
+00:06.750 --> 00:10.410
+of you might think of something like Google right away.
+
+00:10.560 --> 00:15.870
+Now the algorithm behind Google and its search is very complex probably one of the most complicated
+
+00:15.900 --> 00:21.660
+algorithms out there and it's probably more like 10 different algorithms that are being tested at any
+
+00:21.660 --> 00:23.580
+given time and things are being tweaked.
+
+00:23.580 --> 00:29.340
+Not to mention the fact that this algorithm changes so much depending on who you are your browsing history
+
+00:29.970 --> 00:33.050
+the things that you've done and the things you've clicked on.
+
+00:33.060 --> 00:37.260
+So when I search for howler monkey I might see different results than if you search for howler monkey.
+
+00:37.560 --> 00:41.680
+So we're not going to even try and recreate anything like this.
+
+00:41.710 --> 00:47.340
+What we will get to later in the course not right now but later once we cover graphs and trees and other
+
+00:47.340 --> 00:52.560
+complicated data structures We'll discuss how to search and traverse something like a graph which is
+
+00:52.560 --> 00:54.640
+closer to what Google is doing.
+
+00:54.660 --> 00:58.650
+We're not going to talk about the machine learning behind all of this and how it decides you know what
+
+00:58.650 --> 01:03.300
+is best tailored to me cold versus to someone else down the street.
+
+01:03.330 --> 01:08.910
+We're just going to talk about when Google first started before you even cared about people in ads and
+
+01:08.910 --> 01:11.480
+tracking all of that if there even was a period.
+
+01:11.550 --> 01:11.970
+Who knows.
+
+01:11.970 --> 01:12.630
+I doubt there was.
+
+01:12.650 --> 01:16.130
+But if there was then we're going to kind of approximate that.
+
+01:16.230 --> 01:21.540
+But for now we're focusing on are even simpler searching algorithms that are really commonly used.
+
+01:21.630 --> 01:28.470
+But we may not often call it search for example but say that we have a string and we're checking to
+
+01:28.470 --> 01:32.150
+see if if there's another string contained in that string.
+
+01:32.560 --> 01:38.340
+Or let's say that I have a Web site and I want people to sign up and they add their user name and they
+
+01:38.340 --> 01:40.130
+sign up the username and password.
+
+01:40.130 --> 01:42.600
+All we need to tell them if their user name is taken.
+
+01:42.870 --> 01:46.900
+So let's say there's not even a database don't worry about how this works.
+
+01:46.920 --> 01:52.560
+Let's say I have an array of user names if somebody types in a user name into the form and says OK I'm
+
+01:52.560 --> 02:01.140
+going to be I hate cash that's going to be my username and password will be secretly loves cats 72 or
+
+02:01.140 --> 02:01.680
+something.
+
+02:01.890 --> 02:04.200
+If I hit enter I need to.
+
+02:04.320 --> 02:08.570
+Me the developer needs to take that username and somehow figure out if it's taken.
+
+02:08.640 --> 02:14.820
+So if I have a list of user names how am I going to figure out if this I hate cat is contained in that
+
+02:14.820 --> 02:15.310
+list.
+
+02:15.360 --> 02:18.260
+And javascript has many built in ways of doing this.
+
+02:18.330 --> 02:26.400
+You could for example do index of it's a simple one and let's try that username set index of.
+
+02:26.400 --> 02:28.860
+I hate cats.
+
+02:29.220 --> 02:30.730
+This is using a searching algorithm.
+
+02:30.740 --> 02:32.520
+Behind the scenes and so we get 11.
+
+02:32.520 --> 02:36.600
+And if it weren't in there like that we should get a negative one.
+
+02:36.600 --> 02:40.740
+There are some others that will see some other options but what we're going to talk about in this section
+
+02:40.740 --> 02:45.570
+is how these are working behind the scenes and how we can implement our own versions of some of these
+
+02:45.570 --> 02:49.840
+functions built in methods and how we can search across arrays and strings.
+
+02:49.890 --> 02:55.500
+Or one more really quick example if we had a list of states an array in the US.
+
+02:55.500 --> 03:01.380
+I apologize for being America centric in video but if this is what we had we wanted to make sure a user
+
+03:01.380 --> 03:03.350
+was putting a valid state.
+
+03:03.660 --> 03:07.810
+Well we could check it against this but how are we going to do that what's the best algorithm.
+
+03:07.980 --> 03:10.260
+We're going to get into that in this section.
+
+03:10.290 --> 03:11.830
+So what are our objectives.
+
+03:11.830 --> 03:14.100
+First describe what a searching algorithm is.
+
+03:14.100 --> 03:18.940
+We kind of talked about that a bit and we're going to implement linear search on arrays.
+
+03:19.260 --> 03:24.340
+Then we're going to talk about a slightly better algorithm binary search on sorted arrays.
+
+03:24.390 --> 03:26.770
+So we'll talk about the pros and cons of those approaches.
+
+03:27.000 --> 03:32.730
+Then we'll implement a naive string searching algorithm as well as something called the KMP string searching
+
+03:32.760 --> 03:33.520
+algorithm.
+
+03:33.780 --> 03:39.410
+So this section is really the first where we're getting into named algorithms in the recursion section
+
+03:39.420 --> 03:45.480
+for example we talked about how to write a solution to the factorial problem but it didn't have a name
+
+03:45.680 --> 03:50.420
+like we haven't really seen code that has a particular name to the solution but that's going to change
+
+03:50.430 --> 03:54.870
+in this section and that will be something that we see throughout the course is a recurring theme.
+
+03:54.930 --> 03:59.400
+We'll talk about sorting those particular names for a lot of common sorting algorithms.
+
+03:59.400 --> 04:03.740
+So those are our goals and the first thing we're going to do with the next video is implement linear
+
+04:03.750 --> 04:04.200
+search.

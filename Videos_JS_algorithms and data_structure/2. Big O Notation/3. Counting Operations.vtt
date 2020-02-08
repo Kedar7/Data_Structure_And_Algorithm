@@ -1,0 +1,202 @@
+WEBVTT
+
+00:00.220 --> 00:00.570
+OK.
+
+00:00.630 --> 00:05.340
+Well we talked about the problems with using time as our way of comparing code.
+
+00:05.790 --> 00:08.540
+So for not using time what should we do.
+
+00:09.150 --> 00:14.280
+Well as very similar thing rather than counting the exact seconds that it takes for code to run which
+
+00:14.280 --> 00:19.590
+can change so much what we can do instead is count a number of simple operations that a computer has
+
+00:19.590 --> 00:23.520
+to perform because that remains constant no matter what computer we're on.
+
+00:23.520 --> 00:29.580
+So if we just simplified it like crazy and said that you know this one algorithm has five operations
+
+00:29.580 --> 00:31.980
+to run and the other one has seven.
+
+00:32.160 --> 00:37.350
+It doesn't matter what you know the specifications of my computer are or the mood that my laptops in
+
+00:37.350 --> 00:42.750
+that day the time we get might be different but the times will always be determined by the number of
+
+00:42.750 --> 00:48.570
+operations so we can use that rather than the exact times you can just focus on the number of simple
+
+00:48.570 --> 00:50.610
+operations the computer has to perform.
+
+00:50.610 --> 00:55.710
+So what I mean by simple operation is if we take a look at this example the shorter one line version
+
+00:55.830 --> 01:00.580
+that was faster we've got a multiplication happening.
+
+01:01.080 --> 01:03.600
+We have after that an addition.
+
+01:03.730 --> 01:05.210
+So that's another operation.
+
+01:05.790 --> 01:12.360
+And then we have a division things like the number one or two aren't operations.
+
+01:12.360 --> 01:17.550
+The computer doesn't really need to do much there at least compared to multiplication addition and division.
+
+01:17.550 --> 01:24.620
+Those are operations so there are three operations and it doesn't really matter what an is if any is
+
+01:24.630 --> 01:27.240
+to or if and it's a billion.
+
+01:27.270 --> 01:30.030
+There's only three calculations that are happening.
+
+01:30.030 --> 01:36.740
+So three simple operations regardless of the size of N whether it's small or massive If you compare
+
+01:36.740 --> 01:38.470
+that to our other solution.
+
+01:38.480 --> 01:39.730
+The first one.
+
+01:40.190 --> 01:42.580
+This one has a few more operations.
+
+01:42.740 --> 01:44.880
+So let's start here.
+
+01:44.930 --> 01:49.400
+We see a plus sign which we saw in the last video and we counted that as one operation.
+
+01:49.400 --> 01:52.970
+But there's a difference here because this is in a loop.
+
+01:53.630 --> 02:02.130
+So if any is 5 we're adding 5 things so it's five operations if any is 20 there's 20 pluses.
+
+02:02.270 --> 02:04.570
+If it's a billion there's a billion pluses.
+
+02:04.670 --> 02:11.190
+So it's not just one operation anymore it's an operations and additions.
+
+02:11.360 --> 02:16.610
+And actually it's more than that because the equal sign the equal sign is another.
+
+02:16.660 --> 02:17.780
+It's an assignment.
+
+02:17.900 --> 02:23.160
+Now I hope you we shouldn't get too bogged down in the details of counting every minute operation because
+
+02:23.200 --> 02:29.180
+as you've seen a moment all that matters is the general terms of things are very very fuzzy overview.
+
+02:29.180 --> 02:31.450
+So this distinction doesn't really matter.
+
+02:31.610 --> 02:39.110
+But to be clear yes this is another operation and it happens as and grows there's more assignments that
+
+02:39.120 --> 02:41.060
+happen quickly running through these.
+
+02:41.060 --> 02:42.940
+We've also got this here.
+
+02:42.950 --> 02:46.340
+So plus plus it is shorthand for I plus equals 1.
+
+02:46.460 --> 02:48.610
+So there's a plus in there and there's an equals.
+
+02:48.620 --> 02:54.410
+So two simple operations however they happen one time each per.
+
+02:54.440 --> 02:58.130
+And that's not a good way of saying that they happen more as an.
+
+02:58.130 --> 03:02.720
+GROSS So if it's 10 We've got 10 additions and 10 assignments if and is a billion.
+
+03:02.720 --> 03:09.920
+We've got a billion scale with and then appear we've got one assignment so this only happens once because
+
+03:09.980 --> 03:10.790
+it's on a loop.
+
+03:10.790 --> 03:16.970
+It happens one time at the beginning and then we also have this here this is a single assignment I equals
+
+03:16.970 --> 03:19.880
+one that happens once as well at the beginning of the loop.
+
+03:19.910 --> 03:24.700
+We start with equals 1 and then we've also got comparisons here.
+
+03:24.860 --> 03:26.490
+I less than or equal to end.
+
+03:26.660 --> 03:33.740
+And that is in comparison to again if we're dealing with 20 this loop runs 20 times we compare I to
+
+03:33.740 --> 03:35.570
+end 20 times.
+
+03:35.570 --> 03:41.720
+So yes counting these operations can be tricky overall how and when we say there are if the previous
+
+03:41.720 --> 03:44.910
+one there was three operations what do we say about this one.
+
+03:45.230 --> 03:49.270
+I mean it's not a static number it's not a constant number like 3.
+
+03:49.280 --> 03:51.510
+So how do we generalize it.
+
+03:51.530 --> 03:53.320
+There's a lot of ways of counting it.
+
+03:53.330 --> 04:01.670
+And of arriving at an answer but it could be as high as 5 and plus 2 right 1 2 3 4 5 plus 2.
+
+04:01.670 --> 04:08.020
+So if an is 10 we've got 50 operations plus two that are outside the loop.
+
+04:08.030 --> 04:10.390
+So that means 52.
+
+04:10.610 --> 04:11.980
+That's one way of doing it.
+
+04:12.080 --> 04:17.510
+But what I want to say is that it doesn't really matter because regardless of the exact number whether
+
+04:17.510 --> 04:25.220
+it's 5 plus 2 or 2 and or 3 and or even 50 and it doesn't matter because what we care about is a general
+
+04:25.220 --> 04:25.870
+trend.
+
+04:25.970 --> 04:27.820
+And this is what we're going to see a lot with big-O.
+
+04:27.890 --> 04:29.470
+We're focused on the big picture.
+
+04:29.540 --> 04:36.160
+So in this case as and grows the number of operations grow roughly in proportion with an.

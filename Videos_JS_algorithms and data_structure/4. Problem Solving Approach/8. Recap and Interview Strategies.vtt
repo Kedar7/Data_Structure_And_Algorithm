@@ -1,0 +1,232 @@
+WEBVTT
+
+00:00.180 --> 00:00.500
+All right.
+
+00:00.500 --> 00:01.170
+Welcome back.
+
+00:01.170 --> 00:03.050
+This will be a 30 second video.
+
+00:03.090 --> 00:04.960
+I just wanted to summarize the steps.
+
+00:05.160 --> 00:10.440
+So to recap sort of the five step protocol here whether you're faced with a tough interview challenge
+
+00:10.860 --> 00:15.090
+and you're you're at a white board there's a bunch of people watching you or you're trying to solve
+
+00:15.090 --> 00:17.730
+something on your own for a novel.
+
+00:17.730 --> 00:19.520
+I don't know challenge you.
+
+00:20.080 --> 00:24.230
+You're trying to build trying to figure out how to sort search results whatever it is.
+
+00:24.330 --> 00:26.990
+These are the steps that I like to go through.
+
+00:27.030 --> 00:32.340
+Make sure you understand the problem and do this the way I taught it or talked about it was geared towards
+
+00:32.340 --> 00:35.650
+interviews like I said especially things like understanding the problem.
+
+00:35.790 --> 00:41.660
+So ask questions of your interviewer of course clarify the problem make sure you understand it.
+
+00:41.730 --> 00:43.770
+But even if it's just you working on something.
+
+00:43.830 --> 00:49.440
+Make sure you understand it to make sure that you really have thought out how your solution how your
+
+00:49.440 --> 00:55.560
+application should operate how it should behave in every scenario and that goes hand-in-hand with exploring
+
+00:55.560 --> 00:56.900
+concrete examples.
+
+00:56.910 --> 01:01.530
+These two are really both about understanding the problem understanding the inputs understanding the
+
+01:01.530 --> 01:06.180
+outputs understanding edge cases how do you handle errors what happens when a user enters something
+
+01:06.180 --> 01:07.060
+invalid.
+
+01:07.380 --> 01:12.060
+All these different things all have to do with just sort of understanding from the outset how everything
+
+01:12.060 --> 01:14.630
+should work on the outset.
+
+01:14.880 --> 01:16.830
+I don't know break it down.
+
+01:17.100 --> 01:22.860
+So at this point if you if you like to write like totally perfect pseudo code line by line you can do
+
+01:22.860 --> 01:28.700
+that or just break out a couple of steps to lay out a game plan for the code you need to implement.
+
+01:28.710 --> 01:34.080
+This is really helpful especially in an interview a few times and you know that you're going to run
+
+01:34.080 --> 01:34.930
+out of time.
+
+01:34.950 --> 01:40.590
+It can be useful to write your game plan out so you can show them Hey this is where I was going even
+
+01:40.590 --> 01:43.220
+though I only actually implemented 40 percent of this.
+
+01:43.230 --> 01:45.600
+Here's the other steps that I was going to do.
+
+01:45.660 --> 01:49.660
+So make sure you know where you're going before you just start typing code.
+
+01:49.660 --> 01:51.510
+Often that's a bad way.
+
+01:51.510 --> 01:52.520
+You can end up in a hole.
+
+01:52.530 --> 01:57.420
+You can confuse yourself it's happened to me many times in interviews if you just start to think you
+
+01:57.420 --> 01:59.860
+know where to start and you'll figure out the rest as you go.
+
+02:00.030 --> 02:05.160
+Often you pigeonhole pigeonhole yourself into one approach and then I start to panic because it's not
+
+02:05.160 --> 02:12.080
+working out and I take a step back and usually erase everything I've done and and start over and planned
+
+02:12.080 --> 02:12.720
+it out.
+
+02:13.080 --> 02:14.150
+So then solve.
+
+02:14.280 --> 02:18.250
+And if you can't solve the problem right away solve a problem that you can.
+
+02:18.390 --> 02:25.150
+Even if it's simpler if you simplify you remove some core difficulty core challenge try and solve something
+
+02:25.170 --> 02:28.370
+where you can then reincorporate that core difficulty back in.
+
+02:28.590 --> 02:33.540
+So we talked about in two videos ago if you're not sure how to test for something being alphanumeric
+
+02:33.840 --> 02:39.900
+ignore that part and just write the problem write the solution ignoring the alphanumeric part so that
+
+02:39.900 --> 02:42.010
+you could then plug it in later.
+
+02:42.270 --> 02:48.120
+And then finally what I said was the most important for learning or improving as a developer.
+
+02:48.120 --> 02:53.490
+Looking back on your code and sometimes refactoring it sometimes just looking back and analyzing it
+
+02:53.520 --> 02:54.970
+and patting yourself on the back.
+
+02:55.170 --> 03:00.540
+Most of the time there's room to refactor even if you're totally expert developer.
+
+03:00.540 --> 03:05.190
+It can be very useful to look at other people's solutions or to scrutinize your own and figure out what
+
+03:05.190 --> 03:06.810
+you could have done better.
+
+03:06.810 --> 03:07.510
+All right.
+
+03:07.650 --> 03:12.270
+So those are the steps I recommend if you're ever faced with a tough challenge especially if you're
+
+03:12.270 --> 03:14.050
+an interview in an interview.
+
+03:14.190 --> 03:18.330
+I would absolutely recommend always starting off with understanding the problem.
+
+03:18.330 --> 03:21.720
+Exploring examples one in two for sure.
+
+03:21.750 --> 03:22.820
+Do that outloud.
+
+03:22.860 --> 03:27.120
+Make sure the interviewer hears you bring them into the process tell them what you're doing.
+
+03:27.180 --> 03:28.040
+Breaking it down.
+
+03:28.050 --> 03:29.190
+Write the steps down.
+
+03:29.190 --> 03:30.250
+Talk out loud.
+
+03:30.390 --> 03:31.580
+Solve it of course.
+
+03:31.590 --> 03:35.310
+If you can and then look back on your code and refactor if you can.
+
+03:35.310 --> 03:37.710
+All of these honestly are equally important.
+
+03:37.830 --> 03:42.150
+In an interview setting as well as in real life but I think most of you care about interviews for the
+
+03:42.150 --> 03:42.850
+most part.
+
+03:42.960 --> 03:44.280
+So I'm gearing it towards that.
+
+03:44.310 --> 03:50.340
+OK so that's the wishy washy part of problem solving sort of the approach the steps that you can take
+
+03:50.340 --> 03:52.020
+mentally to prepare yourself.
+
+03:52.020 --> 03:55.130
+Next we're going to talk about some patterns for code.
+
+03:55.140 --> 03:59.680
+There are a couple of archetypes blueprints for solutions that may come in handy.
+
+03:59.700 --> 04:04.830
+I honestly think this stuff is much more useful in the real world because this applies to all sorts
+
+04:04.830 --> 04:05.540
+of problems.
+
+04:05.640 --> 04:06.690
+Well we're going to learn next.
+
+04:06.690 --> 04:11.170
+It's a little more specific but for the types of problems it helps with it really helps.
+
+04:11.300 --> 04:11.640
+OK.
+
+04:11.700 --> 04:12.370
+That's up next.

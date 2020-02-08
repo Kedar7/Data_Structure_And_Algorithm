@@ -1,0 +1,187 @@
+WEBVTT
+
+00:00.230 --> 00:01.470
+Hey welcome back.
+
+00:01.470 --> 00:04.970
+So we're moving on to the third of our elementary sorting algorithms.
+
+00:04.980 --> 00:06.650
+The last one for this section.
+
+00:06.750 --> 00:13.500
+Before we move on to some of the scarier ones some of the fancier ones let's call it fancy instead of
+
+00:13.500 --> 00:14.070
+scary.
+
+00:14.150 --> 00:15.840
+So insertion sort.
+
+00:15.870 --> 00:17.720
+Actually it's pretty similar to the bubble sort.
+
+00:17.730 --> 00:21.000
+And two selections sort I mean grips them all together.
+
+00:21.120 --> 00:26.040
+However there are a couple of key distinction some some things that insertion sort is actually good
+
+00:26.040 --> 00:26.220
+at.
+
+00:26.220 --> 00:28.950
+So this isn't one that's just good to know about.
+
+00:28.950 --> 00:30.400
+It's not just a good challenge.
+
+00:30.450 --> 00:35.150
+There are situations where insertion sort does well and I'll explain that as we go.
+
+00:35.250 --> 00:37.320
+But first let's talk about how it works.
+
+00:37.350 --> 00:44.440
+So it builds up the sort by gradually creating a larger half of the array which is always sorted.
+
+00:44.460 --> 00:50.370
+So instead of going one instead of finding the largest element at a time or finding the smallest element
+
+00:50.370 --> 00:56.190
+at a time it takes each element and places it where it should go in the sorted half.
+
+00:56.190 --> 00:57.150
+So let's take a look.
+
+00:57.160 --> 01:03.480
+That doesn't really mean much but if this is our initial state we start with this are sorted half the
+
+01:03.480 --> 01:05.280
+array is a shown in green.
+
+01:05.280 --> 01:10.150
+So right now a half is not the right turn by the way the shorted sorted portion of the array.
+
+01:10.440 --> 01:13.370
+And our value we're looking at is three.
+
+01:13.410 --> 01:16.640
+So where would we put 3 in order to sort this part.
+
+01:16.680 --> 01:18.260
+Well we'd put it before five right.
+
+01:18.270 --> 01:20.330
+We insert it into the right place.
+
+01:20.340 --> 01:21.530
+Now we hit four.
+
+01:21.750 --> 01:22.840
+Where does go.
+
+01:22.950 --> 01:24.700
+We insert it between the two.
+
+01:24.990 --> 01:27.180
+So now this is our sorted portion.
+
+01:27.180 --> 01:31.500
+Then we hit one where should we put that at the beginning and we hit two.
+
+01:31.560 --> 01:33.680
+Where do we insert that right there.
+
+01:33.690 --> 01:34.910
+Index of 1.
+
+01:35.040 --> 01:39.780
+So you can see what happens is that we gradually build up the sorted portion of the array by inserting
+
+01:39.780 --> 01:42.920
+one item at a time in the correct place.
+
+01:42.930 --> 01:45.100
+So here's a quick walkthrough of it.
+
+01:45.480 --> 01:52.200
+If we start with this small array we have three and we take 44 and we figure out where it should go
+
+01:52.770 --> 01:54.120
+in our sorted portion.
+
+01:54.120 --> 01:59.640
+Well actually it just goes right back where it was because it's greater than three that's where it belongs.
+
+01:59.750 --> 02:01.320
+But now we get to 38.
+
+02:01.320 --> 02:04.830
+Where should we put 38 in this left portion.
+
+02:04.830 --> 02:09.870
+We put it between the two like that then five.
+
+02:09.870 --> 02:10.900
+Where should that go.
+
+02:11.070 --> 02:12.670
+Well doesn't go there does it.
+
+02:12.840 --> 02:13.190
+Nope.
+
+02:13.260 --> 02:15.100
+So we have to check the next one to see it go there.
+
+02:15.270 --> 02:16.430
+Yes.
+
+02:16.440 --> 02:25.610
+In between the two 47 compared to 44 up you just go right where you are 15 compared to 47.
+
+02:25.620 --> 02:27.810
+Nope compared to 44.
+
+02:27.840 --> 02:29.570
+No compared to 38.
+
+02:29.670 --> 02:31.370
+No compared to five.
+
+02:31.530 --> 02:32.170
+Yes.
+
+02:32.250 --> 02:34.450
+And now we have the sorted array.
+
+02:34.740 --> 02:37.500
+So hopefully you can see why is called insertion sort.
+
+02:37.530 --> 02:42.030
+We are taking an element one at a time and inserting it in the correct spot.
+
+02:42.070 --> 02:48.390
+But as far as the pseudo code what you do you start by picking the second element in the array because
+
+02:48.660 --> 02:52.810
+our sorted portion will be considered the first element at the very beginning.
+
+02:53.040 --> 02:54.570
+So we don't need to sort the first element.
+
+02:54.600 --> 03:00.370
+So we take the second one and we compare it to the one before it and if necessary we swap them.
+
+03:00.900 --> 03:04.290
+Then we continue to the next element and check if it's in the correct spot.
+
+03:04.290 --> 03:07.020
+So we iterate through the sorted portion the left.
+
+03:07.020 --> 03:12.020
+At this point if we've sorted two of them the left two and we figure out where to put the third one.
+
+03:12.630 --> 03:16.780
+And we repeat until the array is sorted and then return that array.

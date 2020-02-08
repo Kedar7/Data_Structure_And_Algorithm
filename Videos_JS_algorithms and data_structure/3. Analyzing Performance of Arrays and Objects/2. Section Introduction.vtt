@@ -1,0 +1,100 @@
+WEBVTT
+
+00:00.120 --> 00:01.320
+Everyone will come back.
+
+00:01.320 --> 00:03.540
+This is going to be a really quick section.
+
+00:03.630 --> 00:07.530
+I just want to take what we just learned talking about Big-O notation.
+
+00:07.530 --> 00:13.230
+Time and space complexity analyzing code performance take that content and apply it to the stuff we
+
+00:13.230 --> 00:13.960
+already know.
+
+00:14.100 --> 00:19.380
+So before we get to the advanced algorithms and sorting and crazy data structures let's just talk about
+
+00:19.380 --> 00:20.470
+what we get for free.
+
+00:20.550 --> 00:25.210
+The basics in javascript so things like arrays and objects built in methods loops.
+
+00:25.320 --> 00:26.200
+How do they perform.
+
+00:26.280 --> 00:29.170
+What are the easy things the fast things we can do to an array.
+
+00:29.250 --> 00:32.190
+What's the method that might be slower than you would expect.
+
+00:32.210 --> 00:34.380
+That's what we're going to talk about and it's going to be really quick.
+
+00:34.380 --> 00:39.560
+Again I'm not going to teach these things from scratch not showing how an array works or what it is.
+
+00:39.630 --> 00:41.580
+We're just going to talk about how it performs.
+
+00:41.580 --> 00:47.550
+So first our objectives understand how objects and arrays work through the lens of big-O.
+
+00:47.730 --> 00:49.530
+So various operations.
+
+00:49.560 --> 00:53.910
+Is there a fast way to insert to an array or slow way that sort of thing.
+
+00:53.910 --> 00:59.490
+Explain why up spoiler explain why adding elements to the beginning of an array is costly gave it away
+
+00:59.790 --> 01:04.230
+and we'll talk about why that is and how it works and if there are alternatives or if there's a better
+
+01:04.230 --> 01:09.550
+way of inserting and then we'll compare and contrast the runtime for arrays and objects but also they're
+
+01:09.550 --> 01:10.560
+built in methods.
+
+01:10.560 --> 01:12.340
+There's a lot of these methods we get for free.
+
+01:12.360 --> 01:19.390
+Like the built in javascript sort for an array for each object that keys object has own property.
+
+01:19.400 --> 01:24.090
+All that stuff we're going to discuss but it's going to be quick and this isn't I should sit out and
+
+01:24.090 --> 01:28.770
+say this isn't a something you need to memorize it's not something that you know you need to refer to
+
+01:28.770 --> 01:29.860
+the slides.
+
+01:29.880 --> 01:34.410
+I just want to give you a chance to take what we've learned about big-O and apply it to something tangible.
+
+01:34.410 --> 01:36.990
+Before we dive into these crazier algorithms.
+
+01:36.990 --> 01:37.200
+All right.
+
+01:37.230 --> 01:40.030
+So let's start first we're going to discuss objects.
+
+01:40.030 --> 01:41.060
+It will be nice and quick.
+
+01:41.130 --> 01:41.890
+So don't go anywhere.
+
+01:41.910 --> 01:42.720
+I'll see in the next video.

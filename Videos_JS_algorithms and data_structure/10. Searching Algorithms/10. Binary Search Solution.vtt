@@ -1,0 +1,832 @@
+WEBVTT
+
+00:00.180 --> 00:01.290
+Hey welcome back.
+
+00:01.320 --> 00:04.890
+So let's get on to implementing our own version of binary search.
+
+00:04.890 --> 00:06.570
+So again here's the pseudo code.
+
+00:06.590 --> 00:11.350
+First I just need to make a spot to actually write the code so I've already done that.
+
+00:11.430 --> 00:15.090
+I'm doing it as a snippet again I'm calling mine search binary.
+
+00:15.120 --> 00:16.480
+It really doesn't matter.
+
+00:17.010 --> 00:21.710
+If I were you I'd actually I'd probably do this in a file somewhere save it on your computer.
+
+00:21.960 --> 00:23.490
+But this is easier for me.
+
+00:23.670 --> 00:29.470
+So I'm going to define our function all that we said was set to accept a sorted array and a value.
+
+00:29.610 --> 00:32.390
+So I'll just call mine binary search.
+
+00:32.440 --> 00:34.790
+For me this is large enough.
+
+00:34.860 --> 00:39.450
+See shrink some of this down OK.
+
+00:39.840 --> 00:42.390
+Binary Search takes in an array.
+
+00:42.420 --> 00:46.690
+Just call it a r r and then the value will call it element or L-M.
+
+00:46.710 --> 00:56.380
+So for example we should be able to call it with something relatively short to 5 6 9 13 15.
+
+00:56.880 --> 00:59.090
+Almost all odd numbers do.
+
+00:59.500 --> 01:00.830
+20.
+
+01:01.110 --> 01:01.680
+28.
+
+01:01.840 --> 01:05.110
+OK and then let's say that we're looking for.
+
+01:05.280 --> 01:08.260
+Let's say we're looking for 15 in there.
+
+01:08.520 --> 01:09.310
+All right.
+
+01:09.900 --> 01:12.430
+So right now that's obviously not going to work.
+
+01:12.450 --> 01:18.570
+Next we need to set our left and right and middle pointers or I'm going to call them.
+
+01:18.750 --> 01:26.760
+I kind of prefer start and end and middle and what we want to do is set the start to be here the very
+
+01:26.760 --> 01:27.690
+beginning every time.
+
+01:27.690 --> 01:31.890
+We don't want to exclude any of the array so we always want to start at the beginning.
+
+01:31.890 --> 01:37.720
+So that's easy just make a variable call it start equals index of 0.
+
+01:38.250 --> 01:43.420
+Then I'm going to make end and it's going to be the length the theory.
+
+01:43.450 --> 01:45.510
+But we need to do minus one.
+
+01:45.590 --> 01:47.680
+Otherwise we're going to be out of bounds.
+
+01:47.700 --> 01:53.220
+So we want this index which is set 6 0 1 2 3 4 5 6 yes.
+
+01:53.220 --> 01:57.960
+So 0 6 and then we need to take the middle.
+
+01:57.980 --> 01:59.570
+This is just to begin.
+
+01:59.790 --> 02:02.040
+The middle is just the average of those two.
+
+02:02.040 --> 02:07.200
+So in this case 0 and 6 The average is going to be 3 0 1 2 3.
+
+02:07.200 --> 02:09.600
+So that's going to give us this position 3.
+
+02:09.780 --> 02:14.010
+But if we had one more item in here like 30 then that throws everything off.
+
+02:14.010 --> 02:22.050
+So if I just had start plus and then need to add parens to do the average otherwise he'll just be start
+
+02:22.050 --> 02:24.650
+plus and divided by two.
+
+02:24.690 --> 02:26.600
+This case it's the actual average for them.
+
+02:26.700 --> 02:30.440
+But if you take a look we're going from zero up until seven.
+
+02:30.450 --> 02:32.850
+Now the average is three point five.
+
+02:33.000 --> 02:36.280
+There's no index of three point five zero one two three.
+
+02:36.300 --> 02:39.820
+It's going to be right in between 9 and 13 that's not going to work for us.
+
+02:39.840 --> 02:42.640
+So that's where I'm going to do math top floor.
+
+02:42.660 --> 02:43.420
+That whole thing.
+
+02:43.490 --> 02:46.190
+You could also round up if you wanted to.
+
+02:46.230 --> 02:48.240
+You just need to be consistent in what you pick.
+
+02:48.420 --> 02:48.770
+OK.
+
+02:48.810 --> 02:53.070
+So at this point this is what we're looking at with this exact array.
+
+02:53.070 --> 02:54.560
+We start start.
+
+02:54.570 --> 02:57.650
+It's going to be set to index of zero just right here.
+
+02:57.690 --> 03:04.620
+Then we have and set to index of seven in our case which is now 30 and then the middle is going to be
+
+03:04.890 --> 03:08.690
+index of three point five rounded down which gives us 3 0 1 2 3.
+
+03:08.700 --> 03:09.790
+So we have nine.
+
+03:10.140 --> 03:16.350
+And just to verify we could do a count of that log start middle and like that.
+
+03:16.500 --> 03:20.530
+And if we execute this they get anything we go 0 3 7.
+
+03:20.530 --> 03:22.140
+So that's what we expect.
+
+03:22.140 --> 03:25.400
+Now we get into the actual logic of what we want to do here.
+
+03:25.620 --> 03:30.010
+We want to continue to loop and repeat this process where we select a middle.
+
+03:30.010 --> 03:32.390
+Well first we need to check if the middle is correct.
+
+03:32.460 --> 03:33.200
+Right.
+
+03:33.300 --> 03:37.160
+Right off the bat we could have picked 15 we didn't.
+
+03:37.200 --> 03:40.310
+We're working with nine but let's say we were looking for nine.
+
+03:40.590 --> 03:43.670
+We picked the middle of nine right away so we need to check if we got it right.
+
+03:43.670 --> 03:49.410
+And if we didn't are we greater or less than are we looking is 9 too big or too small.
+
+03:49.530 --> 03:54.950
+In which case you need to start searching over here only or start searching only over here only.
+
+03:54.960 --> 03:58.090
+So let's start with just the simple while loop.
+
+03:58.290 --> 04:07.440
+So I'm just going to loop over and over while the element while array middle is not equal to what we're
+
+04:07.440 --> 04:09.170
+looking for.
+
+04:09.180 --> 04:13.450
+So while we haven't found while the middle is wrong let's put it that way.
+
+04:13.860 --> 04:16.170
+So this first time middle is nine.
+
+04:16.200 --> 04:17.420
+That's not what we're looking for.
+
+04:17.430 --> 04:18.280
+We want 15.
+
+04:18.330 --> 04:20.150
+So we're going to repeat this code.
+
+04:20.190 --> 04:22.950
+Now the code that we're going to do first we're going to check.
+
+04:23.310 --> 04:28.890
+We can assume if we're in here that means that the middle is either greater than or less than if the
+
+04:28.890 --> 04:32.430
+number we're looking for is less than the middle.
+
+04:32.460 --> 04:35.610
+So if our middle is nine let's say we're looking for six.
+
+04:35.640 --> 04:37.120
+Six is less than nine.
+
+04:37.440 --> 04:42.670
+So what we want to do is shift our end down to 6.
+
+04:42.930 --> 04:47.430
+Now you might think we could shift the interest to 9 and that would work but it's redundant because
+
+04:47.430 --> 04:49.220
+we know that 9 is not the answer already.
+
+04:49.320 --> 04:50.200
+We checked it.
+
+04:50.430 --> 04:54.420
+So we're going to set the end to be middle minus 1.
+
+04:54.420 --> 04:56.370
+So this is our new window.
+
+04:56.370 --> 05:01.970
+Likewise the other direction like in this case with 15 we checked 9 that's too small.
+
+05:02.040 --> 05:05.020
+So we're going to move our window all the way up to here.
+
+05:05.220 --> 05:09.870
+So our start is now 13 and our middle is going to be fifteen or twenty eight.
+
+05:09.870 --> 05:12.710
+We're going to we'll round down to it will be 15.
+
+05:12.810 --> 05:18.120
+So we want to do middle plus one or middle minus one because we've already tested the middle.
+
+05:18.120 --> 05:18.900
+So let's do that.
+
+05:18.910 --> 05:27.610
+Now I'm going to have a simple IF statement if the element is less than array of middle like that.
+
+05:27.750 --> 05:32.200
+If that's the case like if you're looking for six We're going to set the end.
+
+05:32.210 --> 05:34.070
+We're moving the end down to here.
+
+05:34.080 --> 05:34.860
+Right.
+
+05:34.870 --> 05:43.450
+So and he calls middle minus one and then we have else there's only one other choice.
+
+05:43.620 --> 05:47.900
+Because if it's equal if we actually got it right then we're out of the loop.
+
+05:48.390 --> 05:49.460
+But we haven't gotten there yet.
+
+05:49.470 --> 05:51.710
+So we're either greater than or less than so.
+
+05:51.720 --> 05:55.610
+Else That means that what we're looking for in this case 15 is greater than 9.
+
+05:55.620 --> 06:04.840
+We need to move the start of our window to 13 so start equals middle plus one just like that.
+
+06:05.070 --> 06:06.170
+Then the other thing.
+
+06:06.210 --> 06:07.480
+Well this isn't the only thing.
+
+06:07.480 --> 06:11.220
+But another thing we need to do is now change our middle value.
+
+06:11.310 --> 06:13.260
+We just need to recalculate.
+
+06:13.260 --> 06:17.630
+So our first time through we just copy this.
+
+06:17.760 --> 06:21.240
+This is what we started with and then we checked it.
+
+06:21.240 --> 06:24.920
+So middle class not equal to Element rate 9 is not equal to 15.
+
+06:24.930 --> 06:27.310
+So is the element less than middle.
+
+06:27.330 --> 06:27.770
+Nope.
+
+06:27.900 --> 06:29.580
+So skip this else.
+
+06:29.580 --> 06:33.470
+Start equals middle plus one middle plus one is 13.
+
+06:33.690 --> 06:37.470
+So that means that our start is now 13 here.
+
+06:37.770 --> 06:39.940
+Our end is still 30 it hasn't moved.
+
+06:40.180 --> 06:41.700
+We need to recalculate the middle.
+
+06:41.820 --> 06:43.620
+So we need to average 13.
+
+06:43.620 --> 06:49.320
+And third will not 13:30 we need to average those indices which is going to be what are we as year 1
+
+06:49.320 --> 06:51.910
+2 3 4 and 7.
+
+06:51.960 --> 06:56.910
+So I'm just going to copy this exact same line without the var in that loop.
+
+06:56.910 --> 06:58.980
+We just get a new middle.
+
+06:59.010 --> 07:03.960
+So now middle is going to be what Matha floor of four and seven.
+
+07:03.960 --> 07:07.260
+So that's what 11 to floored.
+
+07:07.350 --> 07:14.030
+It's going to give us 5 index of 5 which is this item here so this will be our new middle.
+
+07:14.040 --> 07:16.440
+And just to verify that.
+
+07:17.010 --> 07:25.220
+Let's move this line into the loop that we see what we get each time through.
+
+07:25.910 --> 07:26.440
+OK.
+
+07:26.610 --> 07:27.610
+So I'm going to run this now.
+
+07:27.690 --> 07:32.910
+Let me clear my counsel make this a little bit bigger.
+
+07:34.290 --> 07:40.210
+And it looks like it's only running once because at the end we got the answer correct.
+
+07:40.320 --> 07:47.600
+So I picked the example of 15 was too easy but you'll see at the end it's 0 3 7 so that's what we have
+
+07:47.640 --> 07:51.210
+0 3 and 7 indices.
+
+07:51.210 --> 07:55.370
+Then add updates to go from 4 to 7 which is what we have here.
+
+07:55.530 --> 07:57.220
+And the middle is five.
+
+07:57.390 --> 07:59.750
+And what do you know that's what we're looking for 15.
+
+07:59.910 --> 08:04.250
+So we broke out of the loop because the middle is now equal to the element.
+
+08:04.290 --> 08:10.500
+Now if I pick something else I'd say pick 28 this time we'll get an extra step.
+
+08:10.780 --> 08:11.640
+Executed again.
+
+08:11.640 --> 08:14.500
+There we go 0 3 7 the same thing.
+
+08:14.670 --> 08:16.860
+But this time 28 is greater than nine.
+
+08:16.950 --> 08:23.100
+So our window now is from here to here and the middle is 15 which is what we checked and that's too
+
+08:23.100 --> 08:23.720
+small.
+
+08:23.850 --> 08:26.150
+So then we have another iteration.
+
+08:26.790 --> 08:29.280
+And in this case it's too small.
+
+08:29.280 --> 08:35.340
+So what do we do we shift the start up again and get rid of the M and the start now goes to 28.
+
+08:35.340 --> 08:39.540
+Here are Endace 30 in our middle.
+
+08:39.540 --> 08:41.910
+When you take the average we're going to round down.
+
+08:41.940 --> 08:43.880
+So our middle is also here.
+
+08:44.300 --> 08:49.890
+So it looks more like this and that now means that we've guessed the number correctly because our middle
+
+08:49.980 --> 08:56.640
+is 28 and you can see that Middle East index of six started this index of six or Endace index of seven.
+
+08:56.640 --> 08:57.840
+We found it.
+
+08:58.110 --> 09:05.080
+So at the end what we should be doing for now at least is just return middle and if we test this all
+
+09:05.080 --> 09:12.600
+out or returning six index of six and that's correct when we're looking for 28 we're looking for five.
+
+09:13.330 --> 09:14.430
+We're returning index of 1.
+
+09:14.440 --> 09:15.420
+That's correct.
+
+09:15.430 --> 09:21.670
+There's a big problem with our code though and the problem is if there's not if the number isn't found
+
+09:21.670 --> 09:23.590
+in there our code doesn't handle it.
+
+09:24.160 --> 09:31.350
+And I'm not going to do this actually I recorded this video once before and I actually showed what happens
+
+09:31.360 --> 09:33.190
+there's an infinite loop going on.
+
+09:33.490 --> 09:35.590
+Hopefully we'll see if you can spot why.
+
+09:35.800 --> 09:38.340
+But let's say I'm looking for 50 in here.
+
+09:38.440 --> 09:39.730
+We're not going to find 50.
+
+09:39.730 --> 09:45.310
+Our code doesn't handle it and the browser just keeps looping over and over and over and with my recording
+
+09:45.310 --> 09:50.570
+software plus the browser doing that my computer was really not happy and it got like a thousand degrees.
+
+09:50.620 --> 09:52.300
+So I'm not going to replicate it here.
+
+09:52.480 --> 09:57.040
+But what would happen is that we would get basically thousands and thousands.
+
+09:57.070 --> 10:03.190
+Eventually it would be shut off but tens of thousands of iterations if not more because we're never
+
+10:03.190 --> 10:04.500
+going to find that element.
+
+10:04.510 --> 10:11.350
+And the only way our loop ever stops is when we find it if our middle index is equal to the element
+
+10:11.560 --> 10:12.590
+we break out.
+
+10:12.850 --> 10:17.950
+But our middle and next is never going to be equal to or the item at the middle index is never equal
+
+10:17.950 --> 10:23.120
+to 50 or 1 or 14 or any number that is not in here.
+
+10:23.140 --> 10:24.440
+This is going to go forever.
+
+10:24.700 --> 10:26.700
+So what's her other stopping condition.
+
+10:26.980 --> 10:32.230
+Well if we look at what happens as we approach a number that's not in there we start we do the same
+
+10:32.230 --> 10:32.820
+thing right.
+
+10:32.920 --> 10:35.910
+To is our start or zero is our index.
+
+10:36.000 --> 10:40.470
+This is our end 7 and this is our middle and index 3.
+
+10:40.510 --> 10:42.210
+Well we check 50 is greater than 9.
+
+10:42.220 --> 10:45.070
+So we moved the window up to here as you see there.
+
+10:45.250 --> 10:49.480
+So now our start has 13 or index of what for up to 7.
+
+10:49.510 --> 10:53.970
+We take the middle index of 5 and 50 is still greater than 15.
+
+10:54.160 --> 11:02.110
+So now we move up again and this is our new window and our middle is 28 and recheck is 50 greater than
+
+11:02.110 --> 11:03.280
+28.
+
+11:03.280 --> 11:03.910
+It is.
+
+11:04.030 --> 11:09.130
+So what's our final iteration going to look like here or what should it look like is that we're going
+
+11:09.130 --> 11:13.320
+to move the start to be middle plus one which is 30.
+
+11:13.330 --> 11:19.530
+So then we end up with everything start middle and end all at 30 at the end of the list.
+
+11:19.960 --> 11:20.830
+So then what's next.
+
+11:20.830 --> 11:26.220
+Because our code is still saying All right well the middle is 30 we're looking for 50.
+
+11:26.290 --> 11:33.190
+So we need to move start to go up one and there isn't anything after that but it's going to increment
+
+11:33.580 --> 11:39.370
+our start or increment our start to be 8 at that point which is out of bounds.
+
+11:39.370 --> 11:44.530
+So then if we tried to do that array of 8 we're going to get undefined and then we're going to start
+
+11:44.530 --> 11:50.320
+comparing things with undefined and it's just not good and it's going to keep going forever and ever.
+
+11:50.410 --> 11:51.510
+So we don't want that.
+
+11:51.550 --> 11:52.340
+OK fine.
+
+11:52.360 --> 11:56.740
+I am I am going to show to you what happens and my computer is not going to be happy.
+
+11:56.740 --> 11:57.920
+Here we go.
+
+12:00.210 --> 12:05.490
+As you can see it just keeps going and going over and over and it sets the start.
+
+12:05.510 --> 12:12.220
+Now is it ok I'm back after my computers and I'm very happy with me but it worked out.
+
+12:12.380 --> 12:19.580
+So what happens at the end is that our start middle and converge and then our start gets above our start
+
+12:19.580 --> 12:21.540
+is set to be middle plus one.
+
+12:21.560 --> 12:27.860
+So the next time through if we're working with the start is 8 the middle seven in the end to 7 if we
+
+12:27.860 --> 12:34.400
+go through again we're checking the middle which is still 7 because we take the average of these eight
+
+12:34.400 --> 12:38.140
+and seven and you floor it and you're still stuck with 7.
+
+12:38.150 --> 12:40.770
+So our middle is not going to budge and it stays at 7.
+
+12:41.180 --> 12:42.240
+And then we go through again.
+
+12:42.260 --> 12:44.150
+Is element less than Array middle.
+
+12:44.150 --> 12:46.310
+No it's greater than because we're looking for 50.
+
+12:46.330 --> 12:47.930
+So 50 is greater than.
+
+12:48.230 --> 12:52.910
+So we get start equals middle class once a start is seven plus one.
+
+12:52.910 --> 12:58.490
+So we're not moving anything and we get stuck because we've hit the end basically and we've crossed
+
+12:58.490 --> 12:59.910
+over if that makes sense.
+
+13:00.170 --> 13:04.330
+Our start has eclipsed our end and it's stuck that way.
+
+13:04.340 --> 13:09.170
+We're going to continually set this to be the start will we ate the middle will be 7 and it keeps going
+
+13:09.170 --> 13:10.300
+over and over and over.
+
+13:10.580 --> 13:12.470
+So you want to stop.
+
+13:12.710 --> 13:18.390
+You want to make sure this loop only runs while our start is less than or equal to the end.
+
+13:18.980 --> 13:24.520
+So as soon as the start becomes greater or the end becomes less then we have a problem.
+
+13:24.830 --> 13:26.250
+So just in here I'm going to do.
+
+13:26.490 --> 13:31.090
+And then we'll just check the start is less than or equal to.
+
+13:31.700 --> 13:35.330
+And just like that OK.
+
+13:35.620 --> 13:36.690
+So we're close now.
+
+13:36.760 --> 13:42.040
+And if I if I run this this time we still have a problem which is that we're returning the middle even
+
+13:42.040 --> 13:43.000
+if we don't find it.
+
+13:43.180 --> 13:47.780
+Now we don't loop forever but it's returning index of 7 because that's where we stopped right.
+
+13:47.830 --> 13:50.140
+That's our last point right here.
+
+13:50.140 --> 13:55.370
+So index of 7 but that doesn't work because 50 clearly is not an index of 7.
+
+13:55.390 --> 13:57.640
+So now we just need to add a little check at the end.
+
+13:57.700 --> 13:58.930
+You want to check.
+
+13:58.930 --> 14:05.320
+Basically if a ray of middle is equal to what we're looking for
+
+14:08.410 --> 14:13.740
+like that if it is then we return middle.
+
+14:14.000 --> 14:18.020
+Else we want to return we'll return negative one.
+
+14:18.070 --> 14:19.400
+I think is what we said right.
+
+14:19.660 --> 14:20.770
+Yes it is.
+
+14:21.120 --> 14:25.810
+So that makes sense so we're checking if the middle the item at the middle index is what we're looking
+
+14:25.810 --> 14:30.220
+for should do triple equals will return middle otherwise return negative 1.
+
+14:30.220 --> 14:32.610
+So now we get negative 1.
+
+14:32.860 --> 14:40.210
+But if we search for 5 it gives us one if we search for nine just three if we search for negative one
+
+14:40.750 --> 14:44.380
+we get negative 1 negative 10 still negative one.
+
+14:44.980 --> 14:45.820
+OK.
+
+14:45.970 --> 14:49.900
+So a couple of small Clean-Up things we could do if we wanted to.
+
+14:50.230 --> 14:54.360
+We can well first get rid of the cons. the logs you don't need that.
+
+14:54.880 --> 14:57.740
+Next we can condense some of these conditional statements.
+
+14:58.030 --> 15:04.930
+So I'm going to duplicate this solution because some people like to have a longer version but I will
+
+15:04.930 --> 15:10.750
+also do a shorter version where we get rid of basically a lot of whitespace like this to do a single
+
+15:10.750 --> 15:17.540
+line IF statement and then our else doesn't need brackets either.
+
+15:17.590 --> 15:22.600
+So there's there's one reduction of a couple of lines and then we can also put all this on a single
+
+15:22.600 --> 15:25.150
+line using the ternary operator.
+
+15:25.360 --> 15:26.730
+So that looks like this.
+
+15:26.840 --> 15:33.580
+Or one possibly there's two implementation so you can just do a return array.
+
+15:33.910 --> 15:36.820
+Middle equals equals element.
+
+15:36.820 --> 15:38.230
+If that's true.
+
+15:38.440 --> 15:40.000
+So we need this question mark.
+
+15:40.000 --> 15:42.570
+We're going to return middle colon.
+
+15:42.670 --> 15:44.260
+Else which turn negative 1.
+
+15:44.320 --> 15:49.030
+If you haven't seen that syntax the way you would read this is returned the result of this whole thing.
+
+15:49.030 --> 15:54.820
+First of all and the result is going to depend on if array of middle is equal to the elements so if
+
+15:54.820 --> 16:00.340
+array of middle is equal to Element return middle else return negative 1.
+
+16:00.340 --> 16:02.320
+So just test it out again.
+
+16:02.580 --> 16:03.930
+It looks like it's working.
+
+16:04.030 --> 16:11.010
+Let's plug in a number that is in there like 30 and we get indexed 7 and 13 get index of 4.
+
+16:11.050 --> 16:13.370
+If we find it in 103 we get negative 1.
+
+16:13.730 --> 16:14.280
+OK.
+
+16:14.320 --> 16:15.630
+So that's our shorter solution.
+
+16:15.640 --> 16:17.440
+All that we did the logic is the same.
+
+16:17.440 --> 16:21.300
+We just got rid of some of the extra brackets and the longer if statements.
+
+16:21.610 --> 16:22.930
+So we made it through there.
+
+16:23.170 --> 16:25.010
+Hopefully it makes sense how this all works.
+
+16:25.030 --> 16:27.820
+And now we're moving on to a couple other searching algorithms.
+
+16:27.820 --> 16:30.550
+So keep in mind this works great on a sorted array.
+
+16:30.550 --> 16:31.840
+Otherwise it's useless.
+
+16:32.050 --> 16:34.380
+So linear is the best that we can do.
+
+16:34.440 --> 16:35.910
+Well we saw a couple of videos ago.
+
+16:35.920 --> 16:39.160
+Is the best we can do on an unsorted array binary though.
+
+16:39.160 --> 16:39.910
+Works great.
+
+16:39.910 --> 16:41.020
+If our data is sorted.

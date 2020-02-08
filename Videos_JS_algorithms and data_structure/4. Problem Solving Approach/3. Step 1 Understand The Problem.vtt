@@ -1,0 +1,421 @@
+WEBVTT
+
+00:00.450 --> 00:01.290
+Welcome back.
+
+00:01.530 --> 00:06.510
+So as I mentioned in the last video one of the biggest challenges for new developers new programmers
+
+00:06.810 --> 00:08.790
+has to do with solving problems.
+
+00:08.790 --> 00:12.510
+So I think for most people it's easy enough to learn the syntax.
+
+00:12.510 --> 00:16.790
+It might take a little bit of time but you learn the syntax and you're done.
+
+00:16.830 --> 00:23.430
+You can copy other people's code or remake an application following step by step instructions.
+
+00:23.580 --> 00:27.750
+But the hardest thing has to do with solving new problems and new challenges.
+
+00:27.960 --> 00:32.790
+And you do get better with time regardless of the technologies you use.
+
+00:32.790 --> 00:37.680
+You know the language that you're working in it's really important to have a strong problem solving
+
+00:37.680 --> 00:42.640
+skill set and a lot of it will come naturally with time but it's worth being deliberate.
+
+00:42.660 --> 00:46.800
+It's worth having a game plan to follow step by step guide.
+
+00:46.860 --> 00:51.990
+It's not going to solve your problems for you but it helps you sit and think about and break problems
+
+00:51.990 --> 00:52.650
+down.
+
+00:52.650 --> 00:55.710
+And it helps solutions come about more naturally.
+
+00:55.710 --> 00:58.670
+So I mentioned these five steps that we're going to talk about.
+
+00:58.740 --> 01:04.050
+This video is going to start with understanding or understand the problem before we go any further.
+
+01:04.080 --> 01:09.090
+I should mention that many of these strategies are adapted from a really good book on problem solving
+
+01:09.090 --> 01:09.960
+in general.
+
+01:10.110 --> 01:15.840
+It's sort of more slanted towards mathematics but it's by this guy named George polio polio.
+
+01:15.840 --> 01:17.480
+The book is called How to solve it.
+
+01:17.540 --> 01:20.750
+A great resource and it's where a lot of these tips come from.
+
+01:21.060 --> 01:21.600
+OK.
+
+01:21.870 --> 01:24.310
+So we're starting with understanding the problem.
+
+01:24.360 --> 01:26.620
+So imagine you're sitting in a room.
+
+01:26.790 --> 01:30.080
+It could be a beautiful room or it could be like a prison cell made of cinderblock.
+
+01:30.330 --> 01:35.310
+And there's an interviewer ahead of you and he or she asks you a question and you don't know how to
+
+01:35.310 --> 01:36.140
+solve it.
+
+01:36.590 --> 01:38.150
+And it doesn't come to you right off the bat.
+
+01:38.160 --> 01:42.880
+It's not one of the practice problems you memorized over the weekend studying before.
+
+01:43.290 --> 01:49.560
+So the first couple of things I would do have to do with understanding the problem and it can be tempting
+
+01:49.560 --> 01:54.420
+just to dive right in and start solving something in particular when you're under some sort of time
+
+01:54.420 --> 01:56.280
+constraint like in an interview.
+
+01:56.310 --> 02:00.750
+So most people just want to their heart starts racing they want to get started immediately.
+
+02:00.930 --> 02:07.590
+And this is true in programming in particular you can make progress even if you don't get it right.
+
+02:07.590 --> 02:12.000
+You can just type a bunch of code pretty quickly and feel like you're making progress in a short amount
+
+02:12.000 --> 02:12.580
+of time.
+
+02:12.720 --> 02:17.580
+But before you start typing or whiteboarding or whatever you're doing I think it's really important
+
+02:17.580 --> 02:21.050
+to take a step back and just make sure you understand the task ahead of you.
+
+02:21.180 --> 02:26.920
+And that sounds silly it sounds trivial but there are some very deliberate questions you can ask.
+
+02:27.080 --> 02:32.820
+A thorough investigation of the problem or a question and it can really help clarify things and sometimes
+
+02:32.820 --> 02:35.060
+will give you an aha moment although not always.
+
+02:35.130 --> 02:40.400
+So here are some of the questions that I recommend you ask yourself or if you're in an interview setting
+
+02:40.410 --> 02:45.330
+ask the interviewer but also if you're working on your own challenge you're trying to build something
+
+02:45.330 --> 02:47.560
+out and you're not sure how to approach it.
+
+02:47.580 --> 02:49.120
+Ask yourself these questions.
+
+02:49.230 --> 02:51.950
+So can you restate the problem in your own words.
+
+02:51.960 --> 02:55.210
+This is always the first thing I ask my students to do in an interview setting.
+
+02:55.260 --> 02:56.590
+You get a new question.
+
+02:56.610 --> 02:58.810
+Just make sure you can restate it back.
+
+02:58.950 --> 03:00.190
+Not word for word.
+
+03:00.240 --> 03:05.970
+Don't just copy with the interviewer said but change it a bit in your own words to make sure that you
+
+03:05.970 --> 03:10.730
+actually understand what the question is What are the inputs that go into the problem.
+
+03:10.890 --> 03:13.300
+So this is a really important one.
+
+03:13.320 --> 03:14.910
+What about the outputs.
+
+03:14.910 --> 03:17.720
+So what are the outputs that should come from the solution to the problem.
+
+03:18.030 --> 03:21.530
+What should the output look like and we're going to dive into an example just a moment.
+
+03:21.720 --> 03:24.000
+So what are the inputs what will the inputs look like.
+
+03:24.000 --> 03:29.670
+What are the outputs what should come from my solution what should be returned from my function.
+
+03:29.670 --> 03:32.250
+Can the outputs be determined from the inputs.
+
+03:32.280 --> 03:38.490
+Meaning do you have enough information to solve the problem you have the inputs can you get the outputs
+
+03:38.490 --> 03:39.490
+that are expected.
+
+03:39.590 --> 03:45.560
+Just using that information and sometimes you need to wait a bit until you can figure that one out.
+
+03:45.630 --> 03:49.170
+How should I label the important pieces of data that are part of the problem.
+
+03:49.200 --> 03:53.910
+So this would be you know what are the things that really matter in this problem what should you call
+
+03:53.910 --> 03:54.850
+them.
+
+03:54.900 --> 03:56.950
+What's the terminology that you should use.
+
+03:57.210 --> 03:58.330
+So it might seem like a lot.
+
+03:58.380 --> 04:04.260
+It is but if we walk through an actual example we're going to do a really simple example which is write
+
+04:04.260 --> 04:07.420
+a function which takes two numbers and returns there so.
+
+04:07.540 --> 04:10.140
+So imagine that someone asked you this in an interview setting.
+
+04:10.380 --> 04:14.550
+Let's explore sort of understanding the problem through this lens.
+
+04:14.670 --> 04:17.490
+So let's let's walk through some of these steps.
+
+04:17.580 --> 04:19.940
+Write a function which takes two numbers and returns or some.
+
+04:19.950 --> 04:21.780
+Can I restate the problem in my own words.
+
+04:21.790 --> 04:24.410
+All right well this one is nice and simple.
+
+04:24.510 --> 04:29.520
+You know we could just say something like write a function that adds two numbers or implement addition
+
+04:29.530 --> 04:30.640
+or something like that.
+
+04:30.860 --> 04:31.280
+OK.
+
+04:31.290 --> 04:32.640
+Easy enough.
+
+04:32.640 --> 04:34.830
+What are the inputs that go into the problem.
+
+04:35.100 --> 04:37.500
+Well this might seem like an open and shut case.
+
+04:37.500 --> 04:40.430
+Just add two numbers so we need two numbers right.
+
+04:40.560 --> 04:43.810
+But if you start to really think about it there it really depends.
+
+04:43.830 --> 04:48.830
+I mean are we talking about integer numbers or are we talking about floating point exclusively.
+
+04:48.860 --> 04:51.420
+Depends on the language that we're working in of course.
+
+04:51.450 --> 04:53.250
+How large are these numbers going to be.
+
+04:53.250 --> 04:58.650
+Because in some languages most that I've worked in there's an upper bound for the size for numbers and
+
+04:58.650 --> 05:02.220
+if you're trying to add really really large numbers it doesn't work well.
+
+05:02.220 --> 05:10.170
+For example if we tried to do this here it's a really large number plus you can see a plus sign.
+
+05:10.170 --> 05:14.000
+Another really large number totally valid mathematical operation.
+
+05:14.160 --> 05:16.190
+But in javascript What do we get.
+
+05:16.190 --> 05:19.820
+Infinity just gives up and gives us infinity.
+
+05:19.830 --> 05:24.380
+So in other languages you might be able to represent this better as a string.
+
+05:24.630 --> 05:25.520
+Each one of these numbers.
+
+05:25.530 --> 05:31.410
+I mean I won't actually do it for both but an implement addition using the strings.
+
+05:31.410 --> 05:34.320
+So it actually really does matter right.
+
+05:34.320 --> 05:36.050
+It's not a trivial question.
+
+05:36.210 --> 05:39.760
+It's silly to just add two numbers together we already have addition.
+
+05:39.780 --> 05:40.640
+Why do that.
+
+05:40.890 --> 05:45.870
+But if we just think about it we already start to figure out that there are some important distinctions
+
+05:45.870 --> 05:51.300
+between these inputs and if we are trying to add these really really large numbers suddenly the problem
+
+05:51.300 --> 05:56.490
+becomes a lot harder because in javascript we can't do that just with plain old numbers.
+
+05:56.490 --> 05:59.830
+Another thing is are we only working with two inputs.
+
+05:59.940 --> 06:00.780
+Is it always two.
+
+06:00.780 --> 06:03.380
+What happens if someone leaves and is put off.
+
+06:03.390 --> 06:08.220
+Or what if someone wants to add four 10 numbers like that's totally valid to add 10 numbers together
+
+06:08.280 --> 06:13.500
+mathematically as our function only going to work with two numbers and the same applies to the third
+
+06:13.500 --> 06:16.890
+question which is output What should the output look like.
+
+06:16.890 --> 06:18.620
+This is simpler in this case.
+
+06:18.690 --> 06:21.930
+We still would have the question of should it be an integer.
+
+06:21.990 --> 06:26.910
+Should it be a float depending on you know if you pass into floats do you want to float back if you
+
+06:26.910 --> 06:28.980
+pass in an integer and a float.
+
+06:28.980 --> 06:30.760
+Are you even allowed to pass in a float.
+
+06:30.780 --> 06:34.290
+Or what about the string returning a string A for doing this massive addition.
+
+06:34.590 --> 06:36.270
+So it's sort of the same question.
+
+06:36.390 --> 06:39.390
+Well it's not the same question but it's a lot of the same issues.
+
+06:39.390 --> 06:42.530
+Next up can the outputs be determined from the inputs.
+
+06:42.690 --> 06:45.770
+Basically do we have enough information to do the problem.
+
+06:45.870 --> 06:47.830
+And in most cases the answer would be yes.
+
+06:47.970 --> 06:53.010
+But if you think about it what happens if someone only passes one number and it's already discussed
+
+06:53.280 --> 06:55.930
+we don't have enough information to do addition at that point.
+
+06:56.190 --> 06:57.750
+So do we add zero.
+
+06:57.750 --> 07:01.180
+Do we return undefined or no or something.
+
+07:01.200 --> 07:02.020
+What do we do.
+
+07:02.400 --> 07:03.910
+And that depends.
+
+07:04.080 --> 07:09.090
+You ask your interviewer that or in most interview settings it might just tell you to ignore that for
+
+07:09.090 --> 07:13.290
+now but also in most interview settings they probably wouldn't ask you to write a function that takes
+
+07:13.290 --> 07:14.990
+two numbers and I turned to them.
+
+07:15.000 --> 07:19.830
+And lastly how should I label the important pieces of data that are part of the problem.
+
+07:19.920 --> 07:23.910
+So I like to put this in here because it's important to start thinking about this what matters.
+
+07:23.940 --> 07:27.400
+So we have the inputs and we have the outputs and that's pretty much all we need.
+
+07:27.660 --> 07:33.420
+So maybe you know name our function add and then we'll have number one and number two is the arguments
+
+07:33.720 --> 07:36.990
+and then some is our result that we return.
+
+07:36.990 --> 07:41.640
+So this is simple but once you start getting into more complicated problems thinking about this step
+
+07:41.640 --> 07:45.300
+by step really can make a difference and I'll show you some examples where it helps.
+
+07:45.300 --> 07:50.700
+But first let's move on from understanding the problem to exploring concrete examples.
+
+07:50.700 --> 07:52.100
+So this was only the first step.
+
+07:52.110 --> 07:57.480
+But there were still multiple questions that we can ask ourselves or ask our interviewer about the problem.
+
+07:57.480 --> 07:57.740
+All right.
+
+07:57.750 --> 07:59.370
+Next up exploring examples.

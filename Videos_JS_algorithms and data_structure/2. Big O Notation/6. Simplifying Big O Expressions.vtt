@@ -1,0 +1,397 @@
+WEBVTT
+
+00:00.210 --> 00:00.580
+All right.
+
+00:00.580 --> 00:01.470
+Welcome back.
+
+00:01.470 --> 00:04.950
+So now we're going to talk more about simplifying big-O expressions.
+
+00:04.950 --> 00:06.810
+We've already seen a little bit of this.
+
+00:06.850 --> 00:12.900
+I'm going to rewind a couple of slides back if you remember this slide where we talked about how counting
+
+00:13.050 --> 00:18.580
+all these different operations can be tricky and that it doesn't really matter the exact count.
+
+00:18.630 --> 00:21.620
+All that we care about is really the general trend.
+
+00:21.740 --> 00:27.380
+And so we simplified this from five and plus two to just.
+
+00:27.420 --> 00:33.840
+And we said that as and grows the runtime grows proportionately with and it doesn't matter if it's two
+
+00:33.840 --> 00:39.930
+times and or 10 times then or a thousand times and the trend line that we're drawing on that chart is
+
+00:39.930 --> 00:41.060
+proportionate with N.
+
+00:41.160 --> 00:46.580
+So now we're going to talk about some actual rules we can use to help us when simplifying these expressions.
+
+00:46.590 --> 00:50.090
+There are some helpful rules of thumb that we can follow.
+
+00:50.490 --> 00:51.590
+Rule of thumbs.
+
+00:51.720 --> 00:54.540
+Rules of thumb rule of thumbs.
+
+00:54.570 --> 00:54.960
+OK.
+
+00:55.020 --> 00:59.970
+Whichever one it is these rules are consequences of the definition of big-O.
+
+00:59.970 --> 01:05.210
+Once again that we only care about the broadest fuzziest big picture view.
+
+01:05.370 --> 01:06.740
+So constants don't matter.
+
+01:06.810 --> 01:14.510
+So if we have something like 0 of two n we simplify that down just to over in 0 of 500.
+
+01:15.150 --> 01:23.220
+Simplify that just to 0 of 1 because 0 500 remember is just that's basically saying there are 500 operations
+
+01:23.520 --> 01:30.250
+every time no matter what end is and to that line that chart is going to be flat and instead of saying
+
+01:30.250 --> 01:34.540
+it's going to be fought at 500 we'll just simplify it down saying that it's 0 0 1 that's how we say
+
+01:34.540 --> 01:41.030
+something is constant constant run time 0 of 13 and squared.
+
+01:41.350 --> 01:46.900
+Well we don't need that constant we just do over and square it because the difference when we're looking
+
+01:46.900 --> 01:47.650
+at this.
+
+01:47.770 --> 01:53.530
+Basically if if our graph went all the way to infinity as far as and and we're looking at the difference
+
+01:53.530 --> 02:00.310
+between 13 and squared and just end squared and a thousand squared they're all going to look very very
+
+02:00.310 --> 02:01.270
+similar.
+
+02:01.390 --> 02:04.490
+Once we elongate that chart to that level.
+
+02:04.660 --> 02:06.040
+So it doesn't really matter.
+
+02:06.040 --> 02:10.010
+So we just get rid of that because now we can compare these and we know that.
+
+02:10.030 --> 02:13.880
+OK this is going to be faster than this and this is going to be the slowest.
+
+02:13.930 --> 02:20.800
+Just based off of the charts the general fuzzy trends so smaller terms also don't matter.
+
+02:20.800 --> 02:26.700
+The constants out front in front of and but smaller terms like this of and plus 10 just get rid of the
+
+02:26.710 --> 02:37.330
+10 his own event or in this case 0 of 1000 plus 50 can simplify that just to oven.
+
+02:37.840 --> 02:41.650
+You don't need the constants and we don't need the small term at the end.
+
+02:41.950 --> 02:43.070
+And how about this one.
+
+02:43.300 --> 02:45.150
+And squared plus five and plus eight.
+
+02:45.430 --> 02:51.100
+Well once again look at it from a huge huge like imagine we're noter outer space looking at this chart
+
+02:51.700 --> 02:56.060
+and we have to figure out what really matters what's the trend at the end of the day.
+
+02:56.140 --> 03:01.030
+Five ten plus eight is meaningless compared to end squared.
+
+03:01.150 --> 03:08.680
+When you're dealing with a number like if you just plug in the number one thousand five times 1005 and
+
+03:08.710 --> 03:14.250
+give just 5000 but n squared 1000 times 1000 is 10 million.
+
+03:14.260 --> 03:15.790
+I think I did that right.
+
+03:15.790 --> 03:22.330
+So we're talking about 10 million plus five thousand plus eight just as an example.
+
+03:22.630 --> 03:28.780
+The difference between 10 million five thousand eight versus 10 million is so small and that's just
+
+03:28.780 --> 03:29.940
+when we plug in 1000.
+
+03:29.940 --> 03:32.080
+But now imagine we plug in a billion.
+
+03:32.260 --> 03:37.630
+And that difference is going to be meaningless from the big picture view.
+
+03:37.660 --> 03:40.470
+So we just simplify it down to 0 and squared.
+
+03:40.540 --> 03:46.450
+So a couple of things that you can keep in mind when analyzing complexity with big o things get complicated
+
+03:46.450 --> 03:50.040
+and you can nitpick and stress out about the individual details.
+
+03:50.350 --> 03:55.450
+But there are some rules of thumb again that can help and they don't always work but it's a good starting
+
+03:55.450 --> 03:56.390
+point.
+
+03:56.410 --> 03:59.730
+The first is that arithmetic operations are constant.
+
+03:59.740 --> 04:04.630
+So for adding something or subtracting or dividing and so on that's going to be constant time it doesn't
+
+04:04.630 --> 04:09.940
+really matter the size of the number your computer takes roughly the same amount of time to do two plus
+
+04:09.940 --> 04:15.700
+two as it does a million plus two variable assignment is also constant.
+
+04:15.700 --> 04:22.900
+So the computer takes roughly the same amount of time to make a variable you know X equals 1000 compared
+
+04:22.900 --> 04:26.540
+to X equals 20000 or a million.
+
+04:26.590 --> 04:32.830
+It's roughly the same accessing element in an array using an index.
+
+04:32.830 --> 04:38.670
+So if I have an array and I find the first item or the tenth item as long as I use the index or I'm
+
+04:38.680 --> 04:45.460
+working with an object and I have a key that I'm using to access data that's constant runtime as well.
+
+04:45.460 --> 04:51.760
+The next rule is that in a loop the complexity is the length of the loop times the complexity for that
+
+04:51.820 --> 04:53.860
+whatever happens inside the loop.
+
+04:53.860 --> 05:00.310
+So if we were working with a loop that's looping over a list or looping through like we did earlier
+
+05:00.400 --> 05:03.930
+is the road to end as and grows that loop grows.
+
+05:04.000 --> 05:08.920
+But then whatever happens inside that loop is also consequential because if we have nested loops as
+
+05:08.920 --> 05:12.790
+we've seen then we end up with potentially end squared runtime.
+
+05:13.060 --> 05:16.640
+So again you don't need to memorize this but it's just nice to.
+
+05:16.770 --> 05:19.150
+I'm going to throw them out there so I can come back to them.
+
+05:19.570 --> 05:22.270
+So let's see a couple of examples.
+
+05:22.300 --> 05:23.340
+Here's a new function.
+
+05:23.620 --> 05:25.830
+It's called log at least five.
+
+05:25.920 --> 05:27.210
+And just copy it over.
+
+05:27.420 --> 05:33.520
+I pasted in and if I call it a pass and a number like 10 and it's going to log 10 but if I plug in one
+
+05:34.390 --> 05:35.740
+it prints 1 2 3 4 or 5.
+
+05:35.740 --> 05:41.810
+So all that it does is it prints numbers up to N but at a minimum it prints 1 2 3 4 5.
+
+05:42.100 --> 05:47.980
+So if I give it three we still get five but if I give it seven we get seven printed out one two three
+
+05:47.980 --> 05:48.840
+four five six seven.
+
+05:49.000 --> 05:51.180
+So what's the what's the big O here.
+
+05:51.250 --> 05:52.880
+How would we categorize this.
+
+05:52.900 --> 06:01.110
+So we have a loop and this loop is going to go from 1 to either five or end whichever one is larger.
+
+06:01.570 --> 06:07.750
+So we could worry about the five but we only really need to worry about that as is small.
+
+06:07.750 --> 06:11.030
+And what we care about is what happens and grows larger.
+
+06:11.110 --> 06:14.880
+So it's and continues to grow and grow and grow towards infinity.
+
+06:15.120 --> 06:17.120
+What happens to the runtime.
+
+06:17.320 --> 06:21.050
+Well if and is 10 million this loop is going to run 10 million times.
+
+06:21.050 --> 06:22.990
+This five doesn't matter.
+
+06:22.990 --> 06:30.040
+So we can just simplify this and say that the big-O of this is over of and because this and grows the
+
+06:30.040 --> 06:32.890
+number of operations grows in proportion with N.
+
+06:33.160 --> 06:34.310
+So here's another one.
+
+06:34.330 --> 06:38.980
+This is the opposite log at most 5 pasted in.
+
+06:38.980 --> 06:45.500
+And if I try hopes there we go at most 5 if I plug in 30 it still only gives me 5.
+
+06:45.520 --> 06:46.710
+I plug in 3.
+
+06:46.780 --> 06:47.740
+It gives me three.
+
+06:47.740 --> 06:52.420
+So it's going to take whatever is smaller if I give it a large number it's going to if it's larger than
+
+06:52.420 --> 06:57.590
+5 it's only going to log 5 if I give it something less than 5 then it will log.
+
+06:57.760 --> 06:58.780
+Oh it's also important.
+
+06:58.870 --> 07:00.570
+It's only with positive numbers.
+
+07:00.570 --> 07:03.020
+If I give it a zero it doesn't do anything.
+
+07:03.270 --> 07:09.550
+And that is important to note because as n grows here it kind of doesn't matter because we're going
+
+07:09.550 --> 07:12.040
+to take the min which is five.
+
+07:12.040 --> 07:18.130
+So if Enge approaching a thousand this loop runs five times and is approaching a million the loop runs
+
+07:18.130 --> 07:22.960
+five times if any to then the loop runs two times and three times.
+
+07:23.050 --> 07:29.910
+So the graph would actually look like you know two and then three and then five and then it's say static
+
+07:29.920 --> 07:35.740
+at 5 and we can simplify that by saying that it's end gross which is what we care about the big-O of
+
+07:35.740 --> 07:38.490
+this is just constant it's 0 1.
+
+07:38.680 --> 07:43.590
+So rather than 0 5 Remember we can simplify that down and say Oh for one.
+
+07:43.690 --> 07:50.060
+So if we were to plot both of these out what we see the general trend is something like this where I
+
+07:50.230 --> 07:54.790
+forgot to have all those little transitions we can ignore all these other ones we haven't talked about
+
+07:54.790 --> 07:56.850
+things like a log and log in.
+
+07:57.100 --> 08:03.990
+But what I've done here is just put them all in a chart so we can see first of all 0 1 is a flightline
+
+08:04.960 --> 08:08.400
+and that's great if we can have runtime of one.
+
+08:08.410 --> 08:14.200
+That is fantastic to have constant runtime it's pretty rare when we're dealing with some more advanced
+
+08:14.230 --> 08:21.130
+algorithms something like of n it's ok you can see the general trajectory it's much better than something
+
+08:21.130 --> 08:23.410
+like quadratic and squared runtime.
+
+08:23.560 --> 08:30.220
+So when we have something like log at least five as and grows this direction the runtime is also going
+
+08:30.220 --> 08:37.300
+to grow and when we have at most 5 the second one which we said had constant runtime as and grows once
+
+08:37.300 --> 08:43.360
+we get past the first little one two three four once we get past the first four and we approach infinity
+
+08:43.620 --> 08:47.640
+and it's going to always be 5 which we just say and it's always constant.
+
+08:47.680 --> 08:53.570
+So I know that this is a lot and some of you might be struggling with it and that's to be expected what
+
+08:53.590 --> 08:59.710
+I think is most important going forward is that if I'm if I say something like this algorithm that we've
+
+08:59.710 --> 09:07.210
+just written has a runtime of oh events squared that you could identify that that is not as good as
+
+09:07.210 --> 09:08.500
+something like Of end.
+
+09:08.500 --> 09:13.180
+For example and I could show you this chart but I just hope that you can understand after the end of
+
+09:13.180 --> 09:17.650
+the section we're not done yet but by the end of the section what it means when I say that something
+
+09:17.650 --> 09:24.590
+has 0 0 of and or 0 of one constant runtime and how that compares to some of the other options.
+
+09:24.790 --> 09:26.670
+And like I said we haven't gone over all of these yet.
+
+09:26.710 --> 09:27.880
+So we'll get there.
+
+09:28.780 --> 09:31.850
+Next up a couple little exercises simplifying expressions.

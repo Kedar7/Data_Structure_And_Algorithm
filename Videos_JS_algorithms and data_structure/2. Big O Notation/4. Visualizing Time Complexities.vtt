@@ -1,0 +1,193 @@
+WEBVTT
+
+00:00.170 --> 00:03.310
+OK so this will be really quick video but I want to show something.
+
+00:03.360 --> 00:09.930
+I'm kind of proud of this is a little widget that I made that helps us understand or plot the time that
+
+00:09.930 --> 00:15.550
+functions take to execute and get a general graph a chart that shows us a trend.
+
+00:15.600 --> 00:20.480
+So there's only seven of them in here and we're going to focus on the first two add up to first.
+
+00:20.610 --> 00:25.980
+I had to give them unique names before they were both called to add up to but add up to first uses the
+
+00:25.980 --> 00:29.030
+loop add up to second uses that little shortcut.
+
+00:29.220 --> 00:31.530
+See if it's that big enough to see.
+
+00:31.800 --> 00:33.520
+And so we select one of them.
+
+00:33.720 --> 00:37.920
+Then I can specify a value for N and hit plot and then change and.
+
+00:38.070 --> 00:43.380
+And what I'll do is increase and then we'll see some sort of chart that shows what happens as and grows
+
+00:43.380 --> 00:43.890
+larger.
+
+00:44.010 --> 00:46.790
+And this is basically just done with a timer in the background.
+
+00:46.840 --> 00:52.740
+So click plot starts a timer it does the operation stops the timer and then plots it and then we do
+
+00:52.740 --> 00:55.700
+it again and it connects the dots and builds a little graph.
+
+00:55.710 --> 01:00.870
+So what I want to show you is that if we take this first one out up to second which was the one that
+
+01:00.870 --> 01:02.750
+was faster we already know it's faster.
+
+01:03.060 --> 01:07.680
+But what we talked about in the last video is that there are three operations three things that take
+
+01:07.680 --> 01:09.240
+time and think about it that way.
+
+01:09.270 --> 01:14.730
+The other one there was a lot of things that take time but this there's three and there's always three
+
+01:14.730 --> 01:15.540
+things that take time.
+
+01:15.540 --> 01:18.070
+No matter what end is if it's ten or a billion.
+
+01:18.210 --> 01:24.780
+So I'm going to plug in a number for her and like 100 and I'm going to hit plot and it's going to time
+
+01:24.780 --> 01:24.860
+it.
+
+01:24.870 --> 01:29.640
+So what is plotting for us here is not the number of operations because that's always three it's plotting
+
+01:29.640 --> 01:30.720
+the time.
+
+01:31.250 --> 01:31.730
+OK.
+
+01:31.800 --> 01:34.190
+So we only have one value so it doesn't really mean much.
+
+01:34.230 --> 01:38.460
+Let's add in 1000 There we go.
+
+01:38.670 --> 01:41.510
+Let's add in 10000.
+
+01:41.550 --> 01:48.990
+OK so it does seem like this is an extreme slope all of a sudden but just hang in there because we pop
+
+01:48.990 --> 01:54.720
+back up and if we look at the difference here it's a matter of what are we talking about is these.
+
+01:54.750 --> 01:59.850
+Remember these are nanoseconds with that little symbol means it's a very small fraction of a second.
+
+01:59.880 --> 02:05.680
+So it looks like this chart is all over the place and it is on such a small scale.
+
+02:06.060 --> 02:09.460
+But what I want to show you is that we don't really care about that.
+
+02:09.690 --> 02:16.520
+We care about a general trend and when we switch over to add up to first I'm going to do the same thing.
+
+02:16.950 --> 02:19.100
+But I'm going to start again with one hundred.
+
+02:19.620 --> 02:21.350
+So we're going out of the first 100.
+
+02:21.780 --> 02:28.350
+And remember that in this case unlike Adams's second well it was a constant number of operations and
+
+02:28.440 --> 02:34.510
+up to first the number of operations depends on and because of this loop.
+
+02:35.100 --> 02:40.280
+So if we start with 100 OK you can already see that it's definitely slower.
+
+02:40.510 --> 02:44.960
+Let's go to 1000 All right it definitely looks slower again.
+
+02:45.370 --> 02:49.550
+Ten thousand keep going here.
+
+02:49.640 --> 02:50.390
+Keep adding in
+
+02:53.820 --> 02:58.030
+going to keep going so that we can get a generalized trend.
+
+02:59.960 --> 03:00.210
+OK.
+
+03:00.250 --> 03:03.320
+In the classroom took a little bit and the next one will take a couple of seconds.
+
+03:03.320 --> 03:04.280
+I'm not going to do it.
+
+03:04.670 --> 03:11.180
+But what we can see here is that there's a pretty good line that's pretty easy to follow.
+
+03:11.630 --> 03:17.900
+And as n grows larger which is down here the time grows in proportion which we kind of discussed in
+
+03:17.900 --> 03:22.310
+the last video although we were talking about the number of operations but this is actually the time
+
+03:22.310 --> 03:23.620
+being printed here.
+
+03:23.630 --> 03:25.910
+And you can see that it follows what we were talking about.
+
+03:25.940 --> 03:30.000
+It's not perfect but overall it's pretty close.
+
+03:30.350 --> 03:37.220
+And same thing down here where we said that for add up to second it's always three operations.
+
+03:37.220 --> 03:40.080
+It's the same number of operations no matter what end is.
+
+03:40.130 --> 03:42.920
+So the time is pretty constant.
+
+03:42.920 --> 03:46.460
+It fluctuated as you saw when we were working on such a small scale.
+
+03:46.460 --> 03:52.510
+It did go up and down but overall when you're comparing the two this is significantly better.
+
+03:52.560 --> 03:59.210
+And if I run this last one here I mean take a look at that and grows the time doesn't really change.
+
+03:59.210 --> 04:04.460
+Now if we zoomed in it would be slightly different but it doesn't matter because this is a massive difference
+
+04:04.500 --> 04:08.600
+1.2 seconds versus a couple of milliseconds.
+
+04:08.720 --> 04:12.840
+So we'll be revisiting this tool to talk about some of these others as we go.
+
+04:13.130 --> 04:19.490
+But here are first to generalize trends where we're comparing two algorithms that do the same thing
+
+04:20.030 --> 04:25.090
+and you can see that they have vastly different big picture overviews of their performance.

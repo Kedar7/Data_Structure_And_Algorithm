@@ -1,0 +1,454 @@
+WEBVTT
+
+00:00.330 --> 00:00.960
+All right.
+
+00:00.960 --> 00:06.720
+So we finally actually introduced the term big-O we've basically been talking about we go without actually
+
+00:06.720 --> 00:09.120
+saying the term Big-O notation.
+
+00:09.330 --> 00:11.850
+So let's actually let's review it now.
+
+00:12.270 --> 00:17.010
+So big-O is just a way of formalized fuzzy counting.
+
+00:17.100 --> 00:23.070
+It allows us to talk in a very formal way about how the runtime of an algorithm grows as the inputs
+
+00:23.070 --> 00:23.310
+grow.
+
+00:23.320 --> 00:24.550
+That's it.
+
+00:24.570 --> 00:30.750
+It's a way of describing the relationship between the input to a function or as it grows and how that
+
+00:30.750 --> 00:33.200
+changes the runtime of that function.
+
+00:33.210 --> 00:40.160
+The relationship between the input size and then the time relative to that input.
+
+00:40.230 --> 00:43.450
+So we don't care about the other details only the broad trends.
+
+00:43.860 --> 00:49.270
+So we've already been talking about broad trends we talked about OK's and grows here.
+
+00:49.680 --> 00:52.880
+And this first solution down here it doesn't matter.
+
+00:52.950 --> 00:59.400
+It doesn't impact the time that it takes but in our second solution which is confusingly called add
+
+00:59.400 --> 01:06.450
+up to first and grows down here the runtime also grows in proportion.
+
+01:06.710 --> 01:11.030
+Basic roughly in a linear one to one pattern with that.
+
+01:11.330 --> 01:17.220
+So that is big so what we've been talking about we just haven't actually been using the correct label.
+
+01:17.720 --> 01:19.520
+So here's a bit of scary text.
+
+01:19.520 --> 01:26.090
+We say that an algorithm of or is Big O of f then if the number of simple operations the computer has
+
+01:26.090 --> 01:30.770
+to do is eventually less than a constant time f event and increases it's a bunch of jibberish really
+
+01:31.070 --> 01:33.780
+what it's saying though is that there's a bunch of these.
+
+01:33.800 --> 01:35.800
+I'm just going to put them on here for now.
+
+01:35.870 --> 01:37.340
+There's a bunch of options.
+
+01:37.370 --> 01:42.230
+If you haven't seen this notation by the way this just means a function with an input of N and then
+
+01:42.440 --> 01:42.950
+the output.
+
+01:42.950 --> 01:46.920
+So we're describing the relationship between the input and then the runtime.
+
+01:47.330 --> 01:56.150
+So it could be linear meaning that as and scales the input the runtime scales as well which we've already
+
+01:56.150 --> 01:56.660
+seen.
+
+01:56.780 --> 02:02.630
+It could be something different could be quadratic whereas and gross the run time square is related
+
+02:02.630 --> 02:03.940
+to the Square event.
+
+02:04.490 --> 02:07.830
+Or it could be constant which you've already seen as well as and grows.
+
+02:07.850 --> 02:13.460
+It doesn't really have an impact because runtime is always constant which we simplify down to one or
+
+02:13.460 --> 02:14.780
+it could be something entirely different.
+
+02:14.780 --> 02:19.250
+We'll get to some of these other options later on in the course and later in the section you can always
+
+02:19.250 --> 02:23.310
+come back and just think about it as well and grows as an input grows.
+
+02:23.390 --> 02:25.430
+What is this chart going to look like.
+
+02:25.430 --> 02:27.550
+Is it going to grow roughly proportionately within.
+
+02:27.590 --> 02:29.180
+Is it going to be constant.
+
+02:29.270 --> 02:33.070
+If we had a square it would be a lot steeper than this.
+
+02:33.080 --> 02:38.580
+One thing I want to highlight is that when we talk about big oh we're talking about the worst case scenario.
+
+02:38.870 --> 02:43.890
+So we're talking about basically the upper bound for runtime.
+
+02:43.970 --> 02:46.370
+So let's revisit our examples from earlier.
+
+02:46.520 --> 02:52.580
+This first add up to where we only had three operations and it's constant It's always three operations.
+
+02:52.580 --> 02:56.520
+So the line we looked at was this one down here that roughly is constant.
+
+02:56.530 --> 02:58.610
+Remember in the real world it's not up.
+
+02:58.610 --> 02:59.830
+It goes up and down a little bit.
+
+02:59.900 --> 03:04.050
+Runtime does vary but overall the trend is that it's flawed.
+
+03:04.310 --> 03:08.960
+So we could say that this has a big one and this is the notation that we'll see.
+
+03:08.960 --> 03:14.840
+So when you see a big go and then in parentheses you see one or you see end or end squared or and log
+
+03:14.840 --> 03:20.990
+and or log in things we haven't gotten to that is telling us that as and grows as the input to this
+
+03:20.990 --> 03:26.700
+function grows in this case it has no change it's not reflected in the runtime.
+
+03:27.230 --> 03:32.190
+But if we take a look at this one add up to and same name.
+
+03:32.270 --> 03:37.430
+This was the one that had a bunch of operations that are happening where we said that it grows and grows
+
+03:37.790 --> 03:44.540
+the runtime grows basically in a 1 to 1 ratio the number of operations is eventually bounded by a multiple
+
+03:44.540 --> 03:44.680
+of.
+
+03:44.690 --> 03:50.840
+And it doesn't actually matter if it's 1 and or five 10 or 15 because at the end of the day we simplify
+
+03:50.840 --> 03:52.280
+it down just to end.
+
+03:52.340 --> 03:55.480
+And we're going to talk about the rules for simplifying these expressions.
+
+03:55.790 --> 03:59.710
+But basically we're concerned with just the order of magnitude.
+
+03:59.810 --> 04:03.100
+So we don't care if it's 5 10 or just plain old.
+
+04:03.110 --> 04:09.420
+And it's the same when are charting in on a massive chart and we're zooming way out and we're just carrying
+
+04:09.420 --> 04:11.150
+a carrying in a fuzzy way.
+
+04:11.150 --> 04:12.830
+I guess is what you would say.
+
+04:12.860 --> 04:14.720
+So here's another example we haven't seen.
+
+04:15.030 --> 04:19.310
+It's called Count up and down and all that it does is copied over.
+
+04:19.310 --> 04:26.020
+I don't actually have a what do you call it the snippet for it but let's just plug in 10 Okay.
+
+04:26.040 --> 04:34.050
+So our output is going up 0 1 2 3 4 5 6 7 8 9 at the top going down 9 8 seven six five four three two
+
+04:34.050 --> 04:35.700
+one zero back down.
+
+04:35.700 --> 04:40.430
+All right so if you're trying to figure out the big 0 for this function we'd start by saying.
+
+04:40.440 --> 04:40.800
+All right.
+
+04:40.800 --> 04:47.610
+So here as n grows we have roughly an operation to have a loop.
+
+04:47.610 --> 04:56.280
+So there's big of and here because this as Ed grows this loop grows same thing down here and grows this
+
+04:56.280 --> 04:57.160
+loop grows.
+
+04:57.270 --> 05:00.510
+It's just doing the same thing in the other order going back down.
+
+05:00.900 --> 05:02.870
+So you might think the big n it's to N.
+
+05:03.240 --> 05:06.830
+But remember that we don't care about that we care about the big picture.
+
+05:06.840 --> 05:08.540
+So we simplify it to big.
+
+05:08.550 --> 05:15.420
+And so if we go back to our performance tracker I do have count up and down added in here so it's plotted
+
+05:15.450 --> 05:23.970
+out with one hundred one thousand ten thousand and you'll see I think that's a small do it's taking
+
+05:23.970 --> 05:26.030
+a while the next one will take forever.
+
+05:26.340 --> 05:27.080
+There we go.
+
+05:27.360 --> 05:30.410
+And you can see there we get that chart that we discussed.
+
+05:30.510 --> 05:36.450
+This is the big picture of anything that has big O of N and we have one more example.
+
+05:36.450 --> 05:38.310
+This one's different.
+
+05:38.310 --> 05:39.260
+We haven't seen this yet.
+
+05:39.390 --> 05:40.940
+So we have a nested loop.
+
+05:41.100 --> 05:43.810
+So what it does it is called Print all pairs.
+
+05:43.980 --> 05:52.440
+And if I plug in five it's going to print every pair of the numbers 0 to 5 0 0 0 0 1 0 2 all the way
+
+05:52.440 --> 05:53.890
+up to 5 5.
+
+05:54.300 --> 05:59.250
+And I don't I won't show the example but you can trust me that's what it does.
+
+05:59.250 --> 06:00.360
+And there's two loops.
+
+06:00.600 --> 06:05.380
+And just like we discussed with the loop this loop is based off of and this first one.
+
+06:05.460 --> 06:07.360
+So that's big-O of N.
+
+06:07.380 --> 06:07.870
+Right.
+
+06:07.900 --> 06:12.690
+And gross This is going to be any number of operations roughly.
+
+06:12.690 --> 06:16.080
+But then we have a nested loop which is also the same thing.
+
+06:16.170 --> 06:22.890
+O of N which just means that as and grows this loop the number time it run a number of times it runs
+
+06:22.890 --> 06:23.930
+grows as well.
+
+06:24.330 --> 06:30.330
+But this is not oh of to N which simplifies to of N because it's nested.
+
+06:30.450 --> 06:38.070
+And that gives us something else and over an operation instead of an event operation is 0 0 of and squared.
+
+06:38.430 --> 06:44.550
+So what this means is that as n grows the runtime roughly grows at the rate of end squared.
+
+06:44.550 --> 06:46.750
+So that's a pretty significant difference.
+
+06:46.770 --> 06:49.920
+And if we plot it out which we will in just a second you'll see that.
+
+06:50.160 --> 06:55.890
+But hopefully that makes sense and I pause over that makes sense of why there is such a difference.
+
+06:55.890 --> 07:03.950
+Because if we step through this if and is let's just think about the number of pairs if any is.
+
+07:04.170 --> 07:06.610
+We have the pairs 0 0 0 1.
+
+07:06.720 --> 07:10.300
+Then we have to pair 1 0 and 1 1 to those four pairs.
+
+07:10.770 --> 07:15.690
+But if we increase and to three all of a sudden we have nine pairs.
+
+07:15.930 --> 07:19.940
+I won't go through them all but it increases very quickly if we increase to four.
+
+07:19.940 --> 07:21.130
+We've got 16 pairs.
+
+07:21.210 --> 07:24.980
+So I said I wouldn't do this but I added it into my console print all pairs.
+
+07:24.990 --> 07:25.900
+If we do too.
+
+07:26.060 --> 07:28.740
+There you go we get the four pairs for three.
+
+07:28.770 --> 07:30.610
+We get a lot more 9.
+
+07:30.900 --> 07:38.750
+Now if we go here and plot this print all pairs I mean you start small and do 10 1.
+
+07:38.780 --> 07:46.170
+I'm not even going to go to 100 right away let's do 50 now let's do one hundred.
+
+07:46.270 --> 07:51.980
+Two hundred and twenty hundred and fifty.
+
+07:51.990 --> 07:54.420
+All right so you can see what we're working with here.
+
+07:55.660 --> 07:58.030
+And try 200.
+
+07:58.400 --> 07:59.460
+Might take a little while.
+
+07:59.590 --> 08:00.900
+OK I'll leave it at this.
+
+08:00.910 --> 08:06.040
+This is a different overall trend a fuzzy version of the chart.
+
+08:06.040 --> 08:12.820
+We're not looking at a linear thing whereas as gross the runtime is roughly proportionate it's proportionate
+
+08:12.820 --> 08:21.800
+to and squared so as and grows larger the runtime grows even larger it grows and times and larger roughly.
+
+08:22.120 --> 08:29.290
+And just to show you this if I increase this to 300 it's going to take a lot lot longer and I think
+
+08:29.290 --> 08:34.510
+I was playing around a 500 earlier and that was about as much as my computer browser wanted to do at
+
+08:34.510 --> 08:35.140
+the time.
+
+08:35.290 --> 08:36.130
+Oh dear.
+
+08:36.510 --> 08:37.110
+OK.
+
+08:37.470 --> 08:37.870
+There you go.
+
+08:37.870 --> 08:41.410
+You can see that this is what used to look very steep.
+
+08:41.410 --> 08:44.540
+Now that we've added it in five hundred It doesn't look so bad.
+
+08:44.560 --> 08:48.550
+And now it looks really steep which is the exponential curve.
+
+08:48.550 --> 08:54.700
+Remember that it's just a generalized way for talking about how efficient an algorithm is as an input
+
+08:54.750 --> 08:55.810
+and grows.
+
+08:55.930 --> 08:58.920
+How does that change to reflect in the runtime.
+
+08:59.350 --> 09:00.960
+So we've seen a couple of options.
+
+09:01.120 --> 09:09.100
+We saw up to first which was basically big-O of n as and grew the output the runtime grew relative to
+
+09:09.100 --> 09:09.660
+end.
+
+09:09.820 --> 09:14.350
+Then we had up to second add up second which was constant.
+
+09:14.350 --> 09:20.440
+It always took roughly the same amount of time than we had count up and down where it was the same as
+
+09:20.440 --> 09:26.440
+add up to first if and gross if it triples than our runtime is roughly going to triple.
+
+09:26.620 --> 09:33.220
+And then finally we saw print all pairs which was our first quadratic and 0 of end squared where as
+
+09:33.250 --> 09:37.960
+an increases the runtime increases roughly at a rate of end squared.
+
+09:37.960 --> 09:42.180
+So I'm hoping I didn't lose you there if I did.
+
+09:42.370 --> 09:44.650
+Well we have some exercises after this.
+
+09:44.680 --> 09:47.110
+Hopefully it will help out a little bit.
+
+09:47.170 --> 09:51.490
+I recommend that you play around with that tool but be careful because if you play in Super large numbers
+
+09:51.580 --> 09:57.250
+it will take forever and or crush your browser window and you'll have to quit that window just have
+
+09:57.250 --> 09:57.850
+a word of warning.

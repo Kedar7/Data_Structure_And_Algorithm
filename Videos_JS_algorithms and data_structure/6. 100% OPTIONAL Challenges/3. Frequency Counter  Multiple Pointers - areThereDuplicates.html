@@ -1,0 +1,44 @@
+
+for(let i=0;i<temp1.length;i++){
+	if(dateObj[temp1[i].date] == undefined)
+  {
+  	dateObj[temp1[i].date] = { };
+		for(let j=0; j < temp1[i]["band_wise_distribution"].length ;j++)
+    {
+    	if( dateObj[temp1[i].date][ temp1[i].band_wise_distribution[j]["rail_name"] ]== undefined)
+      {
+      	dateObj[temp1[i].date][ temp1[i].band_wise_distribution[j]["rail_name"]]  = {};
+       dateObj[temp1[i].date][ temp1[i].band_wise_distribution[j]["rail_name"]] ["count"] = temp1[i]["band_wise_distribution"][j]["count"];
+      }
+   	else
+    	{
+      	 dateObj[temp1[i].date][ temp1[i].band_wise_distribution[j]["rail_name"]] ["count"] =  dateObj[temp1[i].date][ temp1[i].band_wise_distribution[j]["rail_name"]] ["count"] + temp1[i]["band_wise_distribution"][j]["count"];
+      }
+    
+    }
+  }
+  else
+  {
+		for(let j=0; j < temp1[i]["band_wise_distribution"].length ;j++)
+    {
+    	if( dateObj[temp1[i].date][ temp1[i].band_wise_distribution[j]["rail_name"] ]== undefined)
+      {
+      	dateObj[temp1[i].date][ temp1[i].band_wise_distribution[j]["rail_name"]]  = {};
+       dateObj[temp1[i].date][ temp1[i].band_wise_distribution[j]["rail_name"]] ["count"] = temp1[i]["band_wise_distribution"][j]["count"];
+      }
+   	else
+    	{
+      	 dateObj[temp1[i].date][ temp1[i].band_wise_distribution[j]["rail_name"]] ["count"] =  dateObj[temp1[i].date][ temp1[i].band_wise_distribution[j]["rail_name"]] ["count"] + temp1[i]["band_wise_distribution"][j]["count"];
+      }
+    
+    }
+  }
+}
+
+for(let i =0;i<temp2.date_wise_counts.length;i++)
+{
+	if(dateObj[ temp2.date_wise_counts[i].date] != undefined )
+	{
+		
+	}
+}

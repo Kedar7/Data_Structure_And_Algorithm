@@ -1,0 +1,271 @@
+WEBVTT
+
+00:00.270 --> 00:01.260
+Hey welcome back.
+
+00:01.260 --> 00:06.040
+So here's a second problem we can solve using the multiple pointers are the two pointers.
+
+00:06.450 --> 00:07.330
+It's a bit different.
+
+00:07.410 --> 00:11.260
+As I already mentioned because we're not working from the beginning and the end towards the middle.
+
+00:11.490 --> 00:13.960
+But we still have two pointers and that's really all that matters.
+
+00:14.070 --> 00:17.830
+2.0 is moving some direction based off of a condition.
+
+00:18.000 --> 00:21.630
+So the function you need to implement is called to count unique values.
+
+00:22.080 --> 00:29.100
+And it should accept a sorted array again and it returns the count of unique values in that array and
+
+00:29.100 --> 00:30.850
+it can have negative numbers in there.
+
+00:30.960 --> 00:32.590
+But it will always be sorted.
+
+00:32.610 --> 00:38.270
+So in this case it should return two because there's only two unique numbers 1 and 2.
+
+00:38.340 --> 00:44.590
+In this case it should return 7 because we've got 1 2 3 4 5 6 7.
+
+00:44.730 --> 00:49.020
+As far as the unique numbers empty we have 0 unique values.
+
+00:49.020 --> 00:53.240
+Here we have four unique values negative to negative 1 0 and 1.
+
+00:53.310 --> 00:55.460
+So you can use two pointers to help you out here.
+
+00:55.560 --> 01:00.860
+If you do want to try this on your own it's not a direct copy or a clone of the previous solution.
+
+01:00.960 --> 01:03.540
+It is a little different but we still have two pointers.
+
+01:03.540 --> 01:05.450
+So here is if you want to just try it.
+
+01:05.490 --> 01:08.840
+Totally blank slate with zero pointers and zero help.
+
+01:08.850 --> 01:10.820
+I mean zero hints.
+
+01:10.860 --> 01:11.190
+Go ahead.
+
+01:11.190 --> 01:12.540
+Pause a video and just started.
+
+01:12.680 --> 01:16.830
+There's an exercise after this video if you want to try it and I'll have a solution after that.
+
+01:16.920 --> 01:21.240
+But if you do want some some advice some hints pointers Here's how I would do it.
+
+01:21.240 --> 01:23.460
+This is sort of the intended approach.
+
+01:23.460 --> 01:24.470
+Start a pointer.
+
+01:24.480 --> 01:27.360
+Let's do this example start a pointer here.
+
+01:27.510 --> 01:29.980
+And then another one here and basically compare the two.
+
+01:30.120 --> 01:31.420
+Well these aren't equal.
+
+01:31.590 --> 01:36.330
+So you could create a variable to count how many times they're not equal.
+
+01:36.330 --> 01:38.060
+How many times there's a different value.
+
+01:38.310 --> 01:44.450
+But the other thing you could do that's kind of nifty is huge the array itself to store the unique value
+
+01:44.460 --> 01:50.130
+so build the unique values at the beginning of the array because there is no rule that says you can't
+
+01:50.260 --> 01:52.810
+you know alter this array that's being passed in.
+
+01:52.890 --> 01:54.970
+You don't have to use a separate variable.
+
+01:55.020 --> 01:59.730
+So the solution I'm going to do will actually build up unique values at the beginning.
+
+01:59.790 --> 02:06.750
+So I end up with a 7 right here and then we'll end up with the 12 here and 13 and so are our first pointer
+
+02:06.960 --> 02:11.970
+is only going to move as far as index of six or seven items.
+
+02:11.970 --> 02:13.190
+It will move over.
+
+02:13.200 --> 02:15.170
+So let me just show you an example.
+
+02:15.210 --> 02:18.560
+So if we had this array that was passed in I would have a pointer here.
+
+02:18.780 --> 02:19.720
+Let's call it high.
+
+02:19.920 --> 02:21.350
+And another one called J.
+
+02:21.630 --> 02:22.410
+And we compare them.
+
+02:22.440 --> 02:23.730
+Well they are the same.
+
+02:23.730 --> 02:29.200
+So I'm going to move Jay forward but leave I where it is then I'm going to do it again.
+
+02:29.220 --> 02:30.650
+Compare them although still the same.
+
+02:30.660 --> 02:31.760
+So I'm going to move J.
+
+02:31.770 --> 02:34.270
+Sort of like J is like my scout leading.
+
+02:34.320 --> 02:37.920
+Leading the pack charge or whatever the expression is.
+
+02:38.010 --> 02:39.640
+And we look at two and compare it to one.
+
+02:39.660 --> 02:41.040
+Well now they are different.
+
+02:41.340 --> 02:47.720
+So then I'm going to move up here and then I'm going to put a 2 right here just like that.
+
+02:48.030 --> 02:53.070
+So now I is going to be looking at two and I'm going to move Jay forward.
+
+02:53.070 --> 02:55.870
+And now we're looking at three with three and two are different.
+
+02:56.160 --> 02:59.300
+So I'm going to move up one and put a three here.
+
+02:59.520 --> 03:02.040
+So I'm building up the unique values here.
+
+03:02.400 --> 03:07.140
+And at the end I'll have all of them at the beginning and I can just figure out how many there are based
+
+03:07.140 --> 03:09.410
+off of what index i is equal to.
+
+03:09.660 --> 03:11.020
+So I moved Jay up again.
+
+03:11.280 --> 03:12.070
+It's another three.
+
+03:12.090 --> 03:14.670
+So we don't do anything we just increase J.
+
+03:14.730 --> 03:15.870
+Now we get to 4.
+
+03:15.990 --> 03:18.940
+So I'm going to move up and put a 4 here.
+
+03:19.260 --> 03:20.900
+So now I am looking at.
+
+03:21.030 --> 03:22.890
+J goes to another four.
+
+03:23.040 --> 03:23.930
+We don't do anything.
+
+03:24.030 --> 03:25.660
+Jay goes to a five Ah.
+
+03:25.770 --> 03:27.430
+Now we have five compared to four.
+
+03:27.540 --> 03:28.560
+So we add one to J.
+
+03:28.560 --> 03:30.270
+And I put a 5 here.
+
+03:30.330 --> 03:33.110
+Now we compare five to six.
+
+03:33.480 --> 03:34.690
+Well they're different.
+
+03:34.770 --> 03:38.220
+So we put six right here and now we're done.
+
+03:38.220 --> 03:43.920
+Jay has hit the end of the array and this really only takes one pass through the array of end and we're
+
+03:43.920 --> 03:46.040
+looking at how many items are here.
+
+03:46.230 --> 03:50.100
+Well the way we would know that is by taking the current index.
+
+03:50.330 --> 03:54.130
+So I is going to be 0 1 2 3 4 5.
+
+03:54.600 --> 03:57.180
+So that's index of I we need to add one.
+
+03:57.180 --> 03:59.160
+Of course because our index starts at zero.
+
+03:59.250 --> 04:01.640
+So there's actually six unique values.
+
+04:02.010 --> 04:03.360
+And this is one way of doing it.
+
+04:03.360 --> 04:05.520
+We don't even need a separate variable.
+
+04:05.520 --> 04:09.390
+We don't need another variable to keep track of you know unique values.
+
+04:09.390 --> 04:14.280
+Now if we weren't allowed to alter the array then this might not be the best approach but it works well
+
+04:14.310 --> 04:17.220
+for this exact set of circumstances.
+
+04:17.220 --> 04:17.570
+OK.
+
+04:17.610 --> 04:21.540
+So if you want to try it using two pointers starting from the left side you can also start from the
+
+04:21.540 --> 04:27.080
+right side of course and move to the left but move from one direction to the other with two pointers.
+
+04:27.080 --> 04:29.640
+I have a solution after this well after the exercise.

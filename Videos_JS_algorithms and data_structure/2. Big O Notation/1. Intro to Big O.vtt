@@ -1,0 +1,358 @@
+WEBVTT
+
+00:00.210 --> 00:01.290
+Hey welcome back.
+
+00:01.410 --> 00:06.150
+So this is the first real section of the course and we're kicking it off as something really important
+
+00:06.210 --> 00:07.610
+thing big.
+
+00:07.620 --> 00:09.350
+It's called Big O notation.
+
+00:09.540 --> 00:16.480
+And when I say big I don't mean that it's long or difficult even it's big in significance.
+
+00:16.530 --> 00:22.170
+It's something that we basically I had no choice but to start the course off with this topic because
+
+00:22.440 --> 00:29.070
+at least if I wanted to make it a good course because it's going to come up in I don't I won't say every
+
+00:29.070 --> 00:33.600
+single video but maybe 70 percent of the videos and the rest of the course don't hold me to that but
+
+00:33.870 --> 00:36.040
+a lot of video is a significant number.
+
+00:36.150 --> 00:38.840
+We're going to refer back to what we talked about in this section.
+
+00:39.080 --> 00:42.710
+So before I even explain what it is I have a quick warning.
+
+00:42.880 --> 00:49.860
+There's a bit of math in this section and I'm warning you not to scare you away but actually to encourage
+
+00:49.860 --> 00:50.670
+you to push through it.
+
+00:50.670 --> 00:57.960
+If you do struggle with math or if you're someone who hasn't heard the word logarithm ever or in ten
+
+00:57.960 --> 01:01.460
+or 20 years that's going to come up in this section at the end.
+
+01:01.560 --> 01:05.670
+But don't panic because what we're going to do here in this section is establish a framework for talking
+
+01:05.670 --> 01:07.370
+about code and the rest of the course.
+
+01:07.710 --> 01:13.770
+And that does involve some math upfront but it means that the rest of the Course isn't going to be some
+
+01:13.770 --> 01:16.220
+of it will be mathy definitely but it's not.
+
+01:16.230 --> 01:19.120
+This is not indicative of what the rest of the Course will look like.
+
+01:19.170 --> 01:24.210
+So just push through it if I mean if you like math great if you have some problems with this section
+
+01:24.570 --> 01:29.580
+just remember that the entire course isn't like this and we're just getting it out of the way because
+
+01:29.670 --> 01:31.460
+like I said it has to come first.
+
+01:31.470 --> 01:32.490
+I don't really have a choice.
+
+01:32.610 --> 01:33.120
+OK.
+
+01:33.420 --> 01:35.360
+Sorry if I scared anybody there.
+
+01:35.610 --> 01:38.100
+Let's talk about the objectives for this section.
+
+01:38.100 --> 01:42.840
+So in this video we're going to start by just talking about the need for something like Big O notation
+
+01:43.620 --> 01:46.140
+I haven't even mentioned what it is.
+
+01:46.260 --> 01:51.060
+So we're going to get to that then we're going to describe what it is so why we care about it what it
+
+01:51.060 --> 01:57.600
+is we're going to learn to simplify Big O expressions we'll define time complexity and space complexity
+
+01:58.350 --> 02:04.290
+will evaluate time complexity and space complexity of different algorithms using Big O notation and
+
+02:04.290 --> 02:08.020
+then we'll describe what a logarithm is a bit of math at the end there.
+
+02:08.100 --> 02:13.710
+So I know it's a lot but we're going to start with this first bullet point motivate the need for something
+
+02:13.710 --> 02:15.180
+like Big-O notation.
+
+02:15.330 --> 02:16.560
+So what is the idea here.
+
+02:16.740 --> 02:23.280
+Well this course is about algorithms it's about solving challenges it's about computer science and data
+
+02:23.280 --> 02:24.060
+structures.
+
+02:24.060 --> 02:30.060
+But for every topic in this course there's 10 20 different implementations or solutions that could work
+
+02:30.450 --> 02:31.730
+probably way more.
+
+02:31.980 --> 02:33.530
+How do we know what's best.
+
+02:33.690 --> 02:36.620
+So let's scale it down a bit just to a single problem.
+
+02:36.670 --> 02:39.330
+Let's say that there are two valid solutions to a problem.
+
+02:39.420 --> 02:45.480
+They both work and they're different not just in names or variable names or something but totally different
+
+02:45.700 --> 02:48.660
+in approaches one uses a loop the other uses.
+
+02:48.690 --> 02:52.900
+I don't know a list or a string or something to accomplish the same task.
+
+02:52.920 --> 02:54.380
+How do we know which one is best.
+
+02:54.480 --> 02:56.470
+That's really what Big O is about.
+
+02:56.490 --> 03:03.300
+It's a system it's a way of generalizing code and talking about it and comparing code and its performance
+
+03:03.330 --> 03:04.740
+to other pieces of code.
+
+03:06.040 --> 03:07.650
+Ok so here is a more concrete example.
+
+03:07.660 --> 03:11.350
+Write a function that accepts a string input and returns or reversed copy.
+
+03:11.380 --> 03:15.850
+If I asked you to do this which maybe some enterprising students will do this and come up with some
+
+03:15.850 --> 03:22.240
+creative solutions off the top of my head I can come up with three ish solutions different approaches
+
+03:22.630 --> 03:24.780
+and I'm sure there are way more out there.
+
+03:24.790 --> 03:30.760
+I actually found this post on Stack Overflow that has 10 different implementations and Javascript and
+
+03:30.760 --> 03:31.600
+they're all different.
+
+03:31.600 --> 03:34.120
+Like I said it's not just a different variable name.
+
+03:34.120 --> 03:36.600
+It's not just switching a for loop for a while loop.
+
+03:36.760 --> 03:38.410
+There are different approaches.
+
+03:38.410 --> 03:40.530
+How do we know if all these work.
+
+03:40.590 --> 03:43.830
+And here's one using a for loop and an array.
+
+03:43.840 --> 03:48.850
+Here's one that uses no loops and it's no arrays it's all actually just or is an array and there at
+
+03:48.850 --> 03:50.850
+one point but it's all built in methods.
+
+03:51.250 --> 03:52.880
+How do we know which one is best.
+
+03:53.170 --> 03:54.360
+Well we'll get there.
+
+03:54.670 --> 04:01.030
+But wouldn't it be nice if there was sort of a system for classifying code or for comparing it which
+
+04:01.030 --> 04:07.300
+I've already spoiled it and said that's a big O sort of is it sort of like if we're talking about earthquakes.
+
+04:07.330 --> 04:13.480
+This was a seismology 101 class very early on I would start off by talking about the Richter scale because
+
+04:13.480 --> 04:17.970
+then that allows us to talk about earthquakes and compare them to one another.
+
+04:18.070 --> 04:21.640
+So that instead of just saying oh there's a big earthquake and then a bigger one over there.
+
+04:21.730 --> 04:26.320
+We can say there is a 7.5 and then a 9.2 over there.
+
+04:26.320 --> 04:28.580
+And that puts things into context.
+
+04:28.690 --> 04:35.440
+That's kind of not a great analogy but the idea is that we can assign labels generalized labels to our
+
+04:35.440 --> 04:36.120
+code.
+
+04:36.190 --> 04:43.930
+So instead of saying something like great or are awful for our code we can have a numeric representation
+
+04:44.230 --> 04:45.810
+of the performance of code.
+
+04:45.820 --> 04:49.800
+So that's what big-O is going to give us rather than colors and text like.
+
+04:49.810 --> 04:50.510
+Great.
+
+04:50.740 --> 04:52.610
+It's going to look a little bit different.
+
+04:52.630 --> 04:55.560
+It might look a little mathy but it's actually pretty straightforward.
+
+04:55.570 --> 05:00.220
+Once you get past the first hurdle of it looking very foreign and weird.
+
+05:00.220 --> 05:05.740
+So one last point I want to make some of you might be wondering if I asked you to write a function that
+
+05:05.740 --> 05:07.960
+reverse a string and you get it to work.
+
+05:08.060 --> 05:10.680
+It doesn't it only matters that you get it to work.
+
+05:10.720 --> 05:14.900
+Why does it matter what's best the solution you come up with is the best.
+
+05:14.920 --> 05:21.790
+And in some ways I think that depending on your project and the context that's true the best solution
+
+05:21.790 --> 05:23.560
+is the one that you can get to work.
+
+05:23.620 --> 05:30.310
+But when we're talking about things like interviewing technical interview code challenges or working
+
+05:30.310 --> 05:35.500
+at a large company where you're working with a huge data set let's say hundreds of millions of pieces
+
+05:35.500 --> 05:42.550
+of data where one algorithm implementation could save an hour every time it runs compared to another
+
+05:42.550 --> 05:43.610
+implementation.
+
+05:43.630 --> 05:49.660
+Performance matters at that point and there is an actual best algorithm or best solution.
+
+05:50.020 --> 05:53.970
+So it's important to have a precise vocabulary to talk about how our code performs.
+
+05:53.970 --> 05:58.990
+So even if you're content with your solution to something it's helpful to be able to understand how
+
+05:58.990 --> 06:01.830
+it compares how it performs compared to others.
+
+06:02.570 --> 06:08.030
+It's also good for discussing tradeoffs between different approaches because often it's not as cut and
+
+06:08.030 --> 06:13.310
+dry as I made it seem it's not that one solution is always great and the other one is always terrible.
+
+06:13.310 --> 06:18.050
+Sometimes one solution might be great at handling really large data sets of pieces of data.
+
+06:18.140 --> 06:23.230
+Another one might always be very consistent in the time that it takes but it might take more time up
+
+06:23.230 --> 06:23.740
+front.
+
+06:23.840 --> 06:25.640
+There's tradeoffs so it's not always just.
+
+06:25.640 --> 06:30.910
+This is the best Also if you're trying to debug your code.
+
+06:31.010 --> 06:36.360
+It helps to understand things that are slowing it down not just looking for errors.
+
+06:36.470 --> 06:40.280
+Well let's say that your code is working but for some reason it's taking a lot longer than you expect.
+
+06:40.430 --> 06:45.680
+Or your computer is lagging and freaking out in the browser when you execute some function.
+
+06:45.710 --> 06:50.600
+It helps if you understand some of the things we're going to talk about in this section and Big O notation
+
+06:51.170 --> 06:54.680
+you can actually pinpoint where some problems might arise.
+
+06:54.680 --> 07:01.610
+So it helps us identify inefficient points and then finally you should care because it comes up in interviews
+
+07:01.640 --> 07:08.300
+a lot a lot of times an interviewer will say something like tell me the big O of this algorithm or this
+
+07:08.540 --> 07:13.610
+function that you've written or here's three functions what's the big show that will make sense in a
+
+07:13.610 --> 07:18.740
+bit but it's important just to know for interviews I said it's less important because hopefully you're
+
+07:18.740 --> 07:23.150
+learning it to actually understand things and to help you understand your code better and talk about
+
+07:23.150 --> 07:27.640
+your code better rather than just directly trying to master it for an interview.
+
+07:27.680 --> 07:30.990
+But interviews are important so no judgment there either.
+
+07:31.130 --> 07:34.270
+So I'm going to leave this video off here and try to keep things more compact.
+
+07:34.280 --> 07:35.920
+I don't want any rambling videos.
+
+07:36.080 --> 07:41.270
+And the next video we're going to pick up with a real example some code and start to analyze how efficient
+
+07:41.270 --> 07:41.570
+it is.

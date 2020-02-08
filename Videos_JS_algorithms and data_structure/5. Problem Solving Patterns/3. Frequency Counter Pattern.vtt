@@ -1,0 +1,742 @@
+WEBVTT
+
+00:00.210 --> 00:01.090
+Welcome back.
+
+00:01.110 --> 00:02.980
+So the first pattern we'll take a look at.
+
+00:03.090 --> 00:05.880
+It's not really called frequency counters.
+
+00:05.880 --> 00:10.650
+I don't think it's actually called anything officially but that's the name I'm using because the idea
+
+00:10.650 --> 00:18.330
+behind it is that we use an object usually in javascript to basically collect a bunch of values and
+
+00:18.330 --> 00:19.410
+their frequencies.
+
+00:19.470 --> 00:25.110
+So this is useful and and in algorithms and challenges when you have multiple pieces of data multiple
+
+00:25.140 --> 00:31.200
+inputs you need to compare them to see if they consist of similar values.
+
+00:31.200 --> 00:37.470
+If they are anagrams of one another if a value is contained inside of another value anytime you're comparing
+
+00:37.770 --> 00:43.570
+pieces of data to inputs or more than two and frequencies of certain things occur.
+
+00:43.590 --> 00:48.480
+And I know that sounds really wishy washy and not that useful but I'll show you a couple of examples.
+
+00:48.510 --> 00:55.230
+So what makes this a good approach or a nice pattern is that it's usually over and time compared to
+
+00:55.530 --> 01:00.960
+the easier solution which often involves nested loops which is going to give us of and squared quadratic
+
+01:00.960 --> 01:01.570
+time.
+
+01:01.890 --> 01:05.930
+So let me show you an example problem because this probably doesn't make much sense yet.
+
+01:06.440 --> 01:08.010
+OK so here's a challenge.
+
+01:08.010 --> 01:14.520
+Write a function called same which accepts two arrays and the function should return true if every value
+
+01:14.760 --> 01:17.190
+in the array has its corresponding value squared.
+
+01:17.190 --> 01:18.180
+In the second array.
+
+01:18.300 --> 01:24.600
+So in the first array there's a bunch of values and we want to know if the second array has the exact
+
+01:24.600 --> 01:27.690
+same values but squared but the order doesn't matter.
+
+01:27.750 --> 01:30.390
+So it doesn't have to be identical just squared.
+
+01:30.390 --> 01:34.600
+That could be mixed up but the frequency of Malco values must be the same.
+
+01:34.650 --> 01:35.930
+So here's an example.
+
+01:36.060 --> 01:40.470
+1 2 and 3 and 4 1 and 9 should return true.
+
+01:40.770 --> 01:46.960
+So 1 squared that's in here two squared is in here four and three squared is in here nine.
+
+01:47.040 --> 01:49.370
+But the order is mixed up and that's ok.
+
+01:50.010 --> 01:51.750
+However something like this.
+
+01:51.870 --> 01:52.950
+Let's look at the second one.
+
+01:52.950 --> 01:53.690
+One two three.
+
+01:53.700 --> 02:05.400
+Comma 1 9 is false because it doesn't include two squared which is 4 1 2 1 and 4 4 1 is also false because
+
+02:05.400 --> 02:07.540
+the frequency needs to be the same.
+
+02:07.680 --> 02:15.180
+So just because one squared is in disarray and two squared is in disarray doesn't mean that the frequency
+
+02:15.180 --> 02:15.930
+is the same.
+
+02:15.960 --> 02:21.790
+So we need to have one in here two times because we have one and another one.
+
+02:21.960 --> 02:26.080
+We need to have four in here one time because that's what we have over here right.
+
+02:26.100 --> 02:27.300
+Two is in here once.
+
+02:27.450 --> 02:28.490
+So the frequency matters.
+
+02:28.500 --> 02:31.460
+It's not just checking if there is a one.
+
+02:31.500 --> 02:36.080
+If there is a 4 if there is a 9 it's making sure there's the correct number.
+
+02:36.090 --> 02:42.330
+So if you want to try this go ahead and posit you don't have to try with this frequency counter pattern
+
+02:42.330 --> 02:44.180
+which we haven't really introduced.
+
+02:44.250 --> 02:47.930
+But if you want to you could try that or come up with a nested loops solution.
+
+02:48.030 --> 02:55.800
+But here is what I'm I don't like calling solutions naive because they're often not that easy to come
+
+02:55.800 --> 02:58.250
+up with even when they're labeled as naive naive.
+
+02:58.290 --> 03:02.700
+More so just means not the best possible solution in this case.
+
+03:02.700 --> 03:07.020
+So here's a naive solution where we use nested loops.
+
+03:07.020 --> 03:13.160
+Technically we're only writing one loop but then we're using index of which is itself looping.
+
+03:13.350 --> 03:19.130
+So I'm going to hop over and demonstrate how this works first just to make sure we're clear on it.
+
+03:19.140 --> 03:21.060
+So the idea is we have two arrays.
+
+03:21.150 --> 03:23.640
+Let's say I call it with 1 2 3.
+
+03:24.120 --> 03:27.290
+And then my next array will look like.
+
+03:27.690 --> 03:33.300
+Let's go with 9 4 9 1 4 like this.
+
+03:33.690 --> 03:34.280
+OK.
+
+03:34.500 --> 03:39.050
+And let's actually add another two in there and another four.
+
+03:39.120 --> 03:42.030
+So this should return true because we have 1 squared.
+
+03:42.030 --> 03:43.620
+We have two squared.
+
+03:43.620 --> 03:47.050
+We have three squared and we have another two squared four.
+
+03:47.370 --> 03:47.890
+OK.
+
+03:48.090 --> 03:52.410
+So the approach here the very first thing we can do to check a nice little edge case or it's not even
+
+03:52.410 --> 03:58.230
+an edge case just we can tell immediately if the two arrays have different lengths then we're done.
+
+03:58.260 --> 04:04.460
+There's no way for it to be true if there's an extra value in here that isn't over here or vice versa.
+
+04:04.860 --> 04:06.420
+So we return false.
+
+04:06.420 --> 04:07.450
+That part's easy.
+
+04:07.480 --> 04:11.130
+That's a nice short circuit but here what we're going to do.
+
+04:11.320 --> 04:14.120
+Not sure right out of that return true.
+
+04:14.190 --> 04:18.500
+We're going to loop over this first array or we could look over the second one instead.
+
+04:18.780 --> 04:24.590
+And we're going to call index of where we pass in the square of each value.
+
+04:24.690 --> 04:26.540
+So we loop over this array.
+
+04:26.550 --> 04:30.560
+We start at 1 and 1 is a silly example because one square just one.
+
+04:30.630 --> 04:36.480
+But we're going to ask what is the index of 1 squared in array 2.
+
+04:36.480 --> 04:41.010
+So in our case if we take one what's the index of 1 squared in this array.
+
+04:41.020 --> 04:43.260
+It's this index right here which is index of 1.
+
+04:43.320 --> 04:44.300
+It's very confusing.
+
+04:44.310 --> 04:45.380
+A lot of ones.
+
+04:45.690 --> 04:52.340
+And then what we do we check if the correct index is negative one meaning it's not in there.
+
+04:52.500 --> 04:59.940
+We return false and we're done because if we had something in here like five and we're trying to see
+
+05:00.270 --> 05:07.350
+what index in array to contain 25 five square it while nothing does it returns negative one that means
+
+05:07.350 --> 05:08.930
+that we have a mismatch and we're done.
+
+05:09.330 --> 05:16.680
+But in the case of one if it is a match and it is right here then we're going to call a rate to splice
+
+05:17.160 --> 05:23.190
+that correct index comma 1 and that effectively what that does is it removes one from this array.
+
+05:23.700 --> 05:27.690
+So then we move on to two and then we're going to look at two squared.
+
+05:27.690 --> 05:30.480
+What's the index of two squared in this array.
+
+05:30.720 --> 05:33.350
+Well there's two of them just gives us the first one.
+
+05:33.450 --> 05:36.300
+So it's going to turn this index.
+
+05:36.330 --> 05:38.030
+So this is not true right here.
+
+05:38.040 --> 05:39.450
+We don't return false.
+
+05:39.450 --> 05:40.200
+We keep going.
+
+05:40.200 --> 05:46.300
+We live another day another loop iteration and we remove it from the array using splice and then we
+
+05:46.300 --> 05:48.140
+look at three squared and it's in there.
+
+05:48.150 --> 05:55.210
+So we remove it then we get to the end of the array and we look at to what is the index of 2 squared.
+
+05:55.290 --> 05:56.420
+Well that's four.
+
+05:56.910 --> 05:58.020
+That's it.
+
+05:58.020 --> 05:58.620
+We remove it.
+
+05:58.620 --> 06:01.740
+We hit the end of the array and we never return to false.
+
+06:01.740 --> 06:03.060
+So we return true.
+
+06:03.120 --> 06:05.570
+So you don't have to do this solution with index of.
+
+06:05.580 --> 06:11.360
+You could manually iterate over the entire array yourself which is basically what index does.
+
+06:11.550 --> 06:18.090
+So we have one loop and then a second for loop that loops over me commands a couple times that loops
+
+06:18.090 --> 06:22.660
+over this array and looks for one squared is just one squared is this one squared.
+
+06:22.680 --> 06:23.020
+Yup.
+
+06:23.070 --> 06:23.620
+OK.
+
+06:23.850 --> 06:29.700
+Now we look at two and we loop over the entire array but we would need to still splice or we needed
+
+06:29.700 --> 06:36.370
+a way to remember how many times we've already encountered this for so we can also apply this for this.
+
+06:36.390 --> 06:39.840
+We need to make sure that there's the same frequency of values.
+
+06:40.140 --> 06:43.720
+Anyway just to show you how it works as we go through.
+
+06:43.830 --> 06:46.250
+Why not just do that log array 2.
+
+06:46.380 --> 06:48.470
+So you can see it shrink as we go.
+
+06:48.720 --> 06:54.060
+And then here I'll call same on those two and let's execute it.
+
+06:54.060 --> 06:56.960
+And you can see the first time through looks like this.
+
+06:57.210 --> 07:00.240
+And then we're looking for a one so we remove one.
+
+07:00.540 --> 07:02.400
+And now a re two looks like this.
+
+07:02.400 --> 07:07.000
+Next time through we're looking for two squared so we remove four and we have this.
+
+07:07.080 --> 07:09.410
+Next time we're looking for three squared which is nine.
+
+07:09.450 --> 07:10.260
+We remove it.
+
+07:10.260 --> 07:15.130
+We end up with this and then next time through we look for two squared and then we're done.
+
+07:15.270 --> 07:18.120
+We hit the end of the loop and we return true.
+
+07:18.660 --> 07:19.070
+OK.
+
+07:19.260 --> 07:24.630
+So that's the naive approach because it is of and squared it's quadratic time.
+
+07:24.690 --> 07:30.330
+This index of iterating over the entire array or potentially iterating over the entire array which is
+
+07:30.390 --> 07:31.260
+a nested loop.
+
+07:31.320 --> 07:38.520
+So as an grows the length of our arrays this grows as does this and it's nested so that the quadratic
+
+07:38.520 --> 07:39.510
+relationship.
+
+07:39.660 --> 07:43.380
+We always want to try and avoid nested loops whenever possible.
+
+07:43.380 --> 07:46.300
+So this is where the frequency counter pattern comes in.
+
+07:46.620 --> 07:53.640
+Instead of looping over the first array and then checking for each value in a subgroup over the second
+
+07:53.640 --> 07:59.550
+array we can loop over each array one time individually which is what I'm doing here.
+
+07:59.550 --> 08:01.630
+So here's one loop Here's another loop.
+
+08:01.680 --> 08:07.590
+Remember that two loops is vastly better than two nested loops.
+
+08:07.650 --> 08:09.310
+Two separate loops.
+
+08:09.330 --> 08:14.440
+This is going to be you know to n if and is a thousand characters or a thousand elements.
+
+08:14.550 --> 08:21.210
+This means two thousand iterations but if we have 1000 on the outer loop and then 1000 times on the
+
+08:21.210 --> 08:28.880
+inner loop we're looking at 1000 times 1000 which is a million compared to what we say 2000 anyway.
+
+08:29.070 --> 08:34.120
+So I won't make you you know study this in the browser here or in the slides.
+
+08:34.110 --> 08:35.820
+I'll show it to you and show you how it works.
+
+08:35.820 --> 08:36.730
+But it is over.
+
+08:36.750 --> 08:40.340
+And so it's linear time much better than if and squared.
+
+08:40.530 --> 08:40.830
+All right.
+
+08:40.830 --> 08:47.850
+So here it is pasted my same my same line that already says same.
+
+08:47.850 --> 08:48.930
+Very confusing.
+
+08:49.290 --> 08:51.770
+And let's step through the basic idea here.
+
+08:51.810 --> 08:57.660
+So we use an object and there's actually two objects and each one is going to create.
+
+08:57.840 --> 09:02.170
+It's going to count the frequency of individual values in the arrays.
+
+09:02.340 --> 09:05.790
+So we'll end up with two objects at the end.
+
+09:06.000 --> 09:08.270
+Let me just print them out so you can see that.
+
+09:08.330 --> 09:10.680
+So that log frequency counter 1.
+
+09:10.740 --> 09:18.270
+So that applies to our first array and then cancel that log frequency counter 2 and also start by running
+
+09:18.270 --> 09:20.480
+this code so you can see what we end up with.
+
+09:20.520 --> 09:22.500
+This is the so we get true.
+
+09:22.530 --> 09:28.360
+That's our return value because these two are the same according to what we should return true.
+
+09:28.380 --> 09:34.680
+That's what we want but if we look at these objects that were generated we end up with each object has
+
+09:34.860 --> 09:37.110
+a value or a key like one.
+
+09:37.230 --> 09:43.080
+And then it tells us the number of times that occurs in that list then we get to the number of times
+
+09:43.080 --> 09:48.400
+2 is in that list to look at the number of times three is in that list 1.
+
+09:48.480 --> 09:48.870
+Right.
+
+09:48.880 --> 09:54.510
+If we look at this we're compiling an object that just tells us how many times each value is in that
+
+09:54.930 --> 09:55.480
+array.
+
+09:55.800 --> 09:58.830
+And then same thing down here except we're doing it for the second array.
+
+09:59.180 --> 10:03.020
+So we say there is one nine there are two fours.
+
+10:03.060 --> 10:04.700
+There is one one.
+
+10:05.370 --> 10:11.750
+Then the magic is so constructing this only is one iteration over each array to make this.
+
+10:11.750 --> 10:18.650
+It's not that hard but then the magic part is that we then just do one more loop and we loop over either
+
+10:18.650 --> 10:19.010
+one.
+
+10:19.010 --> 10:23.330
+You could do it either direction but we loop over the first object here.
+
+10:23.660 --> 10:27.050
+And for each thing we take a look at one is.
+
+10:27.080 --> 10:28.880
+It's a simple example I shouldn't use that one.
+
+10:28.880 --> 10:29.880
+Let's take a look at two.
+
+10:29.970 --> 10:34.250
+We look at two and we see that it exists or it occurs two times.
+
+10:34.250 --> 10:38.680
+So that tells us that we need to have 4 occur two times.
+
+10:38.750 --> 10:44.960
+And our other object or we look at three it occurs one time in our main first object the first array.
+
+10:44.990 --> 10:50.450
+So that tells us nine needs to occur one time three squares three times three is nine in the second
+
+10:50.450 --> 10:50.940
+array.
+
+10:51.140 --> 10:52.820
+So that's what this logic is doing here.
+
+10:52.970 --> 10:57.400
+So to help me illustrate this I've updated this I've added a 5 and an 11.
+
+10:57.590 --> 11:04.040
+So these are the same length but they're not the same as far as our criteria because this 5 does not
+
+11:04.040 --> 11:06.020
+have a 25 corresponding to it.
+
+11:06.020 --> 11:07.020
+And we have an 11.
+
+11:07.040 --> 11:10.100
+We don't have whatever the square root of 11 is in here.
+
+11:10.330 --> 11:10.570
+OK.
+
+11:10.580 --> 11:17.000
+So if I execute this now I also move my counsel that logs up so that we can see them because I had them
+
+11:17.000 --> 11:20.680
+down here and we were returning false and we wouldn't see them printed out anyway.
+
+11:20.690 --> 11:26.040
+What's happening now is that we're looping over this first frequency counter object.
+
+11:26.060 --> 11:29.710
+This thing that we constructed constructing it was relatively simple.
+
+11:29.710 --> 11:31.100
+Hopefully that part makes sense.
+
+11:31.130 --> 11:34.980
+We start with an empty object and then we just loop over every value in the array.
+
+11:35.130 --> 11:35.980
+Could use a for loop.
+
+11:35.980 --> 11:40.970
+I like using a form of if you're not familiar with the four of syntax it's just a nice way of flipping
+
+11:40.970 --> 11:43.450
+over like an array or a string.
+
+11:43.700 --> 11:48.460
+We just make a placeholder variable like vowel and that corresponds to each element in the array.
+
+11:48.530 --> 11:55.000
+So for each vowel in array one we're going to add one to the frequency counter if it's already in there
+
+11:55.430 --> 11:57.730
+or we're going to initialize it to 1.
+
+11:57.860 --> 12:02.900
+So we end up with just this little object that tells us how many times each thing each element occurs
+
+12:02.960 --> 12:03.980
+in that list.
+
+12:04.250 --> 12:08.580
+Then we loop over this first one and we're going to look at each key.
+
+12:08.630 --> 12:11.820
+So we're going to look at one which one is boring so I'm going to skip it.
+
+12:11.840 --> 12:14.810
+We're going to look at two and we'd check is two squared.
+
+12:14.810 --> 12:16.090
+That's what this is.
+
+12:16.130 --> 12:18.720
+Is that a key in frequency count or two.
+
+12:18.860 --> 12:20.430
+So two squared is four.
+
+12:20.480 --> 12:24.780
+So is there any four in our second object and there is.
+
+12:24.890 --> 12:26.980
+So this part doesn't return false.
+
+12:27.020 --> 12:28.250
+Then we check OK.
+
+12:28.310 --> 12:30.340
+Do the values correspond.
+
+12:30.430 --> 12:34.280
+If there were two twos there needs to be two force.
+
+12:34.280 --> 12:37.260
+And if there's not if there's a mismatch we return false.
+
+12:37.310 --> 12:41.450
+So it's not just a matter of checking if there is a 4.
+
+12:41.480 --> 12:47.420
+We need to make sure there are two fours as we discussed then we keep going you know we hit three and
+
+12:47.420 --> 12:54.920
+we check is nine in the second object in Adis and do the values match one matches one then we get to
+
+12:54.950 --> 12:55.890
+five.
+
+12:56.000 --> 12:58.730
+Is there five squared which is 25.
+
+12:58.730 --> 12:59.800
+Is there a 25.
+
+12:59.810 --> 13:00.520
+No.
+
+13:00.830 --> 13:02.140
+So we return false.
+
+13:02.210 --> 13:04.410
+So hopefully you can see why this is better.
+
+13:04.580 --> 13:12.440
+At least in terms of big-O complexity as we increase the size of these arrays we're talking about how
+
+13:12.440 --> 13:18.880
+many loops here three loops over the entire size of the array whatever the largest array is.
+
+13:18.950 --> 13:24.320
+Let's just say I mean they need to be the same size in order for us to even make it to this point because
+
+13:24.320 --> 13:26.500
+if they are mismatched we quit right here.
+
+13:26.540 --> 13:28.400
+So our two arrays have to be the same size.
+
+13:28.430 --> 13:35.690
+Let's say a thousand like 30 talked about the thousand elements we have roughly 3000 iterations Here's
+
+13:35.690 --> 13:36.330
+a thousand.
+
+13:36.500 --> 13:37.380
+Here's 1000.
+
+13:37.510 --> 13:38.760
+And here's a thousand more.
+
+13:38.760 --> 13:43.360
+And remember that it's very it's very easy it's quick to access data inside of an object.
+
+13:43.370 --> 13:45.560
+Does it matter how many things are in there.
+
+13:45.560 --> 13:49.630
+It's just the way that objects work we actually talk more about this later in the course.
+
+13:49.670 --> 13:56.040
+So this is three and roughly where it's the length of the arrays and we simplify that.
+
+13:56.040 --> 13:58.690
+Just two of end complexity.
+
+13:58.760 --> 14:02.160
+Compare that to our naive approach where we have squared.
+
+14:02.450 --> 14:09.140
+So if we're talking about you know a thousand a length of 1000 for each array that's a million iterations.
+
+14:09.140 --> 14:11.350
+If we have a nested loop Yes.
+
+14:11.360 --> 14:12.580
+Again we're using index of.
+
+14:12.590 --> 14:15.980
+But we're talking about a nested loop that's the index of it's doing.
+
+14:15.990 --> 14:21.590
+It's just a shortcut so we don't have to type it all out inside of a loop that roughly a million operations
+
+14:21.590 --> 14:22.310
+worst case.
+
+14:22.310 --> 14:25.470
+So this is a lot lot worse.
+
+14:25.490 --> 14:26.670
+Why don't you put it that way.
+
+14:26.990 --> 14:32.810
+So the idea behind the frequency counter usually use an object and you use that object to construct
+
+14:33.080 --> 14:39.800
+a profile sort of a way of breaking down the contents of an array or a string.
+
+14:39.800 --> 14:46.700
+Usually some sort of linear structure like an array or a string and then you're able to quickly compare
+
+14:47.000 --> 14:50.230
+that breakdown to how another object looks.
+
+14:50.390 --> 14:52.740
+That was constructed from a string or an array.
+
+14:52.850 --> 14:54.030
+So we had two arrays.
+
+14:54.110 --> 14:59.470
+We break them down into objects that sort of classify what's in those arrays and then we can compare
+
+14:59.470 --> 15:03.140
+those objects and this allows us to improve our code significantly.
+
+15:03.160 --> 15:06.850
+So I'm going to show you another example coming up that has to do with anagrams.
+
+15:06.850 --> 15:11.260
+Hopefully it will help cement how this works and then we'll move on to another pattern.

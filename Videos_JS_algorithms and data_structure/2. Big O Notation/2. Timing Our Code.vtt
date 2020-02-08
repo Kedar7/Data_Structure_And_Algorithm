@@ -1,0 +1,517 @@
+WEBVTT
+
+00:00.180 --> 00:00.720
+All right.
+
+00:00.720 --> 00:05.740
+So let's take a look at a more concrete example let's compare two solutions to the same problem.
+
+00:06.390 --> 00:07.350
+All right so here's our problem.
+
+00:07.350 --> 00:12.930
+Suppose you want to write a function that calculates the sum of all numbers from one up to and including
+
+00:12.930 --> 00:21.300
+some number and so if we plug 3 in we should get one plus two plus three which has six the most common
+
+00:21.420 --> 00:23.670
+are the easiest to come up with solution.
+
+00:23.700 --> 00:30.510
+This is the one that comes to my mind first is to basically create a total variable accumulator and
+
+00:30.540 --> 00:34.870
+loop through all those numbers and add them in one at a time starting at 1.
+
+00:34.890 --> 00:36.090
+All the way up until now.
+
+00:36.300 --> 00:37.660
+So that's what I've done here.
+
+00:37.690 --> 00:42.620
+You have a for loop total variable starts at zero and at the end we return total.
+
+00:42.750 --> 00:51.550
+We start the loop at 1 we go up until N each time through total plus equals I actually have.
+
+00:51.580 --> 00:52.270
+There we go.
+
+00:52.320 --> 00:54.100
+I have it open as a snippet here.
+
+00:54.180 --> 00:59.280
+If you're not familiar with snippets basically it's a way for me to just rather than copy and paste
+
+00:59.280 --> 01:03.020
+code into the console and have to deal with losing it and rerunning it.
+
+01:03.030 --> 01:09.210
+And that pain in Chrome you can go to the sources tab and then there's a snippets tab you can click
+
+01:09.210 --> 01:14.160
+on and it allows you to create new snippets of a couple of them here and I'm going to use them in this
+
+01:14.160 --> 01:18.860
+course quite frequently as an easy way to save code and execute it.
+
+01:18.960 --> 01:22.590
+And just to show you how it works here's this same add up to function.
+
+01:23.130 --> 01:27.570
+And I am printing it out at the bottom the result of adding up to 6.
+
+01:27.570 --> 01:32.940
+So that should be six plus five plus four plus three plus two plus one to execute it.
+
+01:32.940 --> 01:38.900
+I can either click over here or you can see the shortcut it suggests to me on a Mac is command enter.
+
+01:39.090 --> 01:41.010
+It will say the correct shortcut on a PC.
+
+01:41.010 --> 01:42.610
+I think it's control center.
+
+01:43.050 --> 01:45.940
+So if I do that now I get 21.
+
+01:46.110 --> 01:48.250
+I did it with three hour ago.
+
+01:48.360 --> 01:49.030
+I get six.
+
+01:49.050 --> 01:53.040
+If I did it with 100 hundred I get 50 50.
+
+01:53.220 --> 01:53.420
+OK.
+
+01:53.430 --> 01:55.840
+So that's just to demonstrate that that works.
+
+01:55.920 --> 01:58.140
+Next there's a second solution.
+
+01:58.380 --> 02:02.640
+There's more than these two but these are two that I'm going to use because they illustrate my point.
+
+02:02.640 --> 02:05.570
+This one is definitely less intuitive.
+
+02:05.670 --> 02:10.620
+As you can see it's a lot shorter it's a single line which doesn't necessarily make it better but it's
+
+02:10.620 --> 02:11.250
+very different.
+
+02:11.250 --> 02:12.490
+There's no loop involved.
+
+02:12.720 --> 02:16.000
+What we're doing is it's more of a mathematical formula.
+
+02:16.320 --> 02:21.330
+We take N and we multiply it by n plus 1 divided by 2.
+
+02:21.600 --> 02:24.080
+And where this is derived from I'm not going to go into.
+
+02:24.080 --> 02:30.270
+I do have slides on it or a slide that talks about how we arrive with this formula if you want to check
+
+02:30.270 --> 02:32.480
+it out you can but it is not.
+
+02:32.700 --> 02:37.980
+It's not the focus of this video so I don't want to distract from the actual focus which is evaluating
+
+02:38.340 --> 02:43.690
+and comparing these pieces of code not actually diving into how we write them.
+
+02:43.710 --> 02:45.380
+So just to show you this one it does work.
+
+02:45.480 --> 02:47.090
+I have another snippet over here.
+
+02:47.310 --> 02:48.390
+I can run the same thing.
+
+02:48.390 --> 02:51.200
+Let's do it with six again and I'll do.
+
+02:51.210 --> 02:54.230
+Command enter to execute and I get 21.
+
+02:54.480 --> 02:56.060
+And just to walk through what happens there.
+
+02:56.150 --> 03:01.710
+So the equivalent of taking six plus one first which is going to give us seven and then we multiply
+
+03:01.710 --> 03:07.070
+that by six which gives us 42 and then we divide by 2 which gives us 21.
+
+03:07.140 --> 03:10.200
+So it does work gives us the same answer in the end.
+
+03:10.200 --> 03:11.690
+Again how it works.
+
+03:11.730 --> 03:12.970
+We'll leave that be.
+
+03:13.200 --> 03:13.500
+All right.
+
+03:13.500 --> 03:15.620
+So we established there are two working solutions.
+
+03:15.780 --> 03:17.460
+Which one is better.
+
+03:17.460 --> 03:21.540
+And of course the first thing that we could ask is What does better actually mean.
+
+03:21.540 --> 03:28.920
+Does it mean the faster code in seconds or milliseconds does it mean the code that's fastest when we're
+
+03:29.010 --> 03:31.480
+adding a small number versus a large number.
+
+03:31.800 --> 03:36.370
+Let's say we want to benchmark it out when we add up all the numbers trans euro and 1 billion.
+
+03:36.390 --> 03:41.100
+Is that a good test or is it about how much memory is used.
+
+03:41.100 --> 03:46.290
+Is it you know the number of variables that are created that the data that is stored each time that
+
+03:46.460 --> 03:48.690
+that function is called.
+
+03:48.870 --> 03:51.390
+Or what about something like readability legibility.
+
+03:51.390 --> 03:52.440
+How important is that.
+
+03:52.440 --> 03:57.670
+Is that better or brevity that's not on here but a lot of people care about that.
+
+03:57.690 --> 04:02.550
+They like to minimize the length the number of characters used in their programming.
+
+04:02.670 --> 04:05.650
+Not my style personally but definitely valid.
+
+04:05.670 --> 04:10.040
+All of these are valid concerns and it really comes down to the situation.
+
+04:10.350 --> 04:16.320
+But I think most people would agree that the first two especially for now we're going to focus on speed
+
+04:16.320 --> 04:23.010
+will come back to memory usage a bit but these too often can be more important than something like readability.
+
+04:23.400 --> 04:27.840
+And unfortunately they often come at the expense of readability and that's sort of the balancing act
+
+04:27.840 --> 04:33.780
+of of writing good code is writing efficient code that doesn't use up you know a ton of memory but also
+
+04:33.780 --> 04:37.050
+is still readable and doesn't look like complete jibberish.
+
+04:37.050 --> 04:41.510
+So we're going to talk about basically all of these play together throughout the entire course.
+
+04:41.520 --> 04:48.270
+It will be a recurring theme but we're going to focus on evaluating speed how long code takes to execute
+
+04:48.690 --> 04:49.390
+a target to start.
+
+04:49.400 --> 04:50.410
+So how do we do that.
+
+04:50.640 --> 04:56.610
+Well the simplest way would be to use something like a built in timing functions something like this
+
+04:57.420 --> 05:04.470
+where we have our first add up to and then I use a function called method called performance now which
+
+05:04.470 --> 05:09.630
+in the browser is just going to tell me the number of milliseconds since the document was created.
+
+05:09.630 --> 05:13.430
+Basically since they open the window and then so I'm going to save that to a variable.
+
+05:13.440 --> 05:18.840
+Before I call add up to then I'm going to call add up to with what did I do.
+
+05:18.840 --> 05:19.980
+It's a billion.
+
+05:19.980 --> 05:21.050
+I think it's a billion.
+
+05:21.120 --> 05:22.830
+So I'm going to call with a large number.
+
+05:23.130 --> 05:26.580
+And then after that finishes I'm going to check performance out.
+
+05:26.590 --> 05:31.470
+Now again which should have incremented a bunch of milliseconds most likely.
+
+05:31.500 --> 05:32.710
+So I have two numbers.
+
+05:32.820 --> 05:39.450
+Then I just subtract them first or the second time minus the first time and I divide it by 1000 because
+
+05:39.480 --> 05:40.360
+it's in milliseconds.
+
+05:40.380 --> 05:41.860
+And I want to work in seconds.
+
+05:42.030 --> 05:43.420
+We don't have to do that last part.
+
+05:43.530 --> 05:44.570
+And I printed out.
+
+05:44.850 --> 05:45.740
+So this should work.
+
+05:45.780 --> 05:48.310
+And I actually have a snippet right here.
+
+05:48.420 --> 05:49.330
+Same thing.
+
+05:49.470 --> 05:52.690
+So add up to our same one from before.
+
+05:52.920 --> 05:57.400
+And we're calling it with 1 billion and we're going to print out how long elapsed.
+
+05:57.400 --> 05:59.680
+Let me clear my console first and I'm going.
+
+05:59.680 --> 06:00.780
+Executed.
+
+06:01.940 --> 06:06.410
+There we go one point to 5 7 5 so one seconds.
+
+06:06.600 --> 06:07.610
+Let me do it one more time.
+
+06:09.160 --> 06:12.120
+What you actually see I don't think executed.
+
+06:12.120 --> 06:12.780
+There we go.
+
+06:12.930 --> 06:13.860
+Is that it varies.
+
+06:13.890 --> 06:16.650
+So it changes even on my own computer.
+
+06:16.710 --> 06:19.080
+Nothing really has changed.
+
+06:19.290 --> 06:22.850
+I haven't added code I haven't changed the numbers here.
+
+06:23.040 --> 06:27.030
+It's the exact same code but we're getting a different output.
+
+06:27.030 --> 06:27.590
+Before I forget.
+
+06:27.600 --> 06:30.430
+Let's go over to the second solution.
+
+06:30.930 --> 06:35.390
+So the exact same number let me just make sure I didn't leave off or add is zero.
+
+06:35.430 --> 06:39.200
+Yes they are the same and I'm doing the same thing taking performance.
+
+06:39.210 --> 06:42.450
+Now the beginning and performance start now at the end.
+
+06:42.570 --> 06:44.710
+You say should show what that looks like.
+
+06:44.790 --> 06:50.880
+You can see that kind of a large number at this point because I've had this open for a number of minutes
+
+06:50.880 --> 06:54.330
+if I refresh the page though I just did.
+
+06:54.360 --> 06:58.030
+Now it's at 2000 milliseconds which is two seconds.
+
+06:58.200 --> 07:01.680
+Now if I did it again we're at six point six seconds.
+
+07:01.920 --> 07:05.620
+And if we subtract the two you know four seconds roughly in between.
+
+07:05.620 --> 07:07.900
+Anyway we're doing the same thing here.
+
+07:08.220 --> 07:08.720
+OK.
+
+07:08.880 --> 07:16.890
+So now if I run this you can see we get a way smaller number but it's still actually I guess it doesn't
+
+07:16.890 --> 07:19.160
+look like it's changing here is it.
+
+07:19.370 --> 07:23.420
+Then the measurements the differences are too small not really to capture.
+
+07:23.490 --> 07:27.580
+But my point is that this is significantly shorter in duration.
+
+07:27.580 --> 07:30.590
+But the same data as this one.
+
+07:30.590 --> 07:36.000
+Here we go at one point two four seconds compared to basically zero seconds.
+
+07:36.000 --> 07:39.260
+So that seems like a good sign for this solution.
+
+07:39.270 --> 07:42.310
+It seems like it's much more efficient and that's great.
+
+07:42.480 --> 07:50.490
+But this process is not the most reliable of manually timing things like this before and after and comparing
+
+07:50.490 --> 07:53.990
+it to the other function and it's not that easy for us to talk about.
+
+07:54.000 --> 07:59.130
+How would I actually write down how would I give it a label of how efficient this one is compared to
+
+07:59.130 --> 07:59.830
+this one.
+
+07:59.840 --> 08:03.460
+Is it based off of the percentage of speed.
+
+08:03.650 --> 08:09.210
+Is it do I subtract the number of seconds or milliseconds it gets a little blurry.
+
+08:09.210 --> 08:17.430
+This brings us to the problem with time which I'm reserving for my end of life memoir title problem
+
+08:17.430 --> 08:18.290
+with time.
+
+08:18.570 --> 08:21.990
+It's just a nice little sounds very deep.
+
+08:22.140 --> 08:24.770
+So the first is that different machines will record different times.
+
+08:24.780 --> 08:30.900
+So it's not reliable depending on the specifications on how much of a machine and what's currently happening
+
+08:30.900 --> 08:36.480
+on that machine what code is running the time the results you can get will be different.
+
+08:36.540 --> 08:42.090
+That doesn't really mean that we'll get the opposite results where the first solution is suddenly faster
+
+08:42.090 --> 08:43.090
+than the second one.
+
+08:43.170 --> 08:48.240
+But it means that the margins can change the actual measurements could be different and are almost guaranteed
+
+08:48.240 --> 08:49.820
+to be different times.
+
+08:50.370 --> 08:53.760
+And as we saw this same machine will record different times.
+
+08:53.760 --> 08:56.230
+So in my browser I just did the exact same code.
+
+08:56.310 --> 09:02.490
+That first example and it differed each time by a little bit which isn't really a problem but it still
+
+09:02.490 --> 09:05.720
+shows that it's not precise and that we can't rely on that.
+
+09:05.820 --> 09:10.650
+And second of all or third of all I guess is that for fast algorithms things that are happening on a
+
+09:10.710 --> 09:15.590
+really really fast scale speed measurements might not be precise enough.
+
+09:15.600 --> 09:18.750
+We have two or three or four algorithms and they're all super fast.
+
+09:18.790 --> 09:20.330
+They're doing something very quickly.
+
+09:20.340 --> 09:23.220
+There still is one that is going to be fastest or most efficient.
+
+09:23.310 --> 09:29.580
+But if our timing functions can't figure it out because they're you know the smallest interval of time
+
+09:29.880 --> 09:34.530
+that can be measured isn't good enough then it doesn't really help us.
+
+09:34.530 --> 09:40.260
+So how do we walk through our code and actually talk in general terms about which code is better without
+
+09:40.320 --> 09:41.530
+having to go and time it.
+
+09:41.550 --> 09:44.840
+So I want to be clear I'm not saying that timing your code is a bad idea.
+
+09:44.850 --> 09:52.140
+I do it all the time but I'm more saying is that it would be cool if there was another way that didn't
+
+09:52.140 --> 09:56.650
+involve having to set up a new file and actually go through the process of timing our code.
+
+09:56.670 --> 10:02.340
+What if our code takes you know an hour something massive and I'm comparing it to another version that
+
+10:02.340 --> 10:03.560
+takes four hours.
+
+10:03.600 --> 10:06.690
+I don't want to have to run a test to figure out which one is faster.
+
+10:06.720 --> 10:09.450
+We want to be able to assign a value to.
+
+10:09.570 --> 10:14.710
+In general terms talk about how code compares to other code without having to go through all of this.
+
+10:14.760 --> 10:18.040
+And that's where Big-O notation comes in and that's coming up next.
+
+10:18.180 --> 10:19.000
+Cliffhanger sorry.

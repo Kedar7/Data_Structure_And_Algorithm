@@ -1,0 +1,526 @@
+WEBVTT
+
+00:00.130 --> 00:05.310
+Have everyone the next problem solving pattern will talk about I'm calling multiple pointers again.
+
+00:05.430 --> 00:09.750
+It's not really an official name for it but let me just read the definition first.
+
+00:09.750 --> 00:15.450
+The idea is that we create pointers or values that correspond to an index or position and then move
+
+00:15.600 --> 00:19.120
+towards the beginning towards the end or towards each other in the middle.
+
+00:19.170 --> 00:20.700
+Based on a certain condition.
+
+00:21.030 --> 00:23.100
+OK so what it really comes down to.
+
+00:23.250 --> 00:30.540
+We have some sort of structure linear structure like an array or a string or later on we will talk about
+
+00:30.540 --> 00:34.940
+things like a doubly linked list which you may not be familiar with or even a singly linked list.
+
+00:34.980 --> 00:36.420
+If you don't know what those are don't worry.
+
+00:36.420 --> 00:42.090
+And the idea is that we are going to be I don't know searching for a pair of values or searching for
+
+00:42.090 --> 00:43.540
+something that meets the condition.
+
+00:43.680 --> 00:48.960
+Usually we're looking for a pair and I'll show you an example in a moment and we use two references.
+
+00:49.020 --> 00:54.690
+So we start one reference maybe here and another one here and we work towards the middle towards each
+
+00:54.690 --> 00:55.290
+other.
+
+00:55.560 --> 01:01.290
+Or we could start something here and another like when I say reference I mean a variable like i and
+
+01:01.290 --> 01:04.410
+j which are numbers referring to indices.
+
+01:04.440 --> 01:09.380
+So we get start here in J here and then we move them forward in a certain way.
+
+01:09.480 --> 01:12.000
+So there's not you know a guaranteed direction.
+
+01:12.070 --> 01:17.640
+This is this is sort of a loosely defined one compared to what we saw in the last video over the last
+
+01:17.760 --> 01:20.040
+sort of pattern frequency counting.
+
+01:20.040 --> 01:22.980
+But this does come up pretty often I'll show you a couple of examples.
+
+01:22.980 --> 01:26.770
+So just to recap we have a pointer which is just a variable.
+
+01:27.150 --> 01:32.340
+You know we're looking at a specific location in an array or a string usually And we have a second one
+
+01:32.700 --> 01:35.420
+and we work towards each other or we work in the same direction.
+
+01:35.420 --> 01:37.970
+We work from the end towards the beginning.
+
+01:38.010 --> 01:40.490
+It doesn't matter but we use two pointers.
+
+01:40.500 --> 01:43.150
+So let's talk about an example where this could make sense.
+
+01:43.960 --> 01:44.950
+An example.
+
+01:45.100 --> 01:45.410
+OK.
+
+01:45.440 --> 01:52.160
+So write a function called Sum Zero which accepts a sorted array of integers so it needs to be sorted
+
+01:52.220 --> 01:59.360
+not a sorted but in order sorted from lowest to highest the function should find the first pair where
+
+01:59.360 --> 02:00.990
+the sum is zero.
+
+02:01.040 --> 02:07.270
+So the first pair where you take one number and you add it to another number and it's equal to zero.
+
+02:07.280 --> 02:09.890
+So you can see here you know negative three.
+
+02:09.890 --> 02:11.550
+First of all this is a sorted array.
+
+02:11.570 --> 02:13.420
+Negative 3 up to positive 3.
+
+02:13.490 --> 02:17.450
+And in this case negative three plus three gives us zero.
+
+02:17.630 --> 02:20.810
+So we return that pair in an array.
+
+02:20.810 --> 02:25.520
+Otherwise like in this case there is no pair that sums to zero.
+
+02:25.520 --> 02:27.000
+So we return undefined.
+
+02:27.050 --> 02:28.380
+Same thing here.
+
+02:28.400 --> 02:30.100
+So how would you approach this.
+
+02:30.110 --> 02:33.750
+First of all it's important to note and remember him hitting us a lot but it is sorted.
+
+02:33.770 --> 02:39.040
+If it was unsorted then we're kind of out of luck as far as coming up with an efficient solution.
+
+02:39.050 --> 02:43.280
+But it is sorted and we're looking for something that sums to zero.
+
+02:43.550 --> 02:49.520
+So we know that we have small numbers here and the largest numbers are up here and because of that we
+
+02:49.520 --> 02:56.990
+can use two pointers and test for sort of certain conditions to see if we want to move down or want
+
+02:56.990 --> 02:59.250
+to move our other pointer up.
+
+02:59.250 --> 03:01.820
+But first let me show you the naive solution.
+
+03:01.850 --> 03:06.910
+This is the simpler one that has time complexity of all of antiquarks quadratic time.
+
+03:07.160 --> 03:12.620
+And you can see right off the bat we have two loops we're using one for loop and a second for loop.
+
+03:12.620 --> 03:18.320
+So what this one does is it starts appointer looking at negative 3 and then we have a second loop that
+
+03:18.320 --> 03:21.160
+iterates over the entire rest of the array.
+
+03:21.160 --> 03:27.350
+The entire rest of the string the structure looking for something that adds to negative 3 and equals
+
+03:27.380 --> 03:27.780
+zero.
+
+03:27.830 --> 03:29.610
+So looking for three.
+
+03:29.780 --> 03:32.930
+So we go all the way through and we happened to find a three.
+
+03:32.970 --> 03:40.130
+And so that's a simple example but imagine that there was a three here then we would move on to negative
+
+03:40.130 --> 03:43.490
+2 and look through the entire array to find a negative 2.
+
+03:43.550 --> 03:48.810
+And if we're talking about a 10000 item array that's a lot of iteration when we have these nested loops.
+
+03:48.890 --> 03:50.180
+But this is the simplest way.
+
+03:50.240 --> 03:54.290
+You start here and then you compare it to every single other number and then if there's no match that
+
+03:54.290 --> 03:58.750
+equals zero you move forward one and compare it to every other number and keep going.
+
+03:58.970 --> 04:00.860
+So here's the example of the naive version.
+
+04:00.890 --> 04:01.570
+It does work.
+
+04:01.610 --> 04:02.690
+If I run this.
+
+04:02.750 --> 04:06.350
+So we've got negative for negative 3 and so on we would start here.
+
+04:06.420 --> 04:07.480
+We look for a match.
+
+04:07.490 --> 04:10.130
+There is no more than we have to get three.
+
+04:10.130 --> 04:11.260
+There is no match.
+
+04:11.300 --> 04:13.240
+We compare all these different things.
+
+04:13.370 --> 04:19.460
+We get to negative 2 and we compare it to every single other item until we hit 2 and we found a match.
+
+04:19.460 --> 04:25.760
+So even in this case we had to do a bunch of operations to figure out there was no match for negative
+
+04:25.950 --> 04:27.260
+for negative 3.
+
+04:27.290 --> 04:30.400
+We have to do a bunch of operations and this is a small array.
+
+04:30.740 --> 04:35.750
+So this could benefit from a refactor using multiple pointers pattern.
+
+04:35.750 --> 04:37.000
+So here's how it would work.
+
+04:37.070 --> 04:43.310
+We would start a pointer here and start another one up here because we know that this is a small number
+
+04:43.550 --> 04:49.030
+and this is the largest number and we start by just seeing what the sum is what they add to.
+
+04:49.130 --> 04:54.200
+Well negative four plus five that's going to give us a positive number which is 1 and that's too big.
+
+04:54.200 --> 04:55.460
+We're looking for 0.
+
+04:55.490 --> 04:56.970
+So one is greater than zero.
+
+04:56.990 --> 04:58.110
+That's not what we want.
+
+04:58.370 --> 05:04.730
+So what we would do then is move this pointer down to 2 because this is the small number we're going
+
+05:04.730 --> 05:05.610
+to get.
+
+05:05.630 --> 05:09.490
+So maybe just maybe there's a four here but there's not.
+
+05:09.680 --> 05:14.360
+But our code doesn't know that so it's going to look one below and hope that now we're going to sum
+
+05:14.360 --> 05:15.020
+to zero.
+
+05:15.080 --> 05:17.550
+So we add negative four into.
+
+05:17.760 --> 05:22.460
+Well this time it's too small because that's negative too and that's less than zero.
+
+05:22.700 --> 05:27.500
+So that means we're going to add one to the left side because there's no match for negative four.
+
+05:27.500 --> 05:29.160
+Remember it's a sorted array.
+
+05:29.450 --> 05:30.320
+So we go up.
+
+05:30.320 --> 05:32.810
+Now we're looking at negative three in two.
+
+05:33.070 --> 05:35.540
+Well we add them together it's still negative 1.
+
+05:35.660 --> 05:40.570
+Let's not still negative 1 it's still negative it's negative 1 which is less than zero.
+
+05:40.580 --> 05:46.740
+So what that means is that we're going to try and add one to the left side which gives us negative 2.
+
+05:47.060 --> 05:51.310
+And now we add negative 2 and 2 and we get zero.
+
+05:51.410 --> 05:52.850
+And that is the first pair.
+
+05:52.850 --> 05:55.060
+And we return negative to comment 2.
+
+05:55.370 --> 06:01.280
+So WAY WAY fewer operations compared to using a nested loop and starting here looking at every single
+
+06:01.280 --> 06:04.410
+other number then moving to here looking at every other number.
+
+06:04.490 --> 06:11.140
+And this is a simple example where we find it relatively quickly because there is only what 7 ish numbers.
+
+06:11.150 --> 06:12.100
+I didn't count them.
+
+06:12.170 --> 06:12.900
+Is it 8.
+
+06:12.980 --> 06:13.310
+OK.
+
+06:13.310 --> 06:14.180
+It is 8.
+
+06:14.600 --> 06:19.160
+So it's really small compared to 10000 items where it would save us a lot of time.
+
+06:19.160 --> 06:25.580
+So here is that refactored solution where we have two pointers one starting at the left index of 0 and
+
+06:25.580 --> 06:29.480
+the other starting at the last index in the array length minus 1.
+
+06:30.020 --> 06:32.310
+And I'll take you over to the code in just a moment.
+
+06:32.420 --> 06:37.890
+But you can see time complexity is linear it's o of N much better than 0 of squared.
+
+06:37.910 --> 06:42.470
+So here's the refactored version and we've got left to zero.
+
+06:42.560 --> 06:43.070
+Right.
+
+06:43.080 --> 06:48.220
+Set array length minus one so left is going to be this index zero.
+
+06:48.400 --> 06:48.770
+Right.
+
+06:48.790 --> 06:50.650
+Is this index over here.
+
+06:50.920 --> 06:52.650
+This is a slightly different array.
+
+06:52.690 --> 06:53.980
+I put 10 in here.
+
+06:53.980 --> 06:58.020
+Now it looks like our first pair should be negative 3 3.
+
+06:58.540 --> 07:03.110
+So we start and we check the sum of array of left and array of right.
+
+07:03.220 --> 07:08.710
+So negative four in 10 that's going to give us 6 and we check first is it 0.
+
+07:08.740 --> 07:09.810
+Because then we're done.
+
+07:10.060 --> 07:11.050
+No it's not.
+
+07:11.050 --> 07:15.610
+So if some is greater than zero which it is we're going to subtract one from right.
+
+07:15.640 --> 07:19.840
+So right was this index which I'm not going to count my position but we subtract 1.
+
+07:19.990 --> 07:25.930
+So now we're looking at this place 3 and we're adding 3 to negative 4 so we start the loop again because
+
+07:25.930 --> 07:27.120
+nothing else happens.
+
+07:27.150 --> 07:30.440
+You have an if and else if in an else only one of those is going to run.
+
+07:30.490 --> 07:34.090
+So we subtracted one from right moving it down to here and start over it.
+
+07:34.090 --> 07:39.530
+So now sum is equal to negative 4 and 3 which is negative 1 now.
+
+07:39.790 --> 07:41.310
+So this time it's not zero.
+
+07:41.410 --> 07:42.720
+It's not greater than zero.
+
+07:42.940 --> 07:46.620
+So this else runs which means we add one to our left.
+
+07:46.690 --> 07:49.180
+So now left moves up to negative 3.
+
+07:49.210 --> 07:54.190
+Next time through some negative three and three which gives us zero and we're done.
+
+07:54.280 --> 08:00.460
+If sum is zero return array of left column array of right as an array a new array.
+
+08:00.760 --> 08:02.220
+And just to prove that it works.
+
+08:02.360 --> 08:04.940
+There we go negative 3 comma 3.
+
+08:05.230 --> 08:12.370
+And if we give it something that doesn't have a pair like let's remove that 3 and change this to be
+
+08:12.370 --> 08:13.850
+a 5.
+
+08:14.200 --> 08:15.660
+There's no pair here right now no.
+
+08:15.670 --> 08:16.870
+We have one a negative one.
+
+08:16.960 --> 08:17.820
+Remove that one.
+
+08:17.980 --> 08:18.510
+OK.
+
+08:18.550 --> 08:22.560
+There should be no pair now and we get undefined which is how it's supposed to work.
+
+08:22.690 --> 08:27.940
+So we stop because our while loop runs well left is less than right.
+
+08:27.940 --> 08:33.940
+So if they crossover at some point that means that we've exhausted every possible pair We've tried here
+
+08:33.940 --> 08:35.080
+and here that didn't work.
+
+08:35.110 --> 08:37.360
+That was too large so we subtracted one from right.
+
+08:37.360 --> 08:38.960
+We tried five and negative four.
+
+08:39.010 --> 08:39.760
+Still too large.
+
+08:39.760 --> 08:45.910
+So we went to zero and negative for too small so went to negative 3 and zero two small two into negative
+
+08:45.910 --> 08:49.250
+2 and 0 two small and two negative one is zero too small.
+
+08:49.330 --> 08:56.140
+So then we went 0 0 and we have to stop before there otherwise if we try and do you know zero minus
+
+08:56.140 --> 08:58.210
+zero What are we going to get.
+
+08:58.420 --> 08:58.940
+Zero.
+
+08:58.960 --> 09:00.090
+Which is what we're looking for.
+
+09:00.100 --> 09:01.780
+But that's a false positive.
+
+09:01.830 --> 09:08.050
+And if it wasn't zero it could be any other number we subtract it by itself or subtract it from itself.
+
+09:08.050 --> 09:08.920
+We're going to get zero.
+
+09:08.980 --> 09:13.900
+So we have to stop there and that's why we have while left is less than right rather than less than
+
+09:13.900 --> 09:15.490
+or equal to right.
+
+09:15.520 --> 09:16.930
+So we have to have that.
+
+09:17.050 --> 09:18.180
+That's our failsafe.
+
+09:18.430 --> 09:22.540
+And that means that we're done and we could explicitly return undefined at the end.
+
+09:22.600 --> 09:24.080
+But this works fine too.
+
+09:24.520 --> 09:24.850
+Yep.
+
+09:24.850 --> 09:30.400
+So that is using two pointers in this case working from the far left side and the far right side towards
+
+09:30.400 --> 09:31.250
+the middle.
+
+09:31.300 --> 09:32.740
+That's not the only way of doing it.
+
+09:32.740 --> 09:38.050
+Next I'll show you a problem where we actually start from the same side and just look ahead rather than
+
+09:38.050 --> 09:39.860
+going from the left and the right simultaneously.
+
+09:39.880 --> 09:42.000
+We just have two pointers on the left side.
+
+09:42.160 --> 09:42.760
+That's next.

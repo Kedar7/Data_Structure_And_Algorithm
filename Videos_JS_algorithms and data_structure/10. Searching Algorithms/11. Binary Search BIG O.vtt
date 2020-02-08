@@ -1,0 +1,310 @@
+WEBVTT
+
+00:00.180 --> 00:00.560
+All right.
+
+00:00.560 --> 00:01.380
+Welcome back.
+
+00:01.380 --> 00:05.520
+So I'd like to talk about the time complexity for binary search how it performs.
+
+00:05.520 --> 00:07.150
+Let's just say on an array.
+
+00:07.320 --> 00:09.920
+So as the length of the array grows assorted array.
+
+00:09.920 --> 00:10.530
+Of course.
+
+00:10.680 --> 00:13.250
+How does the time complexity grow in relation.
+
+00:13.380 --> 00:20.040
+And you can see here on the left worst an average case 0 of log n and I'll come back to that and why
+
+00:20.040 --> 00:20.700
+that is.
+
+00:20.700 --> 00:26.940
+Best case of course is 0 1 because it's possible that the very first thing we pick is the very is the
+
+00:26.940 --> 00:27.840
+element we're looking for.
+
+00:27.960 --> 00:31.680
+If we pick the middle point of an array and that's what we want.
+
+00:31.680 --> 00:35.840
+While that one operation is constant time 0 of 1 that's pretty rare.
+
+00:35.880 --> 00:42.030
+But it's possible worst an average case are both 0 of log end and I have a couple of slides to detail
+
+00:42.120 --> 00:47.550
+how we get log in if you're not familiar with logarithms and how this applies to big O.
+
+00:47.700 --> 00:48.750
+I have a quick video.
+
+00:48.810 --> 00:51.480
+I think it's the last video of the big O section.
+
+00:51.510 --> 00:54.930
+I'd definitely recommend you watch it if you're not sure about logarithms.
+
+00:54.930 --> 00:59.130
+If you were taught them a long time ago and you forgot them or if you were never taught them it's a
+
+00:59.130 --> 01:00.490
+quick video.
+
+01:00.540 --> 01:05.100
+So suppose we're searching for the number 13 in this array.
+
+01:05.100 --> 01:06.770
+How many steps does it take.
+
+01:07.050 --> 01:09.880
+Well we actually can see 13 not in here as a human.
+
+01:09.960 --> 01:12.680
+It should be right here if it were to be in this array.
+
+01:12.960 --> 01:15.280
+But the first step is to pick a midpoint.
+
+01:15.510 --> 01:19.890
+And I know this looks like it's not the middle but these are all double digit numbers over here so it's
+
+01:19.890 --> 01:20.730
+kind of skewed.
+
+01:20.850 --> 01:22.220
+But this is the midpoint.
+
+01:22.350 --> 01:26.490
+So we pick 19 and we we check is 13 less than or greater than 19.
+
+01:26.490 --> 01:27.340
+It's less then.
+
+01:27.390 --> 01:29.370
+So we know it's somewhere over here.
+
+01:29.370 --> 01:33.410
+If it's going to be in here so then that's what this array is representing.
+
+01:33.450 --> 01:35.850
+We're not actually shrinking the array down.
+
+01:35.850 --> 01:39.520
+We're just looking at this portion of the larger array.
+
+01:39.540 --> 01:41.670
+So then we pick a midpoint again which is 9.
+
+01:41.830 --> 01:44.880
+Well 13 is that less than or greater than it's greater than 9.
+
+01:44.970 --> 01:48.440
+So we're now looking at this some array 11 14 15.
+
+01:48.720 --> 01:53.310
+So we pick the midpoint 14 is 13 plus cent. To then it is less then.
+
+01:53.580 --> 01:56.120
+So we're looking at this supper now 11.
+
+01:56.220 --> 01:59.300
+So we check is 13 equal to 11.
+
+01:59.310 --> 02:01.040
+The answer is no of course.
+
+02:01.110 --> 02:07.560
+And so we know that 13 is not in this array unless it's somehow an unsorted array in which case we shouldn't
+
+02:07.560 --> 02:08.920
+be using binary search.
+
+02:09.030 --> 02:15.620
+But given the conditions of binary search we can say without a doubt there are Tinas not in this array.
+
+02:16.260 --> 02:17.490
+Nope not here.
+
+02:17.910 --> 02:22.690
+So if we look at the number of steps here we had 16 elements.
+
+02:22.780 --> 02:27.350
+It took four steps to say with certainty that an element is not in there.
+
+02:27.520 --> 02:30.650
+So we could have found it earlier if it actually was in this array.
+
+02:30.730 --> 02:37.120
+If we were looking for 9 for example it takes two steps for looking for 14 it would take three steps.
+
+02:37.180 --> 02:43.510
+But if we're looking for something that's not in there or the very worst case it took four steps.
+
+02:43.660 --> 02:45.590
+Now 16 elements 4 steps.
+
+02:45.640 --> 02:47.770
+Let's grow our array.
+
+02:47.780 --> 02:49.660
+Let's double it in size.
+
+02:50.050 --> 02:56.940
+So instead of 16 I'M ADDING right I'm adding 16 more elements so we have 32 elements in our array.
+
+02:56.980 --> 02:58.440
+It looks like this.
+
+02:58.480 --> 03:01.660
+And let's say I'm looking for the number 32.
+
+03:01.780 --> 03:03.420
+How many steps will it take.
+
+03:03.460 --> 03:05.620
+Well in the first step we pick a midpoint.
+
+03:05.680 --> 03:06.960
+This is not counting as a step.
+
+03:06.980 --> 03:08.550
+This is just our starting array.
+
+03:08.590 --> 03:13.730
+I pick the midpoint which is 16 and we testis 32 greater than or less than 16.
+
+03:13.750 --> 03:14.690
+It's greater than.
+
+03:14.710 --> 03:17.040
+So we can ignore all of this.
+
+03:17.050 --> 03:17.900
+There we go.
+
+03:17.950 --> 03:19.950
+The slide took a long time to make.
+
+03:19.960 --> 03:25.870
+So now we're looking at this part of the array and we pick a midpoint which is 24 and we compare 32
+
+03:26.040 --> 03:27.190
+Well third to it's greater.
+
+03:27.190 --> 03:29.210
+So we can ignore all of this.
+
+03:29.320 --> 03:35.150
+Next we're looking at this portion and we pick a midpoint again 32 is greater than 28.
+
+03:35.260 --> 03:39.220
+So we ignore all of this Skip.
+
+03:39.250 --> 03:44.500
+Now we're looking at 30 while we're looking at this portion and we pick the midpoint which is 30 and
+
+03:44.800 --> 03:52.830
+32 is greater than 30 so we ignore this portion finally pick her midpoint again and we find 32 we're
+
+03:52.830 --> 03:53.550
+good to go.
+
+03:53.670 --> 03:57.920
+And that took five steps one step two three.
+
+03:58.290 --> 03:59.840
+What is highlighting the wrong thing.
+
+03:59.850 --> 04:03.140
+One two three four five until we found it.
+
+04:03.270 --> 04:09.030
+So we doubled the number of elements from the previous slide we had 16 elements which was four steps
+
+04:09.180 --> 04:09.590
+to find.
+
+04:09.610 --> 04:13.730
+Or actually we didn't find the element but it took a maximum four steps here.
+
+04:13.770 --> 04:19.250
+We doubled it to 32 elements and it took a maximum of five steps to find our element.
+
+04:19.260 --> 04:22.180
+So that relationship is log based too.
+
+04:22.260 --> 04:29.690
+And so log based to which we simplified to log and basically means to do what power gives us.
+
+04:29.700 --> 04:40.020
+And so if we go all the way back here 16 elements what is log base 2 of 16 it is 4 because 2 to the
+
+04:40.020 --> 04:41.820
+fourth power gives us 16.
+
+04:41.850 --> 04:44.430
+Two times two times two times two.
+
+04:44.610 --> 04:50.560
+Or here it was log base 2 of 32 elements and 32.
+
+04:50.670 --> 04:54.200
+That means five two times two times two times two times two.
+
+04:54.420 --> 05:01.550
+So every time we double the size of and every time we double it we are simply adding one extra step.
+
+05:01.560 --> 05:09.300
+So log in is really good if we look at the big O complexity graph here you can see log in is all the
+
+05:09.300 --> 05:10.490
+way down here.
+
+05:10.560 --> 05:11.690
+It's really good.
+
+05:11.910 --> 05:14.880
+It's so good in fact they don't even put a separate line in here.
+
+05:14.880 --> 05:21.720
+So there's the O of end line our linear big-O and then down here they put constant and log in together
+
+05:21.840 --> 05:26.220
+because in the grand scheme of things when you zoom out far enough so that you're looking at something
+
+05:26.310 --> 05:33.300
+that also includes factorial 0 of log in is so so much better that it just looks like one anyway.
+
+05:33.420 --> 05:37.170
+So log in is really good binary search is very fast.
+
+05:37.170 --> 05:42.150
+Of course the caveat is that it only works on a sorted array and if you don't have sorted data then
+
+05:42.150 --> 05:46.860
+you're out of luck and you've got to use linear search which is not anywhere near as good going forward.
+
+05:46.860 --> 05:51.510
+We actually will see a couple of other algorithms when we talk about things like binary trees and graphs
+
+05:51.870 --> 05:59.090
+where the big owner station for time complexity includes log and again or Also N log in.
+
+05:59.310 --> 06:04.320
+So if you're not comfortable with logs yet again I really recommend you watch that video but also give
+
+06:04.320 --> 06:05.140
+it some time.
+
+06:05.190 --> 06:09.450
+I think we have a couple of sections before we encounter log and again but soon we will.

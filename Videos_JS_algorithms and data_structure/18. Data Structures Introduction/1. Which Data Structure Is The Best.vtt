@@ -1,0 +1,658 @@
+WEBVTT
+
+00:00.210 --> 00:05.610
+Ladies and gentlemen may I please have your undivided attention for an important announcement about
+
+00:05.610 --> 00:07.340
+this Course's content.
+
+00:07.350 --> 00:14.190
+I'm very excited to announce that we have hit a major turning point in this course from this point forward.
+
+00:14.370 --> 00:22.110
+We will be discussing the structure of the data structure data structure structure data structures.
+
+00:22.270 --> 00:27.510
+Well as you may have heard we're talking about data structures which it really is a big turning point
+
+00:27.510 --> 00:28.650
+in this course.
+
+00:28.680 --> 00:33.170
+We've spent a lot of time talking about many different topics different types of algorithms approaches
+
+00:33.180 --> 00:38.080
+for problem solving Big O notation recursion sorting searching a lot of stuff.
+
+00:38.280 --> 00:45.000
+But now from here on out everything we cover will be a new type of data structure or related to a new
+
+00:45.000 --> 00:46.400
+data structure that we learn.
+
+00:46.560 --> 00:50.700
+So when this video and this section there's a couple of things that we have to get out of the way before
+
+00:50.700 --> 00:55.830
+we dive into the many data structures we're going to cover this will be quick but I want to talk about
+
+00:56.010 --> 00:59.850
+why you should care what the data structures are why there's so many of them.
+
+00:59.880 --> 01:01.580
+Like are they how do they differ.
+
+01:01.620 --> 01:03.410
+What's the point of learning these.
+
+01:03.540 --> 01:05.240
+And then also we're going to learn about.
+
+01:05.350 --> 01:06.340
+Yes 2015.
+
+01:06.350 --> 01:11.760
+The class syntax to create classes in javascript which is how we'll be defining our own data structures
+
+01:11.760 --> 01:12.660
+from here on out.
+
+01:12.660 --> 01:17.230
+So if you already know about that you can skip it but it's like 10 minutes of content across three videos.
+
+01:17.280 --> 01:19.830
+If you do want to check it out see how it works.
+
+01:20.160 --> 01:26.760
+OK so I've mentioned we're covering a ton of structures binary search trees Qs singly linked lists undirected
+
+01:26.790 --> 01:27.820
+unweighted graphs.
+
+01:27.900 --> 01:33.690
+Talking about binary heaps priority queues at in Pathet on here directed graphs hash tables double linked
+
+01:33.690 --> 01:34.830
+lists stacks.
+
+01:34.890 --> 01:37.000
+And there's actually some more that I didn't put on here.
+
+01:37.260 --> 01:39.490
+What the heck is going on why are there so many.
+
+01:39.540 --> 01:40.800
+Why am I teaching them.
+
+01:40.980 --> 01:42.420
+And what do they all do.
+
+01:42.420 --> 01:47.340
+So we're not going to get into what each one does individually here but just know we will implement
+
+01:47.400 --> 01:49.660
+each one of these as their own class.
+
+01:49.680 --> 01:51.570
+So we'll define it from scratch.
+
+01:51.570 --> 01:58.560
+Sort of like if we were defining our own array or our own object although it's a little bit more it's
+
+01:58.560 --> 01:59.800
+a little higher level than that.
+
+01:59.880 --> 02:03.290
+The structures we're going to build are a little bit more complex.
+
+02:03.360 --> 02:06.160
+So let's start with what all of these have in common.
+
+02:06.180 --> 02:06.840
+What did they do.
+
+02:06.840 --> 02:09.080
+What makes something a data structure.
+
+02:09.150 --> 02:13.590
+We've kind of touched on this early early on we talked about arrays and objects.
+
+02:13.590 --> 02:16.530
+Those are data structures as well as all of these things.
+
+02:16.530 --> 02:21.960
+These are data structures and there's hundreds dozens of very well-known ones and hundreds of maybe
+
+02:21.960 --> 02:27.170
+thousands of very nuanced niche variants of data structures all of them.
+
+02:27.210 --> 02:30.180
+What they have in common is that they are collections of values.
+
+02:30.780 --> 02:36.990
+They contain the relationships among those values and the functionality or operations that can be applied
+
+02:36.990 --> 02:37.650
+to the data.
+
+02:37.860 --> 02:40.950
+So think of an array an array holds many values.
+
+02:41.040 --> 02:43.880
+It also contains the relationships between those values.
+
+02:43.890 --> 02:49.500
+The order in the case of an array and arrays come with all sorts of built in methods and functionality
+
+02:49.740 --> 02:56.580
+ways of interacting with them adding to them removing push pop that sort of thing but also sorting reversing
+
+02:56.640 --> 02:58.870
+whatever other functionality there is.
+
+02:58.980 --> 03:04.850
+So we'll define our own structures that fit this exact same mold when we define a singly linked list.
+
+03:04.890 --> 03:06.580
+That's the first one we cover.
+
+03:06.660 --> 03:12.600
+It will not only hold data but it also puts them in obviously in a particular way where there's a relationship
+
+03:12.750 --> 03:14.180
+between each piece of data.
+
+03:14.190 --> 03:16.470
+It's not just randomly deciding how to store it.
+
+03:16.470 --> 03:21.630
+There is a particular pattern or relationship so it holds a collection of data and we'll be writing
+
+03:21.630 --> 03:22.780
+a bunch of methods.
+
+03:22.890 --> 03:27.750
+We'll add our own push our own pop our own reverse what else.
+
+03:27.750 --> 03:32.460
+There's probably seven different methods we add to a singly linked list and they all help us interact
+
+03:32.460 --> 03:34.000
+with the singly linked list.
+
+03:34.110 --> 03:38.430
+Same thing when we talk about graphs and trees and heaps and everything else we do from here on out.
+
+03:38.640 --> 03:43.710
+We'll be defining a class called Whatever our data structure of the day is.
+
+03:43.830 --> 03:47.220
+And then on top of that we add a bunch of functionality.
+
+03:47.220 --> 03:48.520
+So why are there so many.
+
+03:48.540 --> 03:49.620
+That's a good question.
+
+03:49.620 --> 03:54.330
+It comes down to the fact that different data structures excel at different things.
+
+03:54.330 --> 04:00.210
+So some of them are very specialized but some of them are pretty general commonly use things like an
+
+04:00.210 --> 04:05.180
+array or an object in javascript which is why those come for free.
+
+04:05.200 --> 04:05.420
+Right.
+
+04:05.430 --> 04:11.250
+We don't have to implement those on our own but if we're trying to work with a red and black tree or
+
+04:11.730 --> 04:16.290
+I don't know an undirected graph or something like that you usually don't get that for free in a programming
+
+04:16.290 --> 04:16.790
+language.
+
+04:16.800 --> 04:20.140
+You have to go and implemented but that doesn't mean they're not useful.
+
+04:20.250 --> 04:25.800
+It just means that they are very useful in special cases and you have to you have to be able to know
+
+04:25.890 --> 04:29.500
+when to use one of those you have to know about them in order to write one.
+
+04:29.550 --> 04:30.570
+If that makes sense.
+
+04:30.570 --> 04:31.920
+So they all do different things.
+
+04:31.920 --> 04:37.950
+And as we go through this course you'll see when certain ones make sense and we talk about usages and
+
+04:37.950 --> 04:42.360
+examples and real world use cases as well as interview problems.
+
+04:42.360 --> 04:44.810
+So you might see a data structure like this.
+
+04:44.820 --> 04:47.500
+This is a visual representation of an array.
+
+04:47.950 --> 04:50.290
+Here's another one will look at a length list.
+
+04:50.310 --> 04:53.560
+This is a singly linked list will also talk about doubly linked lists.
+
+04:53.580 --> 04:55.250
+Here we have a hash table.
+
+04:55.260 --> 04:59.850
+These are just visual representations but you can see these are all different relationships between
+
+04:59.920 --> 05:05.110
+the pieces of data but they all are storing numbers just totally different ways of storing the same
+
+05:05.110 --> 05:06.250
+type of data.
+
+05:06.250 --> 05:08.190
+This here is a binary heap.
+
+05:08.200 --> 05:09.180
+It's also a tree.
+
+05:09.210 --> 05:11.200
+This is a binary search tree.
+
+05:11.200 --> 05:12.760
+Slightly different rules.
+
+05:12.760 --> 05:16.620
+This is a graph in this case and unweighted undirected graph.
+
+05:16.660 --> 05:22.400
+This is an unweighted directed graph similar but different.
+
+05:22.420 --> 05:26.630
+So the point is all of these do the same thing at the end of the day they store data.
+
+05:26.830 --> 05:31.720
+But their behavior the relationships between the data and their functionality the methods we get to
+
+05:31.720 --> 05:33.750
+act upon them are very different.
+
+05:33.940 --> 05:37.860
+So the next question is why should I care and why should you care.
+
+05:38.290 --> 05:42.490
+Well there's a lot of time devoted to data structures in this course and there's a couple of reasons.
+
+05:42.490 --> 05:46.990
+First of all the more time you spend as a developer the more likely you'll need to use one of these
+
+05:46.990 --> 05:49.030
+more advanced data structures.
+
+05:49.120 --> 05:54.820
+Usually there's a time and every developer's life when using an array for every single possible problem
+
+05:54.880 --> 05:55.920
+just doesn't cut it.
+
+05:55.960 --> 05:57.540
+You might need something more efficient.
+
+05:57.610 --> 06:00.570
+You might need something to express a different relationship.
+
+06:00.700 --> 06:05.470
+You might be working with more complicated data that isn't linear and you needed another way of storing
+
+06:05.470 --> 06:05.770
+it.
+
+06:05.770 --> 06:11.410
+There's many situations where this can come up or you might be working with an API or a library that
+
+06:11.620 --> 06:17.530
+gives you like a database for example that returns a graph graph representation and you need to understand
+
+06:17.530 --> 06:18.490
+what the heck a graph is.
+
+06:18.490 --> 06:20.680
+In order for that to make sense.
+
+06:20.810 --> 06:27.310
+Also another reason worth knowing that you've already worked with many data structures probably unknowingly.
+
+06:27.320 --> 06:32.360
+So if you have ever worked with the Dom in javascript you've manipulated and interacted with a tree.
+
+06:32.420 --> 06:33.330
+That's just one example.
+
+06:33.350 --> 06:39.110
+But as we go through through the different structures all constantly point out existing use cases things
+
+06:39.110 --> 06:42.090
+that you're probably familiar with with each data structure.
+
+06:42.290 --> 06:47.090
+And then finally a really important one of course especially in this context interviews.
+
+06:47.090 --> 06:50.590
+So these data structures are the fodder of many an interview.
+
+06:50.810 --> 06:53.040
+It's worth knowing alone just for that.
+
+06:53.120 --> 06:56.470
+But I don't want to make that the focus of all these data structures.
+
+06:56.480 --> 06:58.770
+These exist for a reason they're taught for a reason.
+
+06:58.850 --> 07:04.730
+And it's not just a random hard interview questions though it can definitely help with that and a lot
+
+07:04.730 --> 07:07.050
+of people like to ask data structure questions.
+
+07:07.070 --> 07:09.190
+Can you reverse a singly length list.
+
+07:09.290 --> 07:10.490
+Can you implement a priority.
+
+07:10.490 --> 07:12.570
+Q Can you balance a binary tree.
+
+07:12.620 --> 07:13.950
+All that stuff is worth knowing.
+
+07:14.060 --> 07:18.150
+But at the same time these data structures are useful in the real world.
+
+07:18.200 --> 07:20.480
+If you never interview they're still worth knowing.
+
+07:20.480 --> 07:25.380
+So we'll come back to why as we visit each individual structure an important note.
+
+07:25.400 --> 07:29.250
+A lot of people ask this What is the best one which one should I know.
+
+07:29.420 --> 07:31.460
+The answer is there is no one best one.
+
+07:31.460 --> 07:33.700
+They all do different things right.
+
+07:33.710 --> 07:37.400
+They each have specific talents if you will.
+
+07:37.400 --> 07:42.540
+Some of them are more general just commonly use like an array but some of them are very specific.
+
+07:42.560 --> 07:44.660
+But they all excel in different environments.
+
+07:44.660 --> 07:46.640
+Otherwise why bother having them at all.
+
+07:46.640 --> 07:47.620
+Why bother learning them.
+
+07:47.630 --> 07:51.710
+I wouldn't be teaching them if there was one data structure to rule them all.
+
+07:51.710 --> 07:53.780
+One you could master and then call it a day.
+
+07:53.840 --> 07:56.720
+So they all excel in different situations.
+
+07:56.720 --> 08:00.100
+For example maybe you're working with map or location data.
+
+08:00.140 --> 08:06.290
+You're writing a GPS application like Google Maps which should be a huge undertaking but let's simplify
+
+08:06.290 --> 08:11.900
+it even further and say you're trying to write code that will route you to the nearest gas station or
+
+08:11.900 --> 08:16.850
+something like that that has the cheapest deals whatever you might want to use a graph a graph would
+
+08:16.850 --> 08:17.660
+make sense for this.
+
+08:17.660 --> 08:21.650
+And we talked about graphing data we talked about finding the shortest path between points on a graph
+
+08:21.890 --> 08:25.280
+representing GPS data and location data using a graph.
+
+08:25.280 --> 08:26.660
+So that's one situation.
+
+08:26.660 --> 08:30.730
+It would be very difficult to represent a map using a single array.
+
+08:31.430 --> 08:37.760
+What if you need an ordered list like an array but you need fast inserts in removals at the beginning
+
+08:38.000 --> 08:38.800
+and the end.
+
+08:38.810 --> 08:44.000
+So if you watched early on we talked about arrays they do not do well when you insert at the beginning
+
+08:44.000 --> 08:45.110
+or remove from the beginning.
+
+08:45.110 --> 08:46.810
+Everything has to be indexed.
+
+08:47.090 --> 08:52.130
+So maybe you have a huge data set and you have to have it ordered it take a million data points and
+
+08:52.130 --> 08:55.410
+you are always inserting and removing from both ends.
+
+08:55.520 --> 08:59.580
+Then you might not want to use an array thats where length lists could come in handy.
+
+08:59.600 --> 09:03.340
+So knowing about a linked list would help you in that situation.
+
+09:03.380 --> 09:05.760
+Are you web scraping nested aged DML.
+
+09:05.840 --> 09:08.800
+Are you writing some sort of app that is scraping data from.
+
+09:08.810 --> 09:11.570
+I don't know airline's Web sites or hotel web sites.
+
+09:11.720 --> 09:13.950
+And you're interacting with that aged him now.
+
+09:14.030 --> 09:16.020
+Or maybe you're using a library to help you.
+
+09:16.190 --> 09:19.560
+Well it's almost guaranteed to give you the data in a tree.
+
+09:20.240 --> 09:26.710
+I have another example I need to write a scheduler so this might be a bit more nuanced than Timo But
+
+09:27.010 --> 09:32.140
+if you're writing an app that that has tasks that are scheduled and you need to find what's the highest
+
+09:32.140 --> 09:36.620
+priority task to handle at any given point you might use a binary heap.
+
+09:36.790 --> 09:40.010
+So we'll talk about priority queues and primary heaps in that section.
+
+09:40.320 --> 09:45.990
+OK so enough of those examples but hopefully that makes it clear these all excel in different situations.
+
+09:46.000 --> 09:48.700
+There is no one data structure to rule them all.
+
+09:48.700 --> 09:50.250
+Definitely go through all of them.
+
+09:50.320 --> 09:55.940
+But along with that a quick message there's a ton of content here from here on out.
+
+09:56.030 --> 10:02.830
+This data structure stuff gets dense and I highly recommend you don't just go one section at a time
+
+10:03.310 --> 10:06.240
+and sit through the night or even do it all in a day or two.
+
+10:06.400 --> 10:07.270
+It's a lot.
+
+10:07.390 --> 10:09.680
+I beg you please.
+
+10:09.730 --> 10:11.140
+It will burn you out.
+
+10:11.140 --> 10:18.310
+This is the content that in my classes we do over two weeks of an intensive bootcamp where it's 10 hours
+
+10:18.310 --> 10:21.350
+a day sometimes eight hours but usually 10 hours a day.
+
+10:21.430 --> 10:28.390
+We do two weeks that ten full days to cover this data structures content and those are people who have
+
+10:28.390 --> 10:32.280
+been you know in this classroom for 12 or 10 weeks at that point.
+
+10:32.530 --> 10:38.430
+So they're relatively skilled developers and they are expecting a tough time for the last two weeks.
+
+10:38.470 --> 10:42.880
+So I beg you don't try to fly through this in a night or two or even a single week.
+
+10:42.910 --> 10:44.140
+It's a lot.
+
+10:44.140 --> 10:47.550
+For example watch the singly link section.
+
+10:47.620 --> 10:48.530
+Take a break.
+
+10:48.550 --> 10:52.090
+I mean take an hour two hours three hours an entire day.
+
+10:52.180 --> 10:53.470
+Come back after the weekend.
+
+10:53.470 --> 10:54.240
+Whatever it is.
+
+10:54.280 --> 10:57.970
+And then do double length lists don't do them one right after the other.
+
+10:58.060 --> 11:00.330
+I mean it's up to you of course but that's my recommendation.
+
+11:00.460 --> 11:01.580
+There's a lot there.
+
+11:01.660 --> 11:01.990
+OK.
+
+11:01.990 --> 11:03.550
+And one last little note.
+
+11:03.550 --> 11:07.260
+Please pay attention to the prerequisites listed for each section.
+
+11:07.270 --> 11:13.390
+So a lot of these data structures build upon one another or in some of the later sections like when
+
+11:13.390 --> 11:18.990
+we talk about graphs we talked about a particular algorithm called Dijkstra's shortest path algorithm.
+
+11:19.180 --> 11:24.730
+And in the algorithm itself we actually use another data structure from earlier in the course called
+
+11:24.730 --> 11:25.810
+the binary heap.
+
+11:25.810 --> 11:30.790
+So if you skipped the binary heap section and go right to the graph section you will be missing some
+
+11:30.790 --> 11:32.010
+important information.
+
+11:32.050 --> 11:37.000
+So I made it at the beginning of every single section is a text lecture that explains what you need
+
+11:37.000 --> 11:38.790
+to know for each section.
+
+11:38.890 --> 11:43.660
+So you don't have to go through them in a linear order but they are in an order that makes sense.
+
+11:43.750 --> 11:47.680
+And if you do want to learn them all just start at the beginning singly linked lists and go all the
+
+11:47.680 --> 11:48.870
+way up through graphs.
+
+11:49.150 --> 11:55.960
+Ok I'm done with all these little announcements and pep talks and whatever else this has been.
+
+11:55.960 --> 12:01.330
+So welcome to the new section of the new sort of portion of the course devoted to data structures.
+
+12:01.330 --> 12:07.640
+There's a lot of important content here some very useful stuff but there's a lot of stuff in general.
+
+12:07.690 --> 12:13.710
+So again take your time the first thing we're going to do before we actually implement our first data
+
+12:13.710 --> 12:15.320
+structure the singly linked list.
+
+12:15.480 --> 12:21.780
+We need to just discuss East 2015 class syntax we're defining a new class for every data structure we
+
+12:21.780 --> 12:22.390
+learn.
+
+12:22.410 --> 12:27.420
+So if you already know how to do that skip the next two video or the next three videos after this one.
+
+12:27.480 --> 12:31.640
+But if you don't I highly recommend you start there because we use this syntax.
+
+12:31.740 --> 12:34.740
+The classic keyword in every single video from here on out.
+
+12:34.920 --> 12:36.420
+Ok I'm done I promise.
+
+12:36.420 --> 12:37.860
+Welcome to data structures.
+
+12:37.860 --> 12:38.720
+Let's get going.

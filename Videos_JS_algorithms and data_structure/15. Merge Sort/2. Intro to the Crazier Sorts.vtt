@@ -1,0 +1,310 @@
+WEBVTT
+
+00:00.150 --> 00:01.400
+Hello welcome back.
+
+00:01.410 --> 00:04.090
+This is part two of sorting algorithms.
+
+00:04.140 --> 00:06.230
+This is intermediate sorting algorithms.
+
+00:06.240 --> 00:07.740
+So we have three more to look at.
+
+00:07.920 --> 00:13.470
+And basically we're learning these separate because they are much faster but they're also a little bit
+
+00:13.920 --> 00:20.610
+more challenging they're less intuitive to write on your own They're meteor Giusi or algorithms that
+
+00:20.610 --> 00:25.740
+take more time to understand but they're also the payoff is that they're faster and I'm going to prove
+
+00:25.740 --> 00:26.390
+it to you.
+
+00:26.430 --> 00:30.760
+I'm going to show you at least one example of just how much faster they can be in this video.
+
+00:30.960 --> 00:36.510
+But first I want to add an important note which is don't be scared when I've taught this before I think
+
+00:36.930 --> 00:43.100
+a lot of students feel bad because they struggled through the beginning elementary sorting algorithms
+
+00:43.110 --> 00:45.030
+they weren't able to write everything on their own.
+
+00:45.090 --> 00:46.270
+That's totally normal.
+
+00:46.470 --> 00:50.820
+And when you get to these three these algorithms are harder they're stepping it up.
+
+00:50.970 --> 00:57.050
+Don't don't feel pressure to write the code yourself period but especially not the first time through.
+
+00:57.240 --> 01:01.560
+So I'm going to give you pseudo code for the adventurous souls who do want to try and implement it on
+
+01:01.560 --> 01:02.080
+their own.
+
+01:02.250 --> 01:06.300
+But really this section is more about walking through the code and understanding how it works.
+
+01:06.300 --> 01:11.730
+Being able to explain the algorithms not being able to rewrite it word for word character for character.
+
+01:11.730 --> 01:12.870
+On your first try.
+
+01:13.050 --> 01:14.090
+So keep that in mind.
+
+01:14.250 --> 01:15.410
+We're going to go through it.
+
+01:15.420 --> 01:16.590
+Focus on how it works.
+
+01:16.590 --> 01:21.580
+Focus on being able to explain back to me for example what each line of my code does.
+
+01:21.720 --> 01:26.550
+Rather than you feeling the pressure to come up with everything from scratch because these are challenging
+
+01:26.580 --> 01:31.270
+and these are algorithms created by academics that have been around for a while that have been tried
+
+01:31.260 --> 01:32.320
+and tested.
+
+01:32.460 --> 01:35.130
+So please don't worry don't be too intimidated.
+
+01:35.250 --> 01:37.020
+I don't want it I'm turning nobody away.
+
+01:37.030 --> 01:37.290
+All right.
+
+01:37.290 --> 01:39.510
+If the last section was hard for you that's OK.
+
+01:39.510 --> 01:41.650
+Don't feel bad that this one is called intermediate.
+
+01:41.940 --> 01:42.330
+OK.
+
+01:42.380 --> 01:47.030
+So our objectives first understand the limitations of what we have learned so far.
+
+01:47.040 --> 01:48.990
+Bubble's selection and insertion.
+
+01:49.170 --> 01:49.990
+What's wrong with.
+
+01:50.000 --> 01:53.160
+Well we should say what's wrong what are those shortcomings.
+
+01:53.460 --> 01:58.460
+We're going to implement three sorts implement merge sort of quicksort and radix sort.
+
+01:58.500 --> 02:03.600
+But first I promised I would show you a demonstration of how much faster the algorithms were going to
+
+02:03.600 --> 02:04.700
+learn now are.
+
+02:05.160 --> 02:08.140
+So the sorting algorithms we've learned so far don't scale well.
+
+02:08.160 --> 02:12.500
+They actually work pretty well on small a 20 item array.
+
+02:12.510 --> 02:18.480
+They work pretty fast but they do not scale well if we're working with a 100000 elements for example.
+
+02:18.480 --> 02:23.440
+So if we actually tried bubble sort I'm I'm going to scale it down and just do 10000 elements.
+
+02:23.520 --> 02:26.110
+It takes quite a while I'm going to show you right now.
+
+02:26.460 --> 02:32.340
+So what I have here so here's my bubble sort implementation and down here I have a little bit of code
+
+02:32.340 --> 02:36.700
+that makes an array of oh no this is $100 and I can't count.
+
+02:36.700 --> 02:37.350
+Never mind.
+
+02:37.440 --> 02:41.490
+It is 100000 elements and I'm going to start by showing you bubble sort.
+
+02:41.490 --> 02:43.070
+Now what this code does.
+
+02:43.290 --> 02:47.510
+I just copy this over and change this number to be 10.
+
+02:47.580 --> 02:51.380
+It just picks 10 random numbers and sticks them in an array.
+
+02:51.390 --> 02:55.850
+So if I do 100000 we're going to have an array that's 100000 random numbers.
+
+02:55.980 --> 02:58.330
+There shouldn't really be any ordered period.
+
+02:58.350 --> 03:04.440
+I mean it's technically possible they could be already sorted but that would be insanely unlikely with
+
+03:04.440 --> 03:05.820
+100000 items.
+
+03:05.820 --> 03:07.800
+Ok so I'm going to do this now I'm going to hit enter.
+
+03:07.800 --> 03:13.320
+It's going to make the array that just takes like a split second but then bubble sorting it's going
+
+03:13.310 --> 03:14.440
+to take a little bit.
+
+03:14.490 --> 03:16.620
+So Command enter started.
+
+03:17.010 --> 03:20.910
+And how am I going to talk about pass the time here.
+
+03:21.630 --> 03:27.030
+Well let's see when I write what I'm going to say here.
+
+03:27.560 --> 03:29.580
+He got some time to pass.
+
+03:30.030 --> 03:34.960
+Well it's a nice day outside and I'm in here recording.
+
+03:35.060 --> 03:36.760
+There we go.
+
+03:36.770 --> 03:40.990
+Looks like it just finished so I don't know exactly how long that was.
+
+03:41.000 --> 03:45.950
+I think I also put a cut in the middle of this because I took a sip of water and then I realized that
+
+03:45.950 --> 03:49.700
+I was going to sound really bad on the camera from gulping.
+
+03:49.700 --> 03:54.070
+So anyway that was about 20 seconds of my time.
+
+03:54.080 --> 03:57.650
+Now if I do the same thing with Merge which I already have in this file merge sort.
+
+03:57.650 --> 04:05.090
+We're not we haven't learned it yet but just watch it clear and read you run the same code so 100000
+
+04:05.150 --> 04:07.250
+items but now pass it into merge sort.
+
+04:07.490 --> 04:08.390
+Wow look at that.
+
+04:08.390 --> 04:10.720
+I mean that's crazy how much faster that was.
+
+04:10.750 --> 04:15.260
+That was like that was less than a second compared to 20 something seconds.
+
+04:15.260 --> 04:20.750
+Now if I added another 0 here which I'm not going to remember the bubble sort is quadratic.
+
+04:20.750 --> 04:28.860
+So that has serious implications when we add another zero when we're squaring the time basically.
+
+04:29.030 --> 04:29.980
+That's huge.
+
+04:29.990 --> 04:31.730
+That's a huge difference so I'm not going to do it.
+
+04:31.850 --> 04:36.420
+But with merge sort I mean we'd still notice a difference but it's nowhere near the time difference.
+
+04:36.710 --> 04:40.310
+And we'll talk about what the actual Big O is of something like merge sort.
+
+04:40.490 --> 04:43.550
+But just I just want to show you there how much faster it is.
+
+04:43.790 --> 04:49.430
+Maybe they give you some motivation for learning it so this faster family of algorithms that we're going
+
+04:49.430 --> 04:55.620
+to learn they can improve time complexity from around 0 and 2 0 and log in.
+
+04:55.640 --> 04:58.500
+So if you can think back I'll show you a chart again.
+
+04:58.520 --> 05:02.240
+But oh of and again this is not bad it's pretty good.
+
+05:02.240 --> 05:05.930
+It's much better than quadratic time over and squared.
+
+05:05.930 --> 05:12.890
+It's not as good as log in and it's not as good as 0 of N but it's still pretty darn good.
+
+05:12.890 --> 05:17.810
+So in this section we're going to learn three algorithms that improve time complexity and we'll also
+
+05:17.840 --> 05:23.000
+learn why it's and Lagann for example where does the end log and come from we haven't really talked
+
+05:23.000 --> 05:23.330
+about it.
+
+05:23.330 --> 05:25.110
+We introduced the idea of a log.
+
+05:25.160 --> 05:27.420
+We said that all of log in is good.
+
+05:27.430 --> 05:30.890
+It's pretty fast but we haven't really seen where it comes from.
+
+05:30.890 --> 05:36.710
+So we'll see that there's a tradeoff though as I mentioned between efficiency and simplicity unfortunately.
+
+05:37.070 --> 05:41.220
+So these more efficient algorithms are definitely harder.
+
+05:41.240 --> 05:42.590
+They're longer.
+
+05:42.740 --> 05:47.600
+Or even if they're not longer in the amount of code they're just weirder they're not they're not how
+
+05:47.600 --> 05:50.660
+we think as humans most the time is not how you would sort something.
+
+05:50.750 --> 05:54.400
+So they take a little longer to understand but it's worth it right.
+
+05:54.410 --> 05:58.370
+That's a very big difference that I just showed you and that was only 100000 items.
+
+05:58.370 --> 06:02.870
+Now imagine a million or 10 million pieces of data massive differences in time.
+
+06:02.870 --> 06:05.470
+So let's dive in in the next video merge sort.

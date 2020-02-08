@@ -1,0 +1,337 @@
+WEBVTT
+
+00:00.180 --> 00:00.590
+All right.
+
+00:00.600 --> 00:01.320
+Welcome back.
+
+00:01.470 --> 00:07.880
+Let's talk about a raise through the lens of big-O performance and how do they compare two objects.
+
+00:07.890 --> 00:11.120
+Quick side note if you've never seen a raise are not familiar with them.
+
+00:11.160 --> 00:14.070
+Definitely go learn about them first.
+
+00:14.070 --> 00:17.940
+This is not I'm not teaching them here we're just talking about them and how they perform.
+
+00:17.940 --> 00:18.380
+All right.
+
+00:18.510 --> 00:23.700
+So the big selling point of arrays of course is that they are ordered there is an intrinsic ordering
+
+00:23.700 --> 00:28.120
+to the data unlike an object where things just float around in a gelatinous mass.
+
+00:28.530 --> 00:35.240
+And that's often very useful if we need order but it can come at a cost for some of the operations.
+
+00:35.300 --> 00:39.420
+Anyway here are two different arrays of course you can store whatever you want and there are different
+
+00:39.420 --> 00:40.190
+types of data.
+
+00:40.200 --> 00:46.100
+Mix it up and each element has an index a numeric value that corresponds to it.
+
+00:46.260 --> 00:49.710
+So this is the zeroth item the first and the second item.
+
+00:49.710 --> 00:53.220
+And in general arrays you use when you need order.
+
+00:53.280 --> 00:57.700
+If you don't need order then you probably don't want to use an array if you're just trying to store
+
+00:57.740 --> 00:59.290
+random data together.
+
+00:59.340 --> 01:03.630
+You could still use an array but if you're really trying to optimize for performance there are other
+
+01:03.630 --> 01:04.380
+options.
+
+01:04.620 --> 01:09.630
+And even if you do need order we're going to see some other structures coming up like a singly linked
+
+01:09.630 --> 01:13.290
+list and a doubly linked list that still encode order.
+
+01:13.320 --> 01:14.910
+There is still a linear.
+
+01:14.940 --> 01:20.840
+It's a list structure where each element is in a particular spot and they're all connected in an order.
+
+01:21.000 --> 01:25.450
+But they sometimes can perform better than arrays depending on what you need.
+
+01:25.590 --> 01:28.870
+So arrays are not the only order data structure on Earth.
+
+01:28.920 --> 01:33.170
+They're just the only one that we get for free in javascript anyway link this comes later.
+
+01:33.180 --> 01:38.850
+So when you need an order you can use an array of course but often that can come at a cost depending
+
+01:38.850 --> 01:44.370
+on what you're trying to do especially around insertion and removal it can complicate things.
+
+01:44.430 --> 01:48.120
+So accessing data in an array is always very quick.
+
+01:48.170 --> 01:53.850
+You can see here Access is 0 1 just the exact same as we talked about with an object.
+
+01:53.850 --> 02:01.020
+When I say access what I mean is if we have this array with three items called names if I ask for names
+
+02:01.020 --> 02:03.050
+of zero I remember that once too easy.
+
+02:03.080 --> 02:03.870
+It's the first one.
+
+02:04.020 --> 02:05.600
+Let's say I ask for names of two.
+
+02:05.700 --> 02:08.580
+It's constant time to give me Andrea.
+
+02:08.940 --> 02:14.490
+So a misconception that I've seen a lot of students have when you have a 10000 element array and you
+
+02:14.490 --> 02:21.030
+ask for the nine thousandth element let's say Javascript isn't going through every single element in
+
+02:21.030 --> 02:25.980
+counting all the way up to 9000 and accessing every element and then getting to the one you need and
+
+02:25.980 --> 02:27.310
+giving it to you.
+
+02:27.600 --> 02:28.480
+You can think of.
+
+02:28.750 --> 02:31.410
+There's a direct shortcut to each element.
+
+02:31.470 --> 02:36.710
+If you have a number if you have an index and the array goes that far of course that's the one condition.
+
+02:36.810 --> 02:38.430
+It's a valid index.
+
+02:38.610 --> 02:40.460
+You can jump immediately to the data.
+
+02:40.620 --> 02:43.180
+So it doesn't matter how long the array is.
+
+02:43.290 --> 02:46.930
+It doesn't matter if you're looking at the last item the middle item or the first item.
+
+02:46.980 --> 02:48.360
+It's constant time.
+
+02:48.750 --> 02:49.290
+OK.
+
+02:49.440 --> 02:53.520
+So now that that's out of the way let's talk about insertion and removal.
+
+02:53.850 --> 02:56.460
+So it really depends on where we're inserting.
+
+02:56.460 --> 03:00.060
+Let's start with insertion and it has to do with this order as I've mentioned.
+
+03:00.060 --> 03:02.820
+Each element has an index that corresponds to it.
+
+03:02.970 --> 03:06.630
+And if I want to add something in but say I want to add in the name Raj.
+
+03:06.780 --> 03:13.740
+Well if I add it to the very end like right here by pushing onto this array that is constant time is
+
+03:13.790 --> 03:17.240
+0 0 1 and that's because there's really nothing.
+
+03:17.400 --> 03:19.110
+There's nothing difficult about that.
+
+03:19.200 --> 03:21.920
+We can add to the end of the array and we give it a new index.
+
+03:21.930 --> 03:27.100
+It's sort of like adding into an object it's constant time it's super simple.
+
+03:27.150 --> 03:28.800
+It doesn't require much work.
+
+03:28.800 --> 03:32.590
+The problem comes when we try to insert at the beginning of an array.
+
+03:32.910 --> 03:35.160
+And the reason for that has to do with these indices.
+
+03:35.250 --> 03:39.860
+If I tried to insert rush here you can already kind of see what happens.
+
+03:39.900 --> 03:42.350
+Our indices are totally messed up.
+
+03:42.480 --> 03:44.350
+Michael is no longer element 0.
+
+03:44.370 --> 03:45.820
+Melissa is not element 1.
+
+03:45.900 --> 03:47.370
+Andrea it's not element 2.
+
+03:47.430 --> 03:50.430
+So we have to re-index every single element in the array.
+
+03:50.460 --> 03:52.530
+And this is simple for a four element array.
+
+03:52.530 --> 03:57.600
+But if we're talking about thousands and thousands of elements re-indexing every single one is not a
+
+03:57.600 --> 03:58.870
+trivial task.
+
+03:58.890 --> 04:04.950
+So if we were inserting at the beginning of an array we're talking about 0 of end time because we have
+
+04:04.950 --> 04:08.910
+to do something once roughly once for every single element.
+
+04:08.910 --> 04:13.810
+Now that doesn't mean that it's exactly one operation for each element remember.
+
+04:13.890 --> 04:21.150
+And it could be of 10 and 0 of 2 and 0.5 and it's just that the amount of time it takes roughly grows
+
+04:21.150 --> 04:23.760
+in proportion with the size of the array.
+
+04:23.790 --> 04:26.760
+And all right so inserting in the beginning is problematic.
+
+04:26.760 --> 04:29.410
+The same goes for removing from the beginning.
+
+04:29.430 --> 04:33.400
+So if we do have Raaj at the beginning let's say this is our set up.
+
+04:33.490 --> 04:39.450
+Now this is so annoying having to type all of this like this if we remove Raj like this.
+
+04:40.290 --> 04:40.990
+Everything's wrong.
+
+04:41.050 --> 04:41.320
+Right.
+
+04:41.340 --> 04:47.220
+We have to re-index again just the other direction we need to set Michael index or his index is one
+
+04:47.260 --> 04:48.350
+Malissa goes down.
+
+04:48.390 --> 04:49.340
+Sorry 0.
+
+04:49.440 --> 04:51.620
+Melissa goes to one Andre goes to two.
+
+04:51.810 --> 04:53.790
+So you can see how this becomes difficult.
+
+04:53.820 --> 04:59.060
+Adding and removing from the beginning of an array is best to avoid if you can.
+
+04:59.400 --> 05:02.690
+But often it's meaningful to add to the beginning of an array.
+
+05:02.820 --> 05:07.980
+If you're trying to put something at the beginning of an order for example you may need to say I'm not
+
+05:07.980 --> 05:09.890
+saying you should avoid it at all costs.
+
+05:09.990 --> 05:16.020
+It's just good to be aware that it's not as efficient as adding in removing at the end so push and pop
+
+05:16.410 --> 05:19.230
+always faster than shift in unshipped.
+
+05:19.370 --> 05:23.850
+Unless of course it's an empty array in which case adding to the beginning or end is the same thing.
+
+05:23.850 --> 05:24.090
+All right.
+
+05:24.090 --> 05:25.920
+So we talked about insertion and removal.
+
+05:25.920 --> 05:32.100
+It depends on where we're inserting always inserting removing from the beginning is worse than adding
+
+05:32.100 --> 05:33.650
+to the end and removing from the end.
+
+05:33.780 --> 05:35.820
+Accessing is fast no matter where.
+
+05:35.820 --> 05:40.530
+If we're talking about 10000 elements accessing the middle element is just as fast as accessing the
+
+05:40.530 --> 05:44.330
+second element and then searching the fastest we can do of is oh.
+
+05:44.520 --> 05:46.620
+We'll discuss this in the searching section.
+
+05:46.610 --> 05:52.380
+All write our own basic javascript search if we're talking about an unsorted array where there's no
+
+05:52.380 --> 05:53.550
+order to the data.
+
+05:53.580 --> 06:00.540
+If I wanted to know if I had say another ten thousand names in here and I wanted to know if Robbie was
+
+06:00.540 --> 06:04.280
+in there we have to check potentially every single element.
+
+06:04.320 --> 06:09.240
+So as the number of items grows in that array so does the time potentially that it takes to find that
+
+06:09.240 --> 06:09.590
+item.
+
+06:09.630 --> 06:12.070
+So search grows 7 it's linear.
+
+06:12.300 --> 06:16.920
+And we spend a lot more time talking about search and potential optimizations you can make specifically
+
+06:16.920 --> 06:19.560
+when your data is sorted but that comes up later.
+
+06:19.560 --> 06:24.780
+All right so next we'll talk about some builtin Array methods and their performance and then we're pretty
+
+06:24.780 --> 06:25.260
+much done.
